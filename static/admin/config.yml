@@ -5,6 +5,9 @@ backend:
 media_folder: static/img
 public_folder: /img
 
+publish_mode: editorial_workflow
+
+
 collections:
   - name: "blog"
     label: "Blog"
@@ -27,9 +30,11 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "case"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Subtitle", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Linkedinbild", name: linkedinbild, widget: image}
       - {label: "Description", name: "description", widget: "text"}
+      - {label: "Sidebar", name: intro, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
 

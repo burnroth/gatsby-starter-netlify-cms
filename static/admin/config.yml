@@ -26,9 +26,9 @@ collections:
     label: "Case"
     folder: "src/pages/kunder"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "case"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "case-page"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Subtitle", name: "subtitle", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}

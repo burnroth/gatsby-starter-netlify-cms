@@ -33,10 +33,10 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
 
-  - name: "products"
+  - name: "Verticals"
     create: true
     label: "Vertikalsidor"
-    folder: "src/pages/products/"
+    folder: "src/pages/losningar/"
     slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "vertical-page"}

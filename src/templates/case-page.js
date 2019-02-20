@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
+import Features from '../components/Features'
 import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
@@ -36,7 +37,7 @@ export const CaseTemplate = ({
 						<PostContent content={content} />
 						{tags && tags.length ? (
 							<div style={{ marginTop: `4rem` }}>
-							<Img fluid={ogImage.childImageSharp.fluid}/>
+							<Features gridItems={blurbImage} />
 								<h4>Tags</h4>
 								<ul className="taglist">
 									{tags.map(tag => (
@@ -60,9 +61,9 @@ CaseTemplate.propTypes = {
 	description: PropTypes.string,
 	title: PropTypes.string,
 	helmet: PropTypes.object,
-
-
-
+	intro: PropTypes.shape({
+    blurbs: PropTypes.array,
+  })
 }
 
 const Case = ({ data }) => {
@@ -85,9 +86,10 @@ const Case = ({ data }) => {
 				}
 				tags={post.frontmatter.tags}
 				title={post.frontmatter.title}
+				intro={post.frontmatter.intro}
 				subTitle={post.frontmatter.subtitle}
 				ogImage={post.frontmatter.linkedinbild}
-				blurbImage={post.frontmatter.intro.blurbs.image}
+				blurbImage={post.frontmatter.intro.blurbs}
 			/>
 		</Layout>
 	)
@@ -112,29 +114,44 @@ export const pageQuery = graphql`
 			title
 			subtitle
 			linkedinbild {
-	childImageSharp {
+				childImageSharp {
 		fluid(maxWidth: 500, quality: 100) {
 			...GatsbyImageSharpFluid
 			presentationWidth
 		}
 	}
-  id
-}
-	description
-	intro {
-		blurbs {
-			image {
-				id
-			}
+		id
+		}
+		description
+		intro {
+			blurbs {
+				image1 {
+		alt
+		image {
+		childImageSharp {
+		fluid(maxWidth: 500, quality: 100) {
+			...GatsbyImageSharpFluid
+			presentationWidth
+		}
+	}
+		id
+		}
+		}
 		}
 		description
 		heading
 		image {
-			id
+		childImageSharp {
+		fluid(maxWidth: 500, quality: 100) {
+			...GatsbyImageSharpFluid
+			presentationWidth
 		}
 	}
-	tags
-	}
-	}
+		id
+		}
+		}
+		tags
+		}
+		}
 }
 `

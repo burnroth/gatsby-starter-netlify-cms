@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
-import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import Content, { HTMLContent } from '../components/Content'
@@ -60,6 +59,9 @@ CaseTemplate.propTypes = {
 	description: PropTypes.string,
 	title: PropTypes.string,
 	helmet: PropTypes.object,
+	intro: PropTypes.shape({
+    blurbs: PropTypes.array,
+  }),
 }
 
 const Case = ({ data }) => {
@@ -116,36 +118,22 @@ export const pageQuery = graphql`
 			presentationWidth
 		}
 	}
-		id
 		}
 		description
 		intro {
-			blurbs {
-		
-		image {
-		childImageSharp {
-		fluid(maxWidth: 500, quality: 100) {
-			...GatsbyImageSharpFluid
-			presentationWidth
-		}
-	}
-		id
-		}
-				
-
-		}
-		description
-		heading
-		image {
-		childImageSharp {
-		fluid(maxWidth: 500, quality: 100) {
-			...GatsbyImageSharpFluid
-			presentationWidth
-		}
-	}
-		id
-		}
-		}
+          blurbs {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 240, quality: 64) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            text
+          }
+          heading
+          description
+        }
 		tags
 		}
 		}

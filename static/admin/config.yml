@@ -36,7 +36,7 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Linkedinbild", name: linkedinbild, widget: image}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Sidebar", name: intro, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: title, name: Rubrik, widget: string},{label: information, name: Info, widget: text},{label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}]}
+      - {label: "Sidebar", name: intro, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Ikon, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]},{label: Rubrik, name: rubrik, widget: string}, {label: Text, name: text, widget: text}]}]}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
 

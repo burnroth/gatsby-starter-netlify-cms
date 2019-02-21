@@ -35,5 +35,4 @@ FeatureGrid.propTypes = {
     })
   ),
 }
-
 export default FeatureGrid

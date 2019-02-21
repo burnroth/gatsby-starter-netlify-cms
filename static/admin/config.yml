@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   branch: master
-#backend går att ändra till "github" i framtiden, vilket gör att användare kan logga in i cms:et via
+#backend går att ändra till "github" i framtiden, vilket gör att användare kan logga in i cms:et med sitt guithub-konto
 
 
 media_folder: static/img
@@ -36,7 +36,7 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Linkedinbild", name: linkedinbild, widget: image}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Sidebar", name: intro, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
+      - {label: "Sidebar", name: intro, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: title, name: Rubrik, widget: string},{label: information, name: Info, widget: text},{label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}]}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
 

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
-import Features from '../components/Features'
 import Img from 'gatsby-image'
 import Layout from '../components/Layout'
+import Features from '../components/Features'
 import Content, { HTMLContent } from '../components/Content'
 
 export const CaseTemplate = ({
@@ -16,8 +16,8 @@ export const CaseTemplate = ({
 	title,
 	subTitle,
 	helmet,
-	ogImage,
-	blurbImage,
+	intro
+
 }) => {
 	const PostContent = contentComponent || Content
 
@@ -36,8 +36,8 @@ export const CaseTemplate = ({
 						<p>{description}</p>
 						<PostContent content={content} />
 							<div style={{ marginTop: `4rem` }}>
-							<Features gridItems={blurbImage} />
 								<h4>Tags</h4>
+								<Features gridItems={intro.blurbs} />
 								<ul className="taglist">
 									{tags.map(tag => (
 										<li key={tag + `tag`}>
@@ -60,9 +60,6 @@ CaseTemplate.propTypes = {
 	description: PropTypes.string,
 	title: PropTypes.string,
 	helmet: PropTypes.object,
-	intro: PropTypes.shape({
-		blurbs: PropTypes.array,
-		})
 }
 
 const Case = ({ data }) => {
@@ -124,8 +121,7 @@ export const pageQuery = graphql`
 		description
 		intro {
 			blurbs {
-				image1 {
-		alt
+		
 		image {
 		childImageSharp {
 		fluid(maxWidth: 500, quality: 100) {
@@ -135,7 +131,8 @@ export const pageQuery = graphql`
 	}
 		id
 		}
-		}
+				
+
 		}
 		description
 		heading

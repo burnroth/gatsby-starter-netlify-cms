@@ -27,8 +27,11 @@ const FeatureGrid = ({ gridItems }) => (
 FeatureGrid.propTypes = {
   gridItems: PropTypes.arrayOf(
     PropTypes.shape({
-      image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+      title: PropTypes.string,
+      information: PropTypes.string,
+      image1: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
       text: PropTypes.string,
+
     })
   ),
 }

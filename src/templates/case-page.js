@@ -87,7 +87,7 @@ const Case = ({ data }) => {
 				intro={post.frontmatter.intro}
 				subTitle={post.frontmatter.subtitle}
 				ogImage={post.frontmatter.linkedinbild}
-				blurbImage={post.frontmatter.intro.blurbs}
+				blurbImage={post.frontmatter.intro.blurbs.image1}
 			/>
 		</Layout>
 	)
@@ -104,38 +104,36 @@ export default Case
 
 export const pageQuery = graphql`
 	query CaseByID($id: String!) {
-	markdownRemark(id: {eq: $id }) {
-		id
-		html
-		frontmatter {
-			date(formatString: "MMMM DD, YYYY")
-			title
-			subtitle
-			linkedinbild {
-				childImageSharp {
-		fluid(maxWidth: 500, quality: 100) {
-			...GatsbyImageSharpFluid
-			presentationWidth
-		}
-	}
-		}
-		description
-		intro {
-          blurbs {
+  markdownRemark(id: {eq: $id}) {
+    id
+    html
+    frontmatter {
+      date(formatString: "MMMM DD, YYYY")
+      title
+      subtitle
+      description
+      intro {
+        blurbs {
+          image1 {
+            alt
             image {
               childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
+                fluid(maxWidth: 500, quality: 100) {
                   ...GatsbyImageSharpFluid
+                  presentationWidth
                 }
               }
             }
-            text
           }
-          heading
-          description
+          rubrik
+          text
         }
-		tags
-		}
-		}
+        description
+        heading
+      }
+      tags
+    }
+  }
 }
+
 `

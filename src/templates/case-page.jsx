@@ -35,7 +35,6 @@ export const CaseTemplate = ({
 						</h1>
 						<p>{description}</p>
 						<PostContent content={content} />
-						{tags && tags.length ? (
 							<div style={{ marginTop: `4rem` }}>
 							<Features gridItems={blurbImage} />
 								<h4>Tags</h4>
@@ -62,8 +61,8 @@ CaseTemplate.propTypes = {
 	title: PropTypes.string,
 	helmet: PropTypes.object,
 	intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  })
+		blurbs: PropTypes.array,
+		})
 }
 
 const Case = ({ data }) => {

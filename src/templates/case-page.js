@@ -98,6 +98,9 @@ Case.propTypes = {
 	data: PropTypes.shape({
 		markdownRemark: PropTypes.object,
 	}),
+	intro: PropTypes.shape({
+    blurbs: PropTypes.array,
+  }),
 }
 
 export default Case

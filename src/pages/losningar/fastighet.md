@@ -54,9 +54,17 @@ intro:
         får hjælp til at arbejde proaktivt.
   heading: What we offer
 usp:
-  heading: a
-  string: a
-  text: a
+  heading: Når dit ejendomssystem ikke dur
+  image1:
+    alt: haj
+    image: /img/meeting-space.png
+  string: Köp nu
+  text: >-
+    Som du ved, findes der en del udfordringer i ejendomsbranchen.
+    Udlejningsgæster har høje forventninger til serviceniveauet, samtidig med at
+    informationsstrukturen ofte er kompleks. Ejendomssystemer løser meget, men
+    de er oftest ikke tilstrækkeligt enkle til at kunne håndtere alle
+    kunderelationer og sager på effektiv vis.
 heading: Ett CRM-system du vill flytta in i
 ---
 

@@ -2,13 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import Features from '../components/Features'
+import BulletList from '../components/BulletList';
 
 export const VerticalPageTemplate = ({
   image,
   title,
   heading,
   description,
+  blurbs,
+  list
 
 }) => (
   <section className="section section--gradient">
@@ -21,11 +24,15 @@ export const VerticalPageTemplate = ({
                     {title}
                   </h2>
               <div className="columns">
+              
                 <div className="column is-7">
-<PreviewCompatibleImage fluid={image}/>
+{/* <PreviewCompatibleImage fluid={image}/> */}
+<Features gridItems={blurbs}/>
                   <h3 className="has-text-weight-semibold is-size-2">
                     {heading}
+                
                   </h3>
+                  <BulletList listItem={list}/>
                   <p>{description}</p>
                 </div>
               </div>
@@ -53,10 +60,12 @@ const VerticalPage = ({ data }) => {
   return (
     <Layout>
       <VerticalPageTemplate
-        image={frontmatter.image}
+        image={frontmatter.hero.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
         description={frontmatter.description}
+        list={frontmatter.hero.list}
+        blurbs={frontmatter.intro.blurbs}
       />
     </Layout>
   )
@@ -74,12 +83,58 @@ export default VerticalPage
 
 export const verticalPageQuery = graphql`
   query VerticalPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      frontmatter {
-        title
+  markdownRemark(id: {eq: $id}) {
+    frontmatter {
+      title
+      heading
+      description
+      hero {
         heading
-        description
+        image{
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        list {
+          listObject
+        }
+      }
+      intro {
+        blurbs {
+          image1 {
+            alt
+            image{
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+          }
+          rubrik
+          text
+        }
+        heading
+      }
+      usp {
+        heading
+        image1 {
+          alt
+          image{
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        }
+        string
+        text
       }
     }
   }
+}
+
 `

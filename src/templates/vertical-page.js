@@ -29,7 +29,6 @@ export const VerticalPageTemplate = ({
 							<div className="columns">
 
 								<div className="column is-7">
-{/* <PreviewCompatibleImage fluid={image}/> */}
 <Features gridItems={blurbs}/>
 	<h3 className="has-text-weight-semibold is-size-2">
 		{heading}

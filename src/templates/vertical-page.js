@@ -13,7 +13,7 @@ export const VerticalPageTemplate = ({
 	heading,
 	description,
 	blurbs,
-	list,
+  list,
 	usp
 
 }) => (

@@ -6,6 +6,7 @@ import Features from '../components/Features'
 import BulletList from '../components/BulletList'
 import Button from '../components/Button'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import SEO from '../components/SEO'
 
 export const VerticalPageTemplate = ({
 	image,
@@ -50,6 +51,7 @@ export const VerticalPageTemplate = ({
 	</div>
 	</div>
 	</div>
+	<SEO title={title} desc={description} ogImage={image}/>
 	</section>
 )
 
@@ -66,7 +68,7 @@ const VerticalPage = ({ data }) => {
 	return (
 		<Layout>
 			<VerticalPageTemplate
-				image={frontmatter.hero.image}
+				image={frontmatter.hero.image.absolutePath}
 				title={frontmatter.title}
 				heading={frontmatter.heading}
 				description={frontmatter.description}
@@ -77,6 +79,7 @@ const VerticalPage = ({ data }) => {
 		</Layout>
 	)
 }
+
 
 VerticalPage.propTypes = {
 	data: PropTypes.shape({
@@ -98,11 +101,7 @@ export const verticalPageQuery = graphql`
 			hero {
 				heading
 				image{
-					childImageSharp {
-						fluid(maxWidth: 2048, quality: 100) {
-							...GatsbyImageSharpFluid
-						}
-					}
+					absolutePath
 				}
 				list {
 					listObject

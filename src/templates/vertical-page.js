@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
@@ -14,8 +13,9 @@ export const VerticalPageTemplate = ({
 	heading,
 	description,
 	blurbs,
-  list,
-	usp
+		list,
+	usp, 
+	slug
 
 }) => (
 	<section className="section section--gradient">
@@ -51,19 +51,13 @@ export const VerticalPageTemplate = ({
 	</div>
 	</div>
 	</div>
-	<SEO title={title} desc={description} ogImage={image}/>
+	<SEO title={title} desc={description} ogImage={image} slug={slug}/>
 	</section>
 )
 
-VerticalPageTemplate.propTypes = {
-	image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-	title: PropTypes.string,
-	heading: PropTypes.string,
-	description: PropTypes.string,
-}
 
 const VerticalPage = ({ data }) => {
-	const { frontmatter } = data.markdownRemark
+	const { frontmatter, fields } = data.markdownRemark
 
 	return (
 		<Layout>
@@ -75,25 +69,21 @@ const VerticalPage = ({ data }) => {
 				list={frontmatter.hero.list}
 				blurbs={frontmatter.intro.blurbs}
 				usp={frontmatter.usp}
+				slug={fields.slug}
 			/>
 		</Layout>
 	)
 }
 
 
-VerticalPage.propTypes = {
-	data: PropTypes.shape({
-		markdownRemark: PropTypes.shape({
-			frontmatter: PropTypes.object,
-		}),
-	}),
-}
-
 export default VerticalPage
 
 export const verticalPageQuery = graphql`
 	query VerticalPage($id: String!) {
 	markdownRemark(id: {eq: $id}) {
+		fields {
+			slug
+			}
 		frontmatter {
 			title
 			heading

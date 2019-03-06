@@ -18,14 +18,14 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/pages/dk`,
+        path: `${__dirname}/src/pages/sv`,
         name: 'pages',
       },
     },
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-          bucketName: 'hacktuesday-dk',
+          bucketName: 'hacktuesday-sv',
           region: 'eu-west-1',
       },
   },

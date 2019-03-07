@@ -74,9 +74,8 @@ const VerticalPage = ({ data }) => {
 		</Layout>
 	)
 }
-
-
 export default VerticalPage
+
 
 export const verticalPageQuery = graphql`
 	query VerticalPage($id: String!) {

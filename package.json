@@ -41,10 +41,21 @@
   "scripts": {
     "start": "npm run develop",
     "clean": "rimraf .cache public",
+
     "build:dk": "node build-i18n.js dk",
     "deploy:dk": "npm run build:dk && gatsby-plugin-s3 deploy --yes",
-    "build:sv": "node build-i18n.js sv",
-    "deploy:sv": "npm run build:sv && gatsby-plugin-s3 deploy --yes",
+
+    "build:se": "node build-i18n.js se",
+    "deploy:se": "npm run build:se && gatsby-plugin-s3 deploy --yes",
+
+    "build:fi": "node build-i18n.js fi",
+    "deploy:fi": "npm run build:fi && gatsby-plugin-s3 deploy --yes",
+
+    "develop:se": "node develop-i18n.js se",
+    "develop:dk": "node develop-i18n.js dk",
+    "develop:no": "node develop-i18n.js no",
+    "develop:fi": "node develop-i18n.js fi",
+
     "develop": "npm run clean && gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",

@@ -1,0 +1,42 @@
+/*
+* ----------------------------------------------------------------------------------
+*	svg-icons
+* ----------------------------------------------------------------------------------
+*/
+
+// Colors
+.svg-orange { fill: $orange; }
+.svg-blue { fill: $blue-light; }
+.svg-green { fill: $green-lime; }
+.svg-turq { fill: $turquoise; }
+.svg-purple { fill: $purple; }
+.svg-red { fill: $red; }
+.svg-white { fill: $white; }
+.svg-black { fill: $black; }
+
+// Sizes
+.svg-xsmall, .svg-small, .svg-medium, .svg-footer {
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.svg-xsmall {
+  width: 2rem;
+	height: 2rem;
+}
+
+.svg-small {
+	width: 3rem;
+	height: 3rem;
+}
+
+.svg-medium {
+	width: 5rem;
+	height: 5rem;
+}
+
+.svg-footer {
+	width: 1.6rem;
+	height: 1.6rem;
+}

@@ -1,9 +1,8 @@
 module.exports = {
   siteMetadata: {
-    language: 'dk',
-    title: 'Lime CRM',
+    title: 'Gatsby + Netlify CMS Starter',
     description:
-    'Lime CRM marketsites'
+      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -12,21 +11,21 @@ module.exports = {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/static/img`,
+        path: `${__dirname}/src/pages/se/static/img`,
         name: 'uploads',
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/pages/dk`,
+        path: `${__dirname}/src/pages/se`,
         name: 'pages',
       },
     },
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-          bucketName: 'hacktuesday-dk',
+          bucketName: 'hacktuesday-se',
           region: 'eu-west-1',
       },
   },
@@ -77,7 +76,7 @@ module.exports = {
       resolve:'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
         develop: true,            // Activates purging in npm run develop
-        purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
+        // purgeOnly: ['/all.scss'], 
       },
     }, // must be after other CSS plugins
     'gatsby-plugin-netlify', // make sure to keep it last in the array

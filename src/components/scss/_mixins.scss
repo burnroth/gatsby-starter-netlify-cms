@@ -1,0 +1,17 @@
+
+@mixin gradient-background($turquoise1, $turquoise2) {
+  background: $turquoise;
+  background: linear-gradient(45deg, $turquoise1, $turquoise2);
+  background: -moz-linear-gradient(45deg, $turquoise1 0%, $turquoise2 100%);
+  background: -webkit-linear-gradient(45deg, $turquoise1 0%, $turquoise2 100%);
+  background: linear-gradient(45deg, $turquoise1 0%, $turquoise2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$turquoise1', endColorstr='$turquoise2', GradientType=0);
+}
+
+@mixin section-padding($top, $bottom) {
+  padding: {
+      top: $top;
+      bottom: $bottom;
+  }
+}
+

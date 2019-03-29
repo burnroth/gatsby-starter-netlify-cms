@@ -1,0 +1,23 @@
+.shadow {
+    box-shadow: 0px 8px 40px -10px rgba(0, 0, 0, .6);
+}
+
+.white-shadow {
+    color: $white;
+    text-shadow: 0px 1px 3px #333;
+    font-weight: bold;
+}
+
+.shadow-hover {
+
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .4);
+    transition: all ease .3s;
+
+
+    &:hover {
+        box-shadow: 0px 8px 40px -10px rgba(0, 0, 0, 0.6);
+
+
+    }
+
+}

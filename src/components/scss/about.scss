@@ -1,0 +1,104 @@
+/* ----------------------------------------------------------------------------------
+ *
+ * Our about us page
+ *
+ * ----------------------------------------------------------------------------------
+ */
+
+ .about-page {
+ 	padding-top: 0px;
+ 	padding-bottom: 60px;
+ }
+
+
+ .about-page1 {
+ 	padding-top: 0px;
+ 	padding-bottom: 60px;
+ }
+
+ .about-bg {
+	background-image: url(/assets/img/team/crm-header-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height:450px;
+  background-position: center;
+
+  @media (max-width: 1000px) {
+      background-image: url(/assets/img/crm-header-bg-phone.jpg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+  }
+ }
+
+.hittepa-klass {
+  margin-top:0px;
+  color: red;
+  margin-left:0px;
+  }
+
+.maps-bg-no {
+ background-image: url(/assets/img/header/map-no-header-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+ }
+
+ .maps-bg-dk {
+  background-image: url(/assets/img/header/map-dk-header-bg.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   height: 500px;
+  }
+
+  .maps-bg-se {
+   background-image: url(/assets/img/se/maps-bg-se.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+   }
+
+.about {
+
+	.title {
+		font-size: 40px;
+		font-weight: 100;
+		line-height: 40px;
+    margin-bottom: 20px;
+	}
+
+  .subtitle {
+		font-size: 26px;
+		font-weight: 300;
+		margin-bottom: 20px;
+	}
+
+	.intro {
+    color: $grey-mid;
+    font-size: 18px;
+	}
+}
+
+#team {
+  padding-bottom: 80px;
+  padding-top: 0px;
+
+  .title {
+		font-size: 40px;
+		font-weight: 100;
+		line-height: 40px;
+    margin-bottom: 20px;
+	}
+
+  .name {
+		font-weight: 300;
+  }
+
+  i {
+		color: $grey-darker;
+		font-size: 20px;
+	}
+}

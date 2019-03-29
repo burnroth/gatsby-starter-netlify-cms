@@ -1,0 +1,29 @@
+nav {
+  background-color: $white;
+
+  a {
+    color: $black;
+  }
+
+}
+
+.dropdown-menu {
+  width: max-content;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: -o-max-content;
+  width: -ms-max-content;
+  min-width: 543px;
+
+  padding: {
+    top: 18px;
+    right: 12px;
+    bottom: 20px;
+    left: 12px;
+  }
+
+  .dropdown-heading{
+    padding-top: 8px;
+  }
+
+}

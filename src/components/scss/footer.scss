@@ -1,0 +1,39 @@
+/* -----------------------------------------
+ *
+ * Our footer styles
+ *
+ * -----------------------------------------
+ */
+
+.footer i {
+  color: $white;
+  padding: 0px -15px;
+}
+
+.footer a {
+  padding: 0px 15px;
+  color: $white;
+  line-height: 2.2rem;
+}
+
+.footer li a {
+  padding: 0px 0px;
+  color: $white;
+}
+
+
+.footer a:hover {
+  color: $white;
+
+}
+
+.footer a.demo {
+    color: $turquoise-light;
+    font-weight: 600;
+}
+
+.footer a.text-link {
+  color: $white;
+  font-weight: 600;
+  padding: 0;
+}

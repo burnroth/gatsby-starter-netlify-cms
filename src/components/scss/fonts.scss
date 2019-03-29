@@ -1,0 +1,46 @@
+// Font face
+@font-face {
+	font-family: 'GalanoGrotesque';
+	font-style: normal;
+	font-weight: 400;
+	font-display: auto;
+	src: url('/fonts/GalanoGrotesque-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'GalanoGrotesque';
+	font-style: normal;
+	font-weight: 700;
+	font-display: auto;
+	src: url('/fonts/GalanoGrotesque-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'GalanoGrotesque';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/fonts/GalanoGrotesque-Thin.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'GalanoGrotesque';
+	font-style: normal;
+	font-weight: 300;
+	font-display: auto;
+	src: url('/fonts/GalanoGrotesque-Light.woff') format('woff');
+}
+
+
+
+
+p {
+    font-size: $font-size;
+    line-height: $standard-line-height;
+    margin-bottom: 1.8rem;
+}
+
+ul>li{
+    font-size: 16px;
+}
+

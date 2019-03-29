@@ -1,0 +1,28 @@
+hr {
+	border-top: 1px solid $black;
+	margin-top: 0;
+}
+
+strong{
+	font-weight: 700;
+}
+
+a{
+	font-size: 16px;
+}
+
+svg{
+	margin-bottom: 8px;
+}
+
+ul,
+ol {
+	padding-left: 1.5rem;
+	font-size: 1.4rem;
+}
+
+.list-default li {
+	font-size: 1.4rem;
+	line-height: 2.4rem;
+	margin-bottom: 0.5rem;
+}

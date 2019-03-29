@@ -1,0 +1,201 @@
+section#hero {
+  @include gradient-background($turquoise, $turquoise2);
+
+  padding: {
+    top: 100px;
+    bottom: 100px;
+  }
+
+  h1,
+  p {
+    color: white;
+    padding-top: 40px;
+
+  }
+
+
+  @media (min-width: 576px) {}
+
+  @media (min-width: 768px) {}
+
+  @media (min-width: 992px) {
+
+    padding: {
+      bottom: 100px;
+    }
+
+    h1,
+    p {
+      text-align: center;
+    }
+
+    .btn-wrapper {
+      justify-content: center;
+      display: flex;
+    }
+  }
+
+  @media (min-width: 1200px) {}
+}
+
+section#social-proof {
+
+  padding: {
+    top: 60px;
+    bottom: 40px;
+  }
+}
+
+section#references {
+
+  padding: {
+    bottom: 40px;
+  }
+}
+
+section#video {
+
+  padding: {
+    top: 80px;
+    bottom: 80px;
+  }
+
+  h2 {
+    margin-top: 40px;
+  }
+
+  @media (min-width: 992px) {
+
+    h2 {
+      margin-top: unset;
+    }
+
+    .video-wrapper {
+
+      padding: {
+        top: 40px;
+        right: 40px;
+        bottom: 20px;
+        left: 40px;
+      }
+    }
+  }
+}
+
+section#usp {
+
+  padding: {
+    top: 80px;
+    bottom: 80px;
+  }
+}
+
+section#case {
+
+  padding: {
+    top: 100px;
+    bottom: 100px;
+  }
+
+}
+
+section#support {
+
+  padding: {
+    top: 60px;
+    bottom: 60px;
+  }
+
+  .col-12:first-child {
+    margin-bottom: 40px;
+  }
+
+}
+
+section#magnets {
+
+  padding: {
+    top: 80px;
+    bottom: 80px;
+  }
+
+  .btn-wrapper {
+    justify-content: center;
+    display: flex;
+  }
+
+  @media (min-width: 576px) {}
+
+  @media (min-width: 768px) {
+
+    .row:first-child {
+      padding: {
+        top: 40px;
+        bottom: 120px;
+      }
+    }
+  }
+
+  @media (min-width: 992px) {}
+
+  @media (min-width: 1200px) {}
+
+
+}
+
+section#succeed {
+
+  padding: {
+    top: 80px;
+    bottom: 80px;
+  }
+
+  h2 {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: 992px) {
+    h2 {
+      text-align: center;
+
+      padding: {
+        top: 40px;
+        bottom: 40px;
+      }
+    }
+  }
+
+
+}
+
+section#results {
+
+  padding: {
+    top: 80px;
+    bottom: 80px;
+  }
+
+  .row:first-child {
+    padding: {
+      bottom: 40px;
+    }
+  }
+
+  @media (min-width: 992px) {
+
+    h2 {
+      text-align: center;
+
+      padding: {
+        top: 40px;
+        bottom: 40px;
+      }
+    }
+
+    p.w-75 {
+      text-align: center;
+      margin: auto;
+      padding-bottom: 20px;
+    }
+  }
+}

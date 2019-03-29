@@ -1,0 +1,169 @@
+// Buttons
+.btn {
+	font-size: 16px;
+	border-radius: 4px;
+	padding: 1.5rem 3rem;
+
+	&:focus,
+	&:active,
+	&:hover,
+	&:active:focus {
+		box-shadow: none;
+		outline: none;
+	}
+}
+
+.btn-nav {
+	color: $white;
+	font-size: 14px;
+	margin: 5px 0 15px 15px;
+	padding: 8px 16px;
+
+	&:active {
+		color: $white;
+	}
+}
+
+.btn-nav-phone {
+	color: $white;
+	font-size: 14px;
+	margin: 15px 0 15px 15px;
+	padding: 8px 16px;
+
+	&:active {
+		color: $white;
+	}
+
+	// Margin left on phone
+	@media (max-width: 768px) {
+		margin: 15px 0 15px 32px;
+	}
+}
+
+.btn-turq {
+	background-color: $turquoise;
+	color: $white;
+	transition: color 0.3s ease-out, background-color 0.3s ease-out;
+
+	&:focus,
+	&:active,
+	&:hover {
+		background-color: darken($turquoise, 3%);
+		color: $white;
+	}
+
+	&:active:focus {
+		color: $white;
+	}
+}
+
+.btn-turq-dark {
+	background-color: $turquoise-dark;
+	color: $white;
+
+	&:focus,
+	&:active,
+	&:hover {
+		background-color: darken($turquoise-dark, 3%);
+		color: $white;
+	}
+
+	&:active:focus {
+		color: $white;
+	}
+}
+
+.btn-white {
+	background-color: $white;
+	color: $turquoise;
+	transition: color 0.3s ease-out, background-color 0.3s ease-out;
+
+	&:focus,
+	&:active,
+	&:hover {
+		background-color: darken($turquoise, 5%);
+		color: $white;
+	}
+
+	&:active:focus {
+		color: $white;
+	}
+}
+
+.btn-turq-ghost {
+	background-color: transparent;
+	border: 1px solid $turquoise;
+	color: $turquoise;
+	transition: color 0.3s ease-out, background-color 0.3s ease-out;
+
+	&:focus,
+	&:active,
+	&:hover {
+		background-color: $turquoise;
+		color: $white;
+	}
+
+	&:active:focus {
+		color: $white;
+	}
+}
+
+.btn-white-ghost {
+	background-color: transparent;
+	border: 1px solid $white;
+	color: $white;
+	transition: color 0.3s ease-out, background-color 0.3s ease-out;
+
+	&:focus,
+	&:active,
+	&:hover {
+		background-color: $white;
+		color: $turquoise;
+	}
+
+	&:active:focus {
+		color: $turquoise;
+	}
+}
+
+.btn-white-green {
+	background-color: $white;
+	color: #85c436;
+
+	&:focus,
+	&:active,
+	&:hover {
+		background-color: darken(#85c436, 3%);
+		color: $white;
+	}
+
+	&:active:focus {
+		color: $white;
+	}
+}
+
+.btn-cookie-bar {
+	background-color: $white;
+	color: $grey-darker;
+	font-size: 12px;
+	padding: 1rem 2.4rem;
+	transition: background-color .3s ease-out;
+}
+
+.btn-full-width {
+	width: 100%;
+}
+
+
+.btn-wrapper{
+
+	padding: {
+		top:40px;
+		bottom:40px;
+	}
+
+	button:nth-child(1){
+		margin-right: 8px;
+	}
+
+}

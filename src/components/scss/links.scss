@@ -1,0 +1,25 @@
+a,
+a:hover,
+a:focus {
+	color: $turquoise;
+}
+
+a.link-white,
+a.link-white i {
+	color: $white;
+
+	&:hover,
+	&:focus {
+		color: $white;
+	}
+}
+
+a.link-green,
+a.link-green i {
+	color: $green-lime;
+
+	&:hover,
+	&:focus {
+		color: $green-lime;
+	}
+}

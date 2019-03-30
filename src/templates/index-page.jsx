@@ -5,13 +5,15 @@ import Layout from '../components/Layout'
 import Button from '../components/Button'
 import BlogRoll from '../components/BlogRoll'
 import References from '../components/References'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export const IndexPageTemplate = ({
 	image,
 	title,
 	heading,
 	description,
-	references
+	references,
+	heroImage
 
 }) => (
 	<div>
@@ -24,11 +26,16 @@ export const IndexPageTemplate = ({
 		</h1>
 		<p>{description}</p>
 		</div>
-		</div>
-		</div>
-<div className="btn-wrapper">
+		<div className="btn-wrapper">
 <Button buttonText="Testa gratis" buttonColor="btn-white"/>
-<Button buttonText="Testa gratis" buttonColor="btn-white-ghost"/></div>
+<Button buttonText="Testa gratis" buttonColor="btn-white-ghost"/>
+</div>
+		<div className="col-12 mx-auto">
+		<PreviewCompatibleImage imageInfo={heroImage}/>
+		</div>
+		</div>
+		</div>
+
 	</section>
 
 		<section id="social-proof">
@@ -73,6 +80,7 @@ const IndexPage = ({ data }) => {
 				title={frontmatter.title}
 				heading={frontmatter.heading}
 				description={frontmatter.description}
+				heroImage={frontmatter.heroImage}
 				references={frontmatter.references}
 			/>
 		</Layout>
@@ -96,6 +104,16 @@ query IndexPageTemplate {
 			title
 			heading
 			description
+			heroImage{
+					alt
+					image{
+						childImageSharp {
+						fluid(maxWidth: 1920, quality:60) {
+							...GatsbyImageSharpFluid
+						}
+					}
+					}
+			}
 			references {
 				image1 {
 					alt
@@ -105,7 +123,6 @@ query IndexPageTemplate {
 							...GatsbyImageSharpFluid
 						}
 					}
-						id
 					}
 				}
 				}

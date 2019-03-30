@@ -4,7 +4,7 @@ backend:
 #backend går att ändra till "github" i framtiden, vilket gör att användare kan logga in i cms:et med sitt guithub-konto
 
 
-media_folder: src/pages/se/static/img
+media_folder: assets/se/img
 public_folder: /img
 
 
@@ -62,7 +62,7 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
           - {label: Title, name: title, widget: string}
-          - {label: Image, name: heroImage, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}
+          - {label: Hero Image, name: heroImage, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}
           - {label: Heading, name: heading, widget: string}
           - {label: Description, name: description, widget: string}
       

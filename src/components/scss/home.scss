@@ -15,9 +15,7 @@ section#hero {
 
 
   @media (min-width: 576px) {}
-
   @media (min-width: 768px) {}
-
   @media (min-width: 992px) {
 
     padding: {
@@ -30,6 +28,7 @@ section#hero {
     }
 
     .btn-wrapper {
+      margin: auto;
       justify-content: center;
       display: flex;
     }

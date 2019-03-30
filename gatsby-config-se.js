@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
+    title: 'Lime CRM Website 2.0',
     description:
-      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+      'We create customer magnets',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -11,8 +11,8 @@ module.exports = {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/pages/se/static/img`,
-        name: 'uploads',
+        path: `${__dirname}/assets/se/img`,
+        name: 'images',
       },
     },
     {
@@ -29,13 +29,13 @@ module.exports = {
           region: 'eu-west-1',
       },
   },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/img`,
-        name: 'images',
-      },
-    },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     path: `${__dirname}/src/img`,
+    //     name: 'images',
+    //   },
+    // },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
@@ -45,7 +45,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-relative-images',
             options: {
-              name: 'uploads',
+              name: 'images',
             },
           },
           {

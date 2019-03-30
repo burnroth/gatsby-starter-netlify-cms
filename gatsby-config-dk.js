@@ -1,9 +1,8 @@
 module.exports = {
   siteMetadata: {
-    language: 'dk',
-    title: 'Lime CRM',
+    title: 'Lime CRM Website 2.0',
     description:
-    'Lime CRM marketsites'
+      'We create customer magnets',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -12,8 +11,8 @@ module.exports = {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/static/img`,
-        name: 'uploads',
+        path: `${__dirname}/assets/dk/img`,
+        name: 'images',
       },
     },
     {
@@ -30,13 +29,13 @@ module.exports = {
           region: 'eu-west-1',
       },
   },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/img`,
-        name: 'images',
-      },
-    },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     path: `${__dirname}/src/img`,
+    //     name: 'images',
+    //   },
+    // },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
@@ -46,7 +45,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-relative-images',
             options: {
-              name: 'uploads',
+              name: 'images',
             },
           },
           {
@@ -77,7 +76,7 @@ module.exports = {
       resolve:'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
         develop: true,            // Activates purging in npm run develop
-        purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
+        // purgeOnly: ['/all.scss'], 
       },
     }, // must be after other CSS plugins
     'gatsby-plugin-netlify', // make sure to keep it last in the array

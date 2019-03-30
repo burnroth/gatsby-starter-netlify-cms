@@ -4,10 +4,9 @@ backend:
 #backend går att ändra till "github" i framtiden, vilket gör att användare kan logga in i cms:et med sitt guithub-konto
 
 
-media_folder: static/img
+media_folder: src/pages/se/static/img
 public_folder: /img
 
-publish_mode: editorial_workflow
 
 
 collections:

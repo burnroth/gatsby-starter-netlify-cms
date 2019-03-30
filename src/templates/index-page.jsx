@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Button from '../components/Button'
+import BlogRoll from '../components/BlogRoll'
 import References from '../components/References'
 
 export const IndexPageTemplate = ({
@@ -42,9 +43,15 @@ export const IndexPageTemplate = ({
 
 <section>
 	<div className="container">
- <References refImg={references} /> 
+	<References refImg={references} /> 
 	</div>
 </section>
+
+<section id="cases">
+<div className="container">
+<div className="row">
+<BlogRoll/>
+</div></div></section>
 
 	</div>
 )
@@ -94,7 +101,7 @@ query IndexPageTemplate {
 					alt
 					image {
 						childImageSharp {
-						fluid(maxWidth: 2048, quality: 100) {
+						fluid(maxWidth: 130, quality:60) {
 							...GatsbyImageSharpFluid
 						}
 					}

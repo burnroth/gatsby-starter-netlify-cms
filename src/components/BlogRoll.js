@@ -13,7 +13,7 @@ class BlogRoll extends React.Component {
       {posts && (posts
           .map(({ node: post }) => (
             <div
-              className="is-parent column is-6"
+              className="col-12 col-md-4"
               key={post.id}
             >
             <article className="tile is-child box notification">
@@ -55,6 +55,7 @@ export default () => (
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] },
         filter: { frontmatter: { templateKey: { eq: "case-page" } }}
+        limit: 3,
       ) {
         edges {
           node {

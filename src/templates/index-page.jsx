@@ -13,7 +13,8 @@ export const IndexPageTemplate = ({
 	heading,
 	description,
 	references,
-	heroImage
+	heroImage,
+	videoSection
 
 }) => (
 	<div>
@@ -48,11 +49,40 @@ export const IndexPageTemplate = ({
 			</div>
 		</section>
 
-<section>
+<section id="references">
 	<div className="container">
 	<References refImg={references} /> 
 	</div>
 </section>
+
+<section id="video"
+           class="bg-grey">
+    <div className="container">
+      <div className="row justify-content-between bg-white video-wrapper">
+        <div className="col-12 col-lg-5">
+          <h2>{videoSection.heading}</h2>
+          <p>{videoSection.description}</p>
+        </div>
+        <div className="col-12 col-lg-6">
+          <div className="embed-responsive embed-responsive-16by9 header-video shadow">
+            <iframe className="embed-responsive-item"
+                    src={`https://www.youtube.com/embed/${videoSection.videoId}`}
+										frameborder="0"
+										title="maggan"
+                    cc_load_policy="1"
+                    allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-12 justify-content-between align-items-center">
+          <Button buttonClass="mx-auto" buttonText="Halloj"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
 <section id="cases">
 <div className="container">
@@ -82,6 +112,7 @@ const IndexPage = ({ data }) => {
 				description={frontmatter.description}
 				heroImage={frontmatter.heroImage}
 				references={frontmatter.references}
+				videoSection={frontmatter.videoSection}
 			/>
 		</Layout>
 	)
@@ -125,6 +156,11 @@ query IndexPageTemplate {
 					}
 					}
 				}
+				}
+				videoSection{
+					heading
+					description
+					videoId
 				}
 		}
 		}

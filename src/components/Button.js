@@ -2,10 +2,11 @@ import React from 'react'
 
 const Button = ({
 		buttonText,
-		buttonColor = "btn-turq"
+		buttonColor = "btn-turq",
+		buttonClass = ""
 	}) =>
 	(
-		<button className = {`btn ${buttonColor}`}>{buttonText}</button>
+		<button className = {`btn ${buttonClass} ${buttonColor}`}>{buttonText}</button>
 	)
 
 export default Button

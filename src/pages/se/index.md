@@ -28,5 +28,10 @@ references:
   - image1:
       alt: haj
       image: /img/apple-touch-icon.png
----
 
+videoSection:
+    heading: Visuellt och användarvänligt CRM
+    description: "Med Lime CRM har vi skapat ett CRM-system som du faktiskt kommer att använda. Det innehåller allt du förväntar dig från ett CRM: kontakter, historik, att göra-uppgifter, ärendehantering, affärer och marknadsaktiviteter. Men Lime CRM kan också göra så mycket mer."
+    videoId: "p5YpsEVdG-4"
+
+---

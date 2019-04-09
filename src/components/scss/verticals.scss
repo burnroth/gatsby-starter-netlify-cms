@@ -1,0 +1,176 @@
+main#vertical {
+
+  section#hero {
+    @include gradient-background($turquoise, $turquoise2);
+
+
+
+    h1,
+    p,
+    ul {
+      color: white;
+      padding-top: 40px;
+    }
+
+    button {
+      margin-top: 40px;
+    }
+
+    .hero-copy {
+      padding: {
+        top: 40px;
+        bottom: 60px;
+      }
+    }
+
+
+    @media (min-width: 1200px) {
+      .hero-copy {
+        padding: {
+          top: 3%;
+          right: 6%;
+          bottom: 4%;
+          left: 10%;
+        }
+      }
+    }
+  }
+
+  section#references {
+
+    padding: {
+      bottom: 40px;
+    }
+  }
+
+  section#intro {
+
+    padding: {
+      top: 60px;
+      bottom: 40px;
+    }
+
+  }
+
+  section#usp {
+
+    padding: {
+      top: 60px;
+      bottom: 120px;
+    }
+
+  }
+
+  section#engage {
+
+    background: #f5f5f5;
+
+    padding: {
+      top: 60px;
+      bottom: 60px;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+
+
+    @media (min-width: 1200px) {
+      background: {
+        image: url(/assets/img/shared/skew.svg);
+        position: center;
+        size: cover;
+        repeat: no-repeat;
+      }
+
+      img {
+        max-width: 548px;
+      }
+
+      padding: {
+        top: 100px;
+        bottom: 80px;
+      }
+
+      .engage-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        padding-left: 80px;
+
+        h2,
+        p {
+          color: white;
+        }
+      }
+    }
+
+  }
+
+  section#case {
+
+    padding: {
+      top: 120px;
+      bottom: 120px;
+    }
+
+    .case-copy {
+      margin-top: 60px;
+    }
+
+    @media (min-width: 992px) {
+
+      .case-copy {
+        margin-top: 0px;
+      }
+
+
+    }
+
+  }
+
+  section#contact {
+    @include gradient-background($turquoise1, $turquoise2);
+
+    padding: {
+      top: 120px;
+      bottom: 80px;
+    }
+
+    h2,
+    p {
+      color: white;
+    }
+
+    img {
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 768px) {
+
+      img {
+        margin-bottom: 40px;
+      }
+
+    }
+
+  }
+
+  section#downloads {
+
+    padding: {
+      top: 120px;
+      bottom: 80px;
+    }
+
+    img {
+
+      margin-bottom: 60px;
+
+    }
+
+  }
+
+}

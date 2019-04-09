@@ -9,7 +9,10 @@ description: >-
   og sager på effektiv vis.
 hero:
   heading: 'Et CRM, du vil flytte til '
-  image: /img/blog-index.jpg
+  image: 
+    image: /img/blog-index.jpg
+    alt: hero bild
+
   list:
     - listObject: >-
         Få et samlet billede af udlejningsgæster, udlejningsobjekter, ejendomme

@@ -1,22 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import Img from "gatsby-image"
 import Layout from '../components/Layout'
 import Button from '../components/Button'
 import BlogRoll from '../components/BlogRoll'
 import References from '../components/References'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export const IndexPageTemplate = ({
-	image,
 	title,
 	heading,
 	description,
 	references,
 	heroImage,
-	videoSection
+	videoSection,
+	
 
-}) => (
+}) =>  (
+	
 	<div>
 		<section id="hero" className="gradient">
 		<div className="container">
@@ -32,7 +33,8 @@ export const IndexPageTemplate = ({
 <Button buttonText="Testa gratis" buttonColor="btn-white-ghost"/>
 </div>
 		<div className="col-12 mx-auto">
-		<PreviewCompatibleImage imageInfo={heroImage}/>
+		 <Img fluid={heroImage.image.childImageSharp.fluid} alt={heroImage.alt}/>  
+
 		</div>
 		</div>
 		</div>
@@ -56,7 +58,7 @@ export const IndexPageTemplate = ({
 </section>
 
 <section id="video"
-           class="bg-grey">
+           className="bg-grey">
     <div className="container">
       <div className="row justify-content-between bg-white video-wrapper">
         <div className="col-12 col-lg-5">
@@ -67,10 +69,10 @@ export const IndexPageTemplate = ({
           <div className="embed-responsive embed-responsive-16by9 header-video shadow">
             <iframe className="embed-responsive-item"
                     src={`https://www.youtube.com/embed/${videoSection.videoId}`}
-										frameborder="0"
+										frameBorder="0"
 										title="maggan"
                     cc_load_policy="1"
-                    allowfullscreen>
+                    allowFullscreen>
             </iframe>
           </div>
         </div>
@@ -91,6 +93,7 @@ export const IndexPageTemplate = ({
 </div></div></section>
 
 	</div>
+	
 )
 
 IndexPageTemplate.propTypes = {
@@ -102,11 +105,9 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
 	const { frontmatter } = data.markdownRemark
-
 	return (
 		<Layout>
 			<IndexPageTemplate
-				image={frontmatter.heroImage}
 				title={frontmatter.title}
 				heading={frontmatter.heading}
 				description={frontmatter.description}

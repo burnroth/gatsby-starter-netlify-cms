@@ -1,8 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Lime CRM Website 2.0',
-    description:
-      'We create customer magnets',
+    description: 'We create customer magnets',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -22,27 +21,41 @@ module.exports = {
         name: 'pages',
       },
     },
+    `gatsby-transformer-json`,
     {
-      resolve: `gatsby-plugin-s3`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-          bucketName: 'hacktuesday-se',
-          region: 'eu-west-1',
+        path: `./assets/forms`,
+        name: 'forms'
       },
-  },
+    },
     // {
     //   resolve: 'gatsby-source-filesystem',
     //   options: {
-    //     path: `${__dirname}/src/img`,
-    //     name: 'images',
+    //     path: `${__dirname}/forms`,
+    //     name: 'forms',
     //   },
     // },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: 'hacktuesday-se',
+        region: 'eu-west-1',
+      },
+    },
+    //  {
+    //    resolve: 'gatsby-source-filesystem',
+    //    options: {
+    //      path: `${__dirname}/static/img`,
+    //      name: 'images',
+    //    },
+    //  },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: [
-          {
+        plugins: [{
             resolve: 'gatsby-remark-relative-images',
             options: {
               name: 'images',
@@ -67,12 +80,12 @@ module.exports = {
       },
     },
     {
-      resolve:'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
+      resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
-        develop: true,            // Activates purging in npm run develop
+        develop: true, // Activates purging in npm run develop
         // purgeOnly: ['/all.scss'], 
       },
     }, // must be after other CSS plugins
-    'gatsby-plugin-netlify', // make sure to keep it last in the array
+    // 'gatsby-plugin-netlify',
   ],
 }

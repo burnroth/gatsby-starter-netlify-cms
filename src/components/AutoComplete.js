@@ -1,15 +1,20 @@
 import React, { Component } from "react";
 import Suggestions from "../components/Suggestions";
-import { Link } from "gatsby";
 
-
-const API_URL = "https://gcqupcrlpd.execute-api.eu-west-1.amazonaws.com/v1/staging/search";
+const API_URL =
+  "https://gcqupcrlpd.execute-api.eu-west-1.amazonaws.com/v1/staging/search";
 
 class Search extends Component {
-  state = {
-    query: "",
-    results: []
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      query: "",
+      results: []
+    };
+
+    this.updateSearchField = this.updateSearchField.bind(this);
+  }
 
   getInfo = () => {
     const postQuery = this.state.query;
@@ -25,20 +30,22 @@ class Search extends Component {
     fetch(API_URL, {
       method: "POST",
       headers: {
-        "Content-Type" : "application/json"
+        "Content-Type": "application/json"
       },
       body: postBody
-    }).then(response => response.json()).then(orgArray => {
+    })
+      .then(response => response.json())
+      .then(orgArray => {
         this.setState({
           results: orgArray.data.organizations
         });
-    });
+      });
   };
 
-  handleInputChange = () => {
+  handleInputChange = event => {
     this.setState(
       {
-        query: this.search.value
+        query: event.target.value
       },
       () => {
         if (this.state.query && this.state.query.length > 1) {
@@ -51,16 +58,32 @@ class Search extends Component {
     );
   };
 
+  updateSearchField(event) {
+    this.setState({
+      query: event.target.textContent
+    });
+  }
+
+
   render() {
     return (
-      <form>
+      <div>
         <input
-          placeholder="Search for..."
-          ref={input => (this.search = input)}
+          type="text"
+          autoComplete={false}
+          className="form-control"
+          id="formInputCompany"
+          style={{ width: 300, height: 60, fontSize: 18, color: "black" }}
+          value={this.state.query}
+          placeholder={this.props.data}
           onChange={this.handleInputChange}
+          maxlength="255"
         />
-        <Suggestions results={this.state.results} />
-      </form>
+        <Suggestions
+          pass={this.updateSearchField}
+          results={this.state.results}
+        />
+      </div>
     );
   }
 }

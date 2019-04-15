@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, StaticQuery } from "gatsby";
 import Button from '../components/Button';
-
+import AutoComplete from '../components/AutoComplete';
 
 
 
@@ -70,15 +70,7 @@ const TrialForm = () => (
           />
         </div>
         <div id="moreInfoFormAutocompleteContainer" className="form-group">
-          <input
-            type="text"
-            className="form-control"
-            id="formInputCompany"
-            name="orgSearch"
-            placeholder={data.formsJson.se.company}
-            spellcheck="false"
-            maxlength="255"
-          />
+         <AutoComplete data={data.formsJson.se.company} />
         </div>
         <div className="form-group">
           <input

@@ -6,7 +6,8 @@ import Layout from "../components/Layout";
 import Button from "../components/Button";
 import BlogRoll from "../components/BlogRoll";
 import References from "../components/References";
-import AutoComplete from "../components/AutoComplete";
+import TrialForm from "../components/TrialForm";
+
 
 export const IndexPageTemplate = ({
   title,
@@ -35,7 +36,7 @@ export const IndexPageTemplate = ({
               fluid={heroImage.image.childImageSharp.fluid}
               alt={heroImage.alt}
             />
-            <AutoComplete/>
+            <TrialForm />
           </div>
         </div>
       </div>
@@ -74,7 +75,7 @@ export const IndexPageTemplate = ({
                 frameBorder="0"
                 title="maggan"
                 cc_load_policy="1"
-                allowFullscreen
+                allowFullScreen
               />
             </div>
           </div>
@@ -156,6 +157,7 @@ export const pageQuery = graphql`
                   ...GatsbyImageSharpFluid
                 }
               }
+              id
             }
           }
         }

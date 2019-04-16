@@ -4,15 +4,16 @@ import Suggestions from "../components/Suggestions";
 const API_URL =
   "https://gcqupcrlpd.execute-api.eu-west-1.amazonaws.com/v1/staging/search";
 
-class Search extends Component {
+class AutoComplete extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       query: "",
-      results: []
+      results: [],
+      company: "",
+      companyId: ""
     };
-
     this.updateSearchField = this.updateSearchField.bind(this);
   }
 
@@ -60,32 +61,47 @@ class Search extends Component {
 
   updateSearchField(event) {
     this.setState({
-      query: event.target.textContent
+      query: event.target.text,
+      company: event.target.text,
+      companyId: event.target.value
     });
   }
 
-
   render() {
     return (
-      <div>
+      <form value={this.state.companyId} onChange={this.props.getCompanyInfo}>
         <input
           type="text"
           autoComplete={false}
           className="form-control"
           id="formInputCompany"
-          style={{ width: 300, height: 60, fontSize: 18, color: "black" }}
+          style={{
+            width: 300,
+            height: 60,
+            fontSize: 18,
+            color: "black"
+          }}
           value={this.state.query}
           placeholder={this.props.data}
           onChange={this.handleInputChange}
           maxlength="255"
         />
+        <input
+        style={{ display: false }}
+            type="text"
+            id="signupMoreInfohiddenInputCompanyId"
+            name="companyId"
+            value={this.state.companyId}
+            onChange={this.handleInputChange}
+            onBlue={this.handleInputChange}
+          />
         <Suggestions
-          pass={this.updateSearchField}
+          updateSearchField={this.updateSearchField}
           results={this.state.results}
         />
-      </div>
+      </form>
     );
   }
 }
 
-export default Search;
+export default AutoComplete;

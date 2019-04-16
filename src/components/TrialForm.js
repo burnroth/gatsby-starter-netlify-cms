@@ -1,47 +1,67 @@
-import React from "react";
-import { graphql, StaticQuery } from "gatsby";
-import Button from '../components/Button';
-import AutoComplete from '../components/AutoComplete';
+import React, { Component } from "react";
+import Button from "../components/Button";
+import AutoComplete from "../components/AutoComplete";
 
 
+class TrialForm extends Component {
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      company: "",
+      companyId: "",
+      checked: false
+    };
 
+    
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.getCompanyInfo = this.getCompanyInfo.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
 
-const TrialForm = () => (
+  handleSubmit(event) {
+    const endpoint = "https://postb.in/zOfWyxHz";
+    const payload = JSON.stringify(this.state);
 
-  <StaticQuery
-    query={graphql`
-      query TrialForm {
-        formsJson {
-          se {
-						firstName
-						lastName
-						company
-						email
-						phone
-            emailMissing
-            invalidEmail
-            termsMissing
-            phoneMissing
-            phoneInvalid
-            lastNameMissing
-            firstNameMissing
-            orgNoMissing
-            dataTermsMissing
-            companyMissing
-          }
-        }
-      }
-		`}
-		
-    render={data => (
-			
+    fetch(endpoint, {
+      method: "POST",
+      body: payload
+    }).then(console.log("Tack för att du signade upp")).catch(err => {
+      console.error("Problem reaching the API")
+    })
+    event.preventDefault();
+  }
+
+getCompanyInfo(event) {
+  this.setState({
+    company: event.target.text,
+    companyId: event.target.value
+  })
+  console.log(this.state.companyId)
+}
+
+  // supports future implm of a consent checkbox
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+  render() {
+    return (
       <form
+        onSubmit={this.handleSubmit}
         id="formSignupMoreInfo"
         name="formSignupMoreInfo"
         className="topLabel page"
-        accept-charset="UTF-8"
-        autocomplete="off"
         enctype="multipart/form-data"
         method="post"
         novalidate
@@ -53,9 +73,8 @@ const TrialForm = () => (
             className="form-control"
             id="formInputFirstName"
             name="firstName"
-            placeholder={data.formsJson.se.firstName}
-            spellcheck="false"
-            maxlength="200"
+            value={this.state.firstName}
+            onChange={this.handleInputChange}
           />
         </div>
         <div className="form-group form-2col-right">
@@ -64,13 +83,12 @@ const TrialForm = () => (
             className="form-control"
             id="formInputLastName"
             name="lastName"
-            placeholder={data.formsJson.se.lastName}
-            spellcheck="false"
-            maxlength="200"
+            value={this.state.lastName}
+            onChange={this.handleInputChange}
           />
         </div>
         <div id="moreInfoFormAutocompleteContainer" className="form-group">
-         <AutoComplete data={data.formsJson.se.company} />
+        <AutoComplete getCompanyInfo={this.getCompanyInfo} />
         </div>
         <div className="form-group">
           <input
@@ -78,9 +96,8 @@ const TrialForm = () => (
             className="form-control"
             id="formInputEmail"
             name="email"
-            placeholder={data.formsJson.se.email}
-            spellcheck="false"
-            maxlength="255"
+            value={this.state.email}
+            onChange={this.handleInputChange}
           />
         </div>
         <div className="form-group">
@@ -89,28 +106,17 @@ const TrialForm = () => (
             className="form-control"
             id="formInputTelId"
             name="phone"
-            placeholder={data.formsJson.se.phone}
-            spellcheck="false"
-            maxlength="255"
+            value={this.state.phone}
+            onChange={this.handleInputChange}
           />
+          <input type="checkbox" name="vehicle1" value={this.state.checked}/>
         </div>
-        <div className="form-group d-none">
-          <input
-            type="text"
-            id="signupMoreInfohiddenInputCompanyId"
-            name="companyId"
-          />
-        </div>
+    
 
-        <Button buttonText="Skapa ditt konto" buttonColor="btn-white"/>
-        
-        
+        <Button buttonText="Skapa ditt konto" buttonColor="btn-white" />
       </form>
-    )}
-  />
-);
-
+    );
+  }
+}
 
 export default TrialForm;
-
-

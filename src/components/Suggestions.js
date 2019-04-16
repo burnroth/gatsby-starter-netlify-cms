@@ -4,33 +4,33 @@ class Suggestions extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: []
+      isClicked: false
     };
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({ value: event.target.value });
   }
 
   render() {
     const suggestions = this.props.results;
+    let suggestionsList = "";
 
-    return (
-      <ul style={{ width: 300 }}>
-        {suggestions.map(key => (
-          <li
-            style={{ width: 1200, color: "black", cursor: "pointer" }}
-            key={key.id}
-            value={key.id}
-            onClick={this.props.pass}
-          >
-            {key.name + ", " + key.city}
-          </li>
-        ))}
-      </ul>
-    );
+    if (this.state.isClicked) {
+      suggestionsList = "";
+    } else {
+      suggestionsList = 
+        <ul style={{ width: 300 }}>
+          {suggestions.map(key => (
+            <option
+              style={{ width: 1200, color: "black", cursor: "pointer" }}
+              key={key.id}
+              value={key.id}
+              onClick={this.props.updateSearchField}
+            >
+              {key.name + ", " + key.city}
+            </option>
+          ))}
+        </ul>
+      ;
+    }
+    return <div>{suggestionsList}</div>;
   }
 }
 

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Suggestions from "../components/Suggestions";
+import Suggestions from "./Suggestions";
 
 const API_URL =
   "https://gcqupcrlpd.execute-api.eu-west-1.amazonaws.com/v1/staging/search";
@@ -87,7 +87,7 @@ class AutoComplete extends Component {
           maxlength="255"
         />
         <input
-        style={{ display: false }}
+        style={{ display: "" }}
             type="text"
             id="signupMoreInfohiddenInputCompanyId"
             name="companyId"

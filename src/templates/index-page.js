@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import Button from "../components/Button";
 import BlogRoll from "../components/BlogRoll";
 import References from "../components/References";
-import TrialForm from "../components/TrialForm";
+import TrialForm from "../components/TrialForm/TrialForm";
 
 
 export const IndexPageTemplate = ({

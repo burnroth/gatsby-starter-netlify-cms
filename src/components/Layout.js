@@ -1,10 +1,9 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
-import './all.scss'
+import './scss/all.scss'
 
 const TemplateWrapper = ({ children }) => (
   <StaticQuery

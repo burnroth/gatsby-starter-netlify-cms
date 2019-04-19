@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import Button from "../Button";
-import store from '../../store';
 import AutoComplete from "./AutoComplete";
-import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from "redux";
-
 
 class TrialForm extends Component {
   constructor(props) {
@@ -61,7 +57,6 @@ getCompanyInfo(event) {
   render() {
 
 return (
-  <Provider store={store}>
       <form
         onSubmit={this.handleSubmit}
         id="formSignupMoreInfo"
@@ -120,7 +115,6 @@ return (
 
         <Button buttonText="Skapa ditt konto" buttonColor="btn-white" />
       </form>
-      </Provider>
     );
 
   }

@@ -1,100 +1,123 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import React from "react";
+import { graphql } from "gatsby";
+import Img from "gatsby-image";
+import Layout from "../components/Layout";
+import CaseSidebar from "../components/CaseSidebar";
+import Content, { HTMLContent } from "../components/Content";
 
 export const CaseTemplate = ({
-	content,
-	contentComponent,
-	description,
-	title,
-	subTitle,
-	helmet,
-	
-
+  content,
+  contentComponent,
+  description,
+  title,
+  subtitle,
+  linkedinbild,
+  blurbs,
+	card,
+	descriptionSidebar
 }) => {
-	const PostContent = contentComponent || Content
+  const PostContent = contentComponent || Content;
 
-	return (
-		<section className="section">
-			{helmet || ''}
-			<div className="container content">
-				<div className="columns">
-					<div className="column is-10 is-offset-1">
-						<h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-							{title}
-						</h1>
-						<h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-							{subTitle}
-						</h1>
-						<p>{description}</p>
-						<PostContent content={content} />
+  return (
+    <main id="case">
+      <section id="hero">
+        <div className="container">
+          <div className="row">
+            <div className="col-12 text-center">
+              <h1>{title}</h1>
+              <h3>{subtitle}</h3>
+            </div>
+          </div>
+        </div>
+      </section>
 
-					</div>
-				</div>
-			</div>
-		</section>
-	)
-}
-
-CaseTemplate.propTypes = {
-	content: PropTypes.node.isRequired,
-	contentComponent: PropTypes.func,
-	description: PropTypes.string,
-	title: PropTypes.string,
-	helmet: PropTypes.object,
-
-}
+      <section id="body">
+        <div className="container">
+          <div className="row justify-content-around">
+            <div className="col-md-8">
+              <PostContent content={content} />
+            </div>
+            <div className="col-md-3">
+              <div className="col-12">
+                <Img fixed={card.childImageSharp.fixed} alt={title} />
+								<h4>{title}</h4>
+								<p>{descriptionSidebar}</p>
+              </div>
+              <CaseSidebar content={blurbs} />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+};
 
 const Case = ({ data }) => {
-	const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
 
-	return (
-		<Layout>
-			<CaseTemplate
-				content={post.html}
-				contentComponent={HTMLContent}
-				description={post.frontmatter.description}
-				helmet={
-					<Helmet titleTemplate="%s | Blog">
-						<title>{`${post.frontmatter.title}`}</title>
-						<meta
-							name="description"
-							content={`${post.frontmatter.description}`}
-						/>
-					</Helmet>
-				}
-				title={post.frontmatter.title}
+  return (
+    <Layout>
+      <CaseTemplate
+        content={post.html}
+        contentComponent={HTMLContent}
+        description={post.frontmatter.description}
+        title={post.frontmatter.title}
+        subtitle={post.frontmatter.subtitle}
+        linkedinbild={post.frontmatter.linkedinbild}
+        blurbs={post.frontmatter.intro.blurbs}
+				card={post.frontmatter.card}
+				descriptionSidebar={post.frontmatter.intro.description}
+      />
+    </Layout>
+  );
+};
 
-			/>
-		</Layout>
-	)
-}
-
-Case.propTypes = {
-	data: PropTypes.shape({
-		markdownRemark: PropTypes.object,
-	}),
-
-}
-
-export default Case
+export default Case;
 
 export const casePageQuery = graphql`
-	query CaseByID($id: String!) {
-  markdownRemark(id: {eq: $id}) {
-    id
-    html
-    frontmatter {
-      date(formatString: "MMMM DD, YYYY")
-      title
-      description
-			heading
-      
+  query CaseByID($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      id
+      html
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        title
+        metaDescription
+        subtitle
+        linkedinbild {
+          publicURL
+          
+        }
+        card {
+          childImageSharp {
+            fixed(width: 350, height: 220, quality: 80) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+          publicURL
+        }
+        
+        intro {
+					description
+          blurbs {
+            image1 {
+              alt
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 350, quality: 80) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+                publicURL
+                id
+              }
+            }
+            rubrik
+            text
+          }
+        }
+        tags
+      }
     }
   }
-}
-
-`
+`;

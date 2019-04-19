@@ -4,10 +4,10 @@ import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../components/Layout";
 import Button from "../components/Button";
+import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import References from "../components/References";
 import TrialForm from "../components/TrialForm/TrialForm";
-
 
 export const IndexPageTemplate = ({
   title,
@@ -15,7 +15,8 @@ export const IndexPageTemplate = ({
   description,
   references,
   heroImage,
-  videoSection
+  videoSection,
+  whyImages
 }) => (
   <div>
     <section id="hero" className="gradient">
@@ -88,12 +89,14 @@ export const IndexPageTemplate = ({
       </div>
     </section>
 
+    <section id="why">
+    <Features gridItems={whyImages} />
+    </section>
+
     <section id="cases">
-      <div className="container">
-        <div className="row">
+ 
           <BlogRoll />
-        </div>
-      </div>
+ 
     </section>
   </div>
 );
@@ -116,6 +119,7 @@ const IndexPage = ({ data }) => {
         heroImage={frontmatter.heroImageHome}
         references={frontmatter.references}
         videoSection={frontmatter.videoSection}
+        whyImages={frontmatter.why.blurbs}
       />
     </Layout>
   );
@@ -146,6 +150,7 @@ export const pageQuery = graphql`
                 ...GatsbyImageSharpFluid
               }
             }
+            publicURL
           }
         }
         references {
@@ -158,6 +163,7 @@ export const pageQuery = graphql`
                 }
               }
               id
+              publicURL
             }
           }
         }
@@ -165,6 +171,24 @@ export const pageQuery = graphql`
           heading
           description
           videoId
+        }
+        why{
+          blurbs{
+            image1{
+              alt
+              image{
+              childImageSharp {
+                fluid(maxWidth: 130, quality: 60) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+              id
+              publicURL
+            }
+            }
+            rubrik
+            text
+          }
         }
       }
     }

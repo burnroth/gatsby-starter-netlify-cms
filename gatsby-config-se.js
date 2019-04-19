@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    language: 'se',
     title: 'Lime CRM Website 2.0',
     description: 'We create customer magnets',
   },
@@ -21,7 +22,39 @@ module.exports = {
         name: 'pages',
       },
     },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 2048,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+            options: {
+              destinationDir: 'static',
+            },
+          },
+        ],
+      },
+    },
     `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./assets/svg`,
+        name: 'icons'
+      },
+    },
+    `gatsby-transformer-xml`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -50,39 +83,11 @@ module.exports = {
     //      name: 'images',
     //    },
     //  },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [{
-            resolve: 'gatsby-remark-relative-images',
-            options: {
-              name: 'images',
-            },
-          },
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 2048,
-            },
-          },
-          {
-            resolve: 'gatsby-remark-copy-linked-files',
-            options: {
-              destinationDir: 'static',
-            },
-          },
-        ],
-      },
-    },
+
     {
       resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
-        develop: true, // Activates purging in npm run develop
+        develop: false, // Activates purging in npm run develop
         // purgeOnly: ['/all.scss'], 
       },
     }, // must be after other CSS plugins

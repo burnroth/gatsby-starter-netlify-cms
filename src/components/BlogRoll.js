@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
+import Img from "gatsby-image";
 
 class BlogRoll extends React.Component {
 
@@ -9,32 +10,32 @@ class BlogRoll extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
     
     return (
-      <div className="columns is-multiline">
+      <div className="container">
+      <div className="row">
       {posts && (posts
           .map(({ node: post }) => (
-            <div
-              className="col-12 col-md-4"
-              key={post.id}
-            >
-            <article className="tile is-child box notification">
-              <p>
-                <Link className="title has-text-primary is-size-4" to={post.fields.slug}>
-                  {post.frontmatter.title}
-                </Link>
-                <span> &bull; </span>
-                <span className="subtitle is-size-5 is-block">{post.frontmatter.date}</span>
-              </p>
-              <p>
-                {post.excerpt}
-                <br />
-                <br />
-                <Link className="button" to={post.fields.slug}>
-                  Keep Reading →
-                </Link>
-              </p>
-              </article>
+            <div key={post.id} className="col-12 col-md-6 col-lg-4 d-flex">
+            <div className="card-customer">
+              <div className="card-image">
+                <Img fixed={post.frontmatter.linkedinbild.childImageSharp.fixed}/>
+
+              </div>
+              <div className="card-body">
+                <h3>{post.frontmatter.title}
+                </h3>
+                <h4>{post.frontmatter.subtitle}</h4>
+                <p>
+                  {post.excerpt}
+                </p>
+                <Link className="button" to={post.fields.slug}>Läs mer</Link>
+              </div>
+              <div className="card-btn">
+                <button to={post.fields.slug} className="btn btn-turq-ghost">Läs mer</button>
+              </div>
             </div>
+          </div>
           )))}
+          </div>
           </div>
     );
   }
@@ -59,13 +60,23 @@ export default () => (
       ) {
         edges {
           node {
-            excerpt(pruneLength: 400)
+            excerpt(pruneLength: 200)
             id
             fields {
               slug
             }
             frontmatter {
               title
+              subtitle
+              linkedinbild{
+            childImageSharp {
+              fixed(width: 350, height:220, quality: 60) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+            publicURL
+          }
+              metaDescription
               templateKey
               date(formatString: "MMMM DD, YYYY")
             }

@@ -10,7 +10,7 @@ description: >-
 hero:
   heading: 'Et CRM, du vil flytte til '
   image: 
-    image: /img/blog-index.jpg
+    image: "./meeting.png"
     alt: hero bild
 
   list:
@@ -24,7 +24,7 @@ intro:
   blurbs:
     - image1:
         alt: haj
-        image: /img/apple-touch-icon.png
+        image: "./meeting.png"
       rubrik: Kunde- og ejendomsoversigt
       text: >-
         Kobl dit ejendomssystem til Lime CRM og saml al nødvendig information,
@@ -32,7 +32,7 @@ intro:
         nemt at finde alle data!
     - image1:
         alt: aaaaa
-        image: /img/apple-touch-icon.png
+        image: "./meeting.png"
       rubrik: Teknisk forvaltning og sager
       text: >-
         Et spørgsmål om den seneste kvittering for husleje, en vandhane, der er
@@ -41,7 +41,7 @@ intro:
         vedligeholdelse.
     - image1:
         alt: gggg
-        image: /img/apple-touch-icon.png
+        image: "./meeting.png"
       rubrik: Publicering af annoncer
       text: >-
         Publicér hurtigt ledige objekter, hvor du vil, direkte fra Lime CRM. Det
@@ -49,7 +49,7 @@ intro:
         Tilmeldingerne lander herefter i systemet.
     - image1:
         alt: ffff
-        image: /img/apple-touch-icon.png
+        image: "./meeting.png"
       rubrik: Kundepleje og udlejning
       text: >-
         Gør det daglige arbejde nemmere med eksisterende og potentielle kunder.
@@ -60,7 +60,7 @@ usp:
   heading: Når dit ejendomssystem ikke dur
   image1:
     alt: haj
-    image: /img/meeting-space.png
+    image: "./meeting.png"
   string: Köp nu
   text: >-
     Som du ved, findes der en del udfordringer i ejendomsbranchen.

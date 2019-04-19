@@ -108,6 +108,7 @@ export const verticalPageQuery = graphql`
                   ...GatsbyImageSharpFluid
                 }
               }
+              publicURL
             }
             alt
           }
@@ -119,13 +120,14 @@ export const verticalPageQuery = graphql`
           blurbs {
             image1 {
               alt
-              image {
-                childImageSharp {
-                  fluid(maxWidth: 2048, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
+              image{
+              childImageSharp {
+                fluid(maxWidth: 448, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
+              publicURL
+            }
             }
             rubrik
             text
@@ -142,6 +144,7 @@ export const verticalPageQuery = graphql`
                   ...GatsbyImageSharpFluid
                 }
               }
+              publicURL
             }
           }
           string

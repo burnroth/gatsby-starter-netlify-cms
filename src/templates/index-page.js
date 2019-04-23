@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../components/Layout";
@@ -7,6 +6,7 @@ import Button from "../components/Button";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import References from "../components/References";
+import SEO from "../components/SEO";
 import TrialForm from "../components/TrialForm/TrialForm";
 
 export const IndexPageTemplate = ({
@@ -16,9 +16,14 @@ export const IndexPageTemplate = ({
   references,
   heroImage,
   videoSection,
-  whyImages
+  whyImages,
+  testForFree,
+  freeDemo,
+  slug
+
 }) => (
   <div>
+    <SEO title={title} desc={description} slug={slug} />
     <section id="hero" className="gradient">
       <div className="container">
         <div className="row">
@@ -29,8 +34,11 @@ export const IndexPageTemplate = ({
             <p>{description}</p>
           </div>
           <div className="btn-wrapper">
-            <Button buttonText="Testa gratis" buttonColor="btn-white" />
-            <Button buttonText="Testa gratis" buttonColor="btn-white-ghost" />
+            <Button buttonText={testForFree} buttonColor="btn-white" />
+            <Button
+              buttonText={freeDemo}
+              buttonColor="btn-white-ghost"
+            />
           </div>
           <div className="col-12 mx-auto">
             <Img
@@ -90,26 +98,18 @@ export const IndexPageTemplate = ({
     </section>
 
     <section id="why">
-    <Features gridItems={whyImages} />
+      <Features gridItems={whyImages} />
     </section>
 
     <section id="cases">
- 
-          <BlogRoll />
- 
+      <BlogRoll />
     </section>
   </div>
 );
 
-IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
-  heading: PropTypes.string,
-  description: PropTypes.string
-};
-
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
+  const { translations } = data.allSeJson.edges[0].node;
   return (
     <Layout>
       <IndexPageTemplate
@@ -120,24 +120,33 @@ const IndexPage = ({ data }) => {
         references={frontmatter.references}
         videoSection={frontmatter.videoSection}
         whyImages={frontmatter.why.blurbs}
+        testForFree={translations.testForFree}
+        freeDemo={translations.freeDemo}
+        slug={data.markdownRemark.fields.slug}
       />
     </Layout>
   );
-};
-
-IndexPage.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object
-    })
-  })
 };
 
 export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
+    allSeJson {
+      edges {
+        node {
+          translations {
+            testForFree
+            freeDemo
+            numberOfUsers
+          }
+        }
+      }
+    }
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+      fields {
+        slug
+      }
       frontmatter {
         title
         heading
@@ -158,8 +167,8 @@ export const pageQuery = graphql`
             alt
             image {
               childImageSharp {
-                fluid(maxWidth: 130, quality: 60) {
-                  ...GatsbyImageSharpFluid
+                fixed(width: 130, height: 86, quality: 60) {
+                  ...GatsbyImageSharpFixed
                 }
               }
               id
@@ -172,19 +181,19 @@ export const pageQuery = graphql`
           description
           videoId
         }
-        why{
-          blurbs{
-            image1{
+        why {
+          blurbs {
+            image1 {
               alt
-              image{
-              childImageSharp {
-                fluid(maxWidth: 130, quality: 60) {
-                  ...GatsbyImageSharpFluid
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 130, quality: 60) {
+                    ...GatsbyImageSharpFluid
+                  }
                 }
+                id
+                publicURL
               }
-              id
-              publicURL
-            }
             }
             rubrik
             text

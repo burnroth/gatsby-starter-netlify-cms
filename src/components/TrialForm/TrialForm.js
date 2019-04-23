@@ -30,20 +30,19 @@ class TrialForm extends Component {
       method: "POST",
       body: payload
     }).then(console.log("Tack för att du signade upp")).catch(err => {
-      console.error("Problem reaching the API")
+      console.error("Connection problems")
     })
     event.preventDefault();
   }
 
-getCompanyInfo(event) {
-  this.setState({
-    company: event.target.text,
-    companyId: event.target.value
-  })
-  console.log(this.state.companyId)
-}
+ getCompanyInfo(event) {
+   this.setState({
+     company: event.target.text,
+     companyId: event.target.value
+   })
+   console.log(this.state.company)
+ }
 
-  // supports future implm of a consent checkbox
   handleInputChange(event) {
     const target = event.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
@@ -61,10 +60,11 @@ return (
         onSubmit={this.handleSubmit}
         id="formSignupMoreInfo"
         name="formSignupMoreInfo"
+        autoComplete="off"
         className="topLabel page"
-        enctype="multipart/form-data"
+        encType="multipart/form-data"
         method="post"
-        novalidate
+        noValidate
         action="#"
       >
         <div className="form-group form-2col-left">
@@ -109,7 +109,7 @@ return (
             value={this.state.phone}
             onChange={this.handleInputChange}
           />
-          <input type="checkbox" name="vehicle1" value={this.state.checked}/>
+          <input type="checkbox" name="checkbox" onChange={this.handleInputChange}/>
         </div>
     
 

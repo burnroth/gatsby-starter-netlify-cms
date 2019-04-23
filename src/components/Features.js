@@ -5,7 +5,7 @@ const Features = ({ gridItems }) => (
   <div className="container">
 	<div className="row">
     {gridItems.map(item => (
-      <div key={item.id} className="col-12 col-md-3 text-center">
+      <div key={item.image1.image.id + Math.random()} className="col-12 col-md-3 text-center">
           <Img
             fluid={item.image1.image.childImageSharp.fluid}
             alt={item.image1.alt}

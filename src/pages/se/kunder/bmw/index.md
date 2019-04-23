@@ -1,30 +1,38 @@
 ---
 templateKey: case-page
-title: Curonova Consulting AB
-subtitle: Säker fakturering och säkrare kundutskick
+title: BMW Financial Services
+
+subtitle: FRÅN 25 % TILL 40 % I RETENTION RATE
+
 date: 2019-02-19T19:02:16.732Z
 linkedinbild: "./bmw-linkedin.jpg"
 metaDescription: En beskrivning som fungerar som meta för google och sociala medier bla
 intro:
-  description: Curonova Consulting AB stöttar individer, fack och företag i förändring genom förändringsledning, kompetenskartläggningar och omställningsuppdrag. Med digitala verktyg och en metod som utgår från individen skapas nya karriärer, effektiva team och starka chefer. Bolaget har kontor på 12 orter i Sverige och ett kontor i Oslo.
+  description: >
+   BMW Financial Services är BMW:s eget finansbolag. Totalt finansieras idag ca 3,1 miljoner bilar via bolaget i hela världen. BMW Financial Services har funnits i Sverige sedan 1999 och huvudkontoret för Norden ligger i Stockholm.
+   Idag har BMW Financial Services runt 50 stycken Lime CRM-användare i Stockholm, Oslo och Köpenhamn.
+
   card: "./bmw-card.jpg"
 
   blurbs:
   - blurb:
       image: "./bmw-card.jpg"
-      rubrik: LÄTTILLGÄNGLIG INFORMATION
+      rubrik: ENAD KUNDBILD
       text: >
-        Molnlagringen av Lime CRM gör att viktig information finns lättillgänglig för alla medarbetare. Inget letande eller krångliga uppkopplingar.
+        Allt som rör kunden samlat på ett ställe ger ett större kundfokus och effektivare arbetssätt.
+
   - blurb:
       image: "./bmw-card.jpg"
-      rubrik: LÄTTILLGÄNGLIG INFORMATION
+      rubrik: EFFEKTIVARE ÄRENDEHANTERING
       text: >
-        Molnlagringen av Lime CRM gör att viktig information finns lättillgänglig för alla medarbetare. Inget letande eller krångliga uppkopplingar.
+        Kundcentret har effektiviserats och standardiserats med hjälp av automatisk inläsning av e-post och en Knowledge Base.
+
   - blurb:
       image: "./bmw-card.jpg"
-      rubrik: LÄTTILLGÄNGLIG INFORMATION
+      rubrik: HÖGRE RETENTION RATE
       text: >
-        Molnlagringen av Lime CRM gör att viktig information finns lättillgänglig för alla medarbetare. Inget letande eller krångliga uppkopplingar.
+        De nya CRM-processerna ledde redan under första året till en ökning av retention rate - från 25 % till 40 %.
+
 
 tags:
   - "fastighet"

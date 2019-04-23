@@ -1,0 +1,25 @@
+ {
+  "translations": {
+      "testForFree" : "Testa gratis",
+      "freeDemo" : "Gratis demo",
+      "readMore" : "Läs mer",
+      "firstName": "Förnamn",
+      "lastName": "Efternamn",
+      "company": "Ditt företag",
+      "email": "Din e-postadress",
+      "phone": "Ditt telefonnummer",
+      "numberOfUsers" : "Fler än <b>40 000</b> användare har redan Lime CRM",
+      "emailMissing": "Vi behöver din epostaddress för att sätta upp ditt konto.",
+      "invalidEmail": "Bra försök! Använd en riktig epostadress. :)",
+      "termsMissing": "Du måste acceptera licensvillkoren.",
+      "dataTermsMissing": "Du måste acceptera personuppgiftshanteringen.",
+      "orgNoMissing": "Vad har du för organisationsnummer?",
+      "firstNameMissing": "Vad heter du i förnamn?",
+      "lastNameMissing": "Vad heter du i efternamn?",
+      "companyMissing": "Vad heter ditt företag?",
+      "phoneMissing": "Vilket telefonnummer kan vi nå dig på?",
+      "phoneInvalid": "Använd siffror är du snäll.",
+      "licenseCountMissinig": "Hur många licenser vill du ha?",
+      "licenseCountInvalid": "Vi gillar siffror. Skriv hur många licenser du vill ha i siffror."
+  }
+}

@@ -37,7 +37,7 @@ export const CaseTemplate = ({
             <div className="col-md-8">
               <PostContent content={content} />
             </div>
-            <div className="col-md-3">
+            <div className="col-md-4">
               <div className="col-12">
                 <Img fixed={card.childImageSharp.fixed} alt={title} />
 								<h4>{title}</h4>
@@ -65,7 +65,7 @@ const Case = ({ data }) => {
         subtitle={post.frontmatter.subtitle}
         linkedinbild={post.frontmatter.linkedinbild}
         blurbs={post.frontmatter.intro.blurbs}
-				card={post.frontmatter.card}
+				card={post.frontmatter.intro.card}
 				descriptionSidebar={post.frontmatter.intro.description}
       />
     </Layout>
@@ -86,9 +86,9 @@ export const casePageQuery = graphql`
         subtitle
         linkedinbild {
           publicURL
-          
         }
-        card {
+        intro {
+          card {
           childImageSharp {
             fixed(width: 350, height: 220, quality: 80) {
               ...GatsbyImageSharpFixed
@@ -96,12 +96,9 @@ export const casePageQuery = graphql`
           }
           publicURL
         }
-        
-        intro {
 					description
           blurbs {
-            image1 {
-              alt
+            blurb {
               image {
                 childImageSharp {
                   fluid(maxWidth: 350, quality: 80) {
@@ -111,13 +108,13 @@ export const casePageQuery = graphql`
                 publicURL
                 id
               }
-            }
             rubrik
             text
           }
         }
-        tags
       }
+      tags
     }
+  }
   }
 `;

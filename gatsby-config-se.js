@@ -58,8 +58,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `./assets/forms`,
-        name: 'forms'
+        path: `./assets/translations/se`,
+        name: 'translations'
       },
     },
     // {
@@ -83,7 +83,14 @@ module.exports = {
     //      name: 'images',
     //    },
     //  },
-
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /business/ // See below to configure properly
+        }
+      }
+    },
     {
       resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {

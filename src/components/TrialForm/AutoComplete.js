@@ -59,6 +59,8 @@ class AutoComplete extends Component {
     );
   };
 
+
+
   updateSearchField(event) {
     this.setState({
       query: event.target.text,
@@ -67,14 +69,19 @@ class AutoComplete extends Component {
     });
   }
 
+  handleCompanyIdChange(e) {
+    console.log(e);
+  }
+
   render() {
     return (
-      <form value={this.state.companyId} onChange={this.props.getCompanyInfo}>
+      <div value={this.state.companyId} text={this.state.company} onChange={this.props.getCompanyInfo}>
         <input
           type="text"
-          autoComplete={false}
+          autoComplete="off"
           className="form-control"
           id="formInputCompany"
+          name="company"
           style={{
             width: 300,
             height: 60,
@@ -84,22 +91,21 @@ class AutoComplete extends Component {
           value={this.state.query}
           placeholder={this.props.data}
           onChange={this.handleInputChange}
-          maxlength="255"
+          maxLength="255"
         />
         <input
-        style={{ display: "" }}
-            type="text"
-            id="signupMoreInfohiddenInputCompanyId"
-            name="companyId"
-            value={this.state.companyId}
-            onChange={this.handleInputChange}
-            onBlue={this.handleInputChange}
-          />
+          style={{ display: "" }}
+          type="text"
+          id="signupMoreInfohiddenInputCompanyId"
+          name="companyId"
+          value={this.state.companyId}
+          onChange={this.handleCompanyIdChange}
+        />
         <Suggestions
           updateSearchField={this.updateSearchField}
           results={this.state.results}
         />
-      </form>
+      </div>
     );
   }
 }

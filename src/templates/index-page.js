@@ -20,7 +20,6 @@ export const IndexPageTemplate = ({
   testForFree,
   freeDemo,
   slug
-
 }) => (
   <div>
     <SEO title={title} desc={description} slug={slug} />
@@ -35,10 +34,7 @@ export const IndexPageTemplate = ({
           </div>
           <div className="btn-wrapper">
             <Button buttonText={testForFree} buttonColor="btn-white" />
-            <Button
-              buttonText={freeDemo}
-              buttonColor="btn-white-ghost"
-            />
+            <Button buttonText={freeDemo} buttonColor="btn-white-ghost" />
           </div>
           <div className="col-12 mx-auto">
             <Img
@@ -108,8 +104,8 @@ export const IndexPageTemplate = ({
 );
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
-  const { translations } = data.allSeJson.edges[0].node;
+  const { frontmatter, fields } = data.markdownRemark;
+  const { node } = data.allTranslationsJson.edges[0];
   return (
     <Layout>
       <IndexPageTemplate
@@ -120,9 +116,9 @@ const IndexPage = ({ data }) => {
         references={frontmatter.references}
         videoSection={frontmatter.videoSection}
         whyImages={frontmatter.why.blurbs}
-        testForFree={translations.testForFree}
-        freeDemo={translations.freeDemo}
-        slug={data.markdownRemark.fields.slug}
+        testForFree={node.buttons.testForFree}
+        freeDemo={node.buttons.freeDemo}
+        slug={fields.slug}
       />
     </Layout>
   );
@@ -132,17 +128,21 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
-    allSeJson {
-      edges {
-        node {
-          translations {
-            testForFree
-            freeDemo
-            numberOfUsers
+          allTranslationsJson {
+            edges {
+              node {
+                buttons {
+                  testForFree
+                  freeDemo
+                  readMore
+                  download
+                }
+                usps {
+                  numberOfUsers
+                }
+              }
+            }
           }
-        }
-      }
-    }
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       fields {
         slug

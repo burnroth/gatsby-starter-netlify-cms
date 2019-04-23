@@ -1,13 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Img from "gatsby-image";
 import Layout from "../components/Layout";
-import Button from "../components/Button";
-import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
-import References from "../components/References";
 import SEO from "../components/SEO";
-import TrialForm from "../components/TrialForm/TrialForm";
 
 export const CustomersPageTemplate = ({
   title,
@@ -51,18 +46,19 @@ export default CustomersPage;
 
 export const pageQuery = graphql`
   query CustomersPageTemplate {
-    allSeJson {
-      edges {
-        node {
-          translations {
-            testForFree
-            freeDemo
-            numberOfUsers
-            readMore
-          }
+    allTranslationsJson {
+    edges {
+      node {
+        buttons {
+          testForFree
+          freeDemo
+          readMore
+          download
         }
+        
       }
     }
+  }
     markdownRemark(frontmatter: { templateKey: { eq: "customers-page" } }) {
       fields {
         slug

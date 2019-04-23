@@ -1,5 +1,5 @@
  {
-  "translations": {
+  "forms": {
       "emailMissing": "We need your email to create your account.",
       "invalidEmail": "Nice try. Use a sensible email instead. :)",
       "termsMissing": "You need to accept the terms of service.",

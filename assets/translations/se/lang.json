@@ -26,32 +26,85 @@
   },
   "navbar": {
     "solutions": {
-      "solutions": "Lösningar",
-      "standard": "Standard",
-      "addOns": "Add-ons",
-      "GDPR": "GDPR",
-      "verticals": "Branschlösningar",
-      "sales": "Sälj",
-      "utility": "Energi",
-      "realEstate": "Fastighet",
-      "construction": "Bygg",
-      "consultancy": "Konsult",
-      "membership": "Medlem & utbildning",
-      "machinery": "Maskin & instrument"
+      "title": "Lösningar",
+
+      "landingPages": {
+        "title": "Lime CRM",
+        "pageArray": [
+          {
+            "linkText": "Standard",
+            "href": "/losningar/crm"
+          },
+          {
+            "linkText": "Add-ons",
+            "href": "/addons"
+          },
+          {
+            "linkText": "GDPR",
+            "href": "/resurser/gdpr"
+          }
+        ]
+      },
+
+      "verticals": {
+        "title": "Branschlösningar",
+        "verticalsArray": [
+          {
+            "linkText": "Sälj",
+            "href": "/losningar/salj"
+          },
+          {
+            "linkText": "Energi",
+            "href": "/losningar/energi"
+          },
+          {
+            "linkText": "Fastighet",
+            "href": "/losningar/fastighet"
+          },
+          {
+            "linkText": "Bygg",
+            "href": "/losningar/bygg"
+          },
+          {
+            "linkText": "Konsult",
+            "href": "/losningar/salj"
+          },
+          {
+            "linkText": "Medlem & utbildning",
+            "href": "/losningar/energi"
+          },
+          {
+            "linkText": "Maskin & instrument",
+            "href": "/losningar/fastighet"
+          }
+        ]
+      }
     },
     "customers": "Kunder",
     "pricing": "Pris",
     "material": {
-      "material": "Material",
-      "whatIsCrm": "Vad är CRM?",
-      "blog": "Blogg"
+      "title" : "Material",
+      "materialArray": [
+        {
+          "linkText": "Standard",
+          "href": "/losningar/crm"
+        },
+        {
+          "linkText": "Add-ons",
+          "href": "/addons"
+        },
+        {
+          "linkText": "GDPR",
+          "href": "/resurser/gdpr"
+        }
+      ]
     },
     "about": "Om oss"
   },
   "alreadyCustomer": "Redan kund?",
   "contact": "Kontakta oss",
 
-  "usps" : {
+  "usps": {
     "numberOfUsers": "Fler än <b>40 000</b> användare har redan Lime CRM"
   }
 }

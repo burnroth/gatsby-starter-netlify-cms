@@ -1,84 +1,74 @@
-import React from "react";
+import React, { Component } from "react";
+import { Link } from "gatsby";
 
-const SolutionsDropdown = data => {
-
-  const { navbar } = data.props.translationsJson;
-
-  const x = {
-    colName : "Branschlösningar",
-    items: [{
-      linkText : "Sälj",
-      href: "/losningar/salj",
-    },
-    {
-      linkText : "Energi",
-      href: "/losningar/energi",
-    },
-    {
-      linkText : "Fastighet",
-      href: "/losningar/fastighet",
-    },
-    {
-      linkText : "Bygg",
-      href: "/losningar/bygg",
-    },
-  ]
+class SolutionsDropdown extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
+  componentDidMount() {
+    document.addEventListener("mousedown", this.handleClickOutside);
+  }
 
-  return (
-    <div
-      class="dropdown-menu"
-      style={{ display: "block" }}
-      aria-labelledby="dropdownMenuButton"
-    >
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12 col-md-4">
-            <a class="dropdown-heading">
-              <b>Lime CRM</b>
-            </a>
-            <a class="dropdown-item" href="/losningar/crm/">
-            {navbar.solutions.standard}
-            </a>
-            <a class="dropdown-item" href="/addons/">
-            {navbar.solutions.addOns}
-            </a>
-            <a class="dropdown-item" href="/resurser/gdpr/">
-              GDPR
-            </a>
-          </div>
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleClickOutside);
+  }
 
-          <div class="col-12 col-md-6">
-            <a class="dropdown-heading">
-              <b>Branschlösningar</b>
-            </a>
-            <a class="dropdown-item" href="/losningar/salj/">
-              Sälj
-            </a>
-            <a class="dropdown-item" href="/losningar/energi/">
-              Energi
-            </a>
-            <a class="dropdown-item" href="/losningar/fastighet/">
-              Fastighet
-            </a>
-            <a class="dropdown-item" href="/losningar/bygg/">
-              Bygg
-            </a>
-            <a class="dropdown-item" href="/losningar/konsult/">
-              Konsult
-            </a>
-            <a class="dropdown-item" href="/losningar/medlem-utbildning/">
-              Medlem & utbildning
-            </a>
-            <a class="dropdown-item" href="/losningar/maskin-instrument/">
-              Maskin & instrument
-            </a>
+  handleClickOutside = event => {
+    const dropdown = document.querySelector("#dropdownMenuButton");
+    if (this.node.contains(event.target)) {
+    } else if (!this.node.contains(event.target) && event.target != dropdown) {
+      this.props.handleClick(event);
+    }
+  };
+
+  render() {
+    const { navbar } = this.props.translations.translationsJson;
+    const verticalsArray = navbar.solutions.verticals.verticalsArray;
+    const landingPageArray = navbar.solutions.landingPages.pageArray;
+    return (
+      <div
+        className="dropdown-menu"
+        style={{ display: "block" }}
+        ref={node => (this.node = node)}
+      >
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-12 col-md-4">
+              <a className="dropdown-heading">
+                <b>{navbar.solutions.landingPages.title}</b>
+              </a>
+              {landingPageArray.map(item => (
+                <Link
+                  key={Math.random() * 10}
+                  className="dropdown-item"
+                  to={item.href}
+                >
+                  {item.linkText}
+                </Link>
+              ))}
+            </div>
+
+            <div className="col-12 col-md-6">
+              <a className="dropdown-heading">
+                <b>{navbar.solutions.verticals.title}</b>
+              </a>
+              {verticalsArray.map(item => (
+                <Link
+                  key={Math.random() * 10}
+                  className="dropdown-item"
+                  to={item.href}
+                >
+                  {item.linkText}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default SolutionsDropdown;

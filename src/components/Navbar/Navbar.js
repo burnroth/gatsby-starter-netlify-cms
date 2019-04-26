@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link, StaticQuery, graphql } from "gatsby";
-import SolutionsDropdown from "./SolutionsDropdown"
+import SolutionsDropdown from "./SolutionsDropdown";
 import logo from "../../../static/img/lime-crm-logo.svg";
 
 class Navbar extends Component {
@@ -10,15 +10,17 @@ class Navbar extends Component {
     this.state = {
       check: false
     };
-
     this.handleClick = this.handleClick.bind(this);
+
   }
+  
 
   handleClick(event) {
     this.setState(prevState => ({
       check: !prevState.check
     }));
   }
+
   render() {
     const { data } = this.props;
     const { navbar } = data.translationsJson;
@@ -62,14 +64,13 @@ class Navbar extends Component {
                   class="dropdown-toggle nav-link"
                   onClick={this.handleClick}
                   style={{ cursor: "pointer" }}
+                  href="#"
                 >
-                  {navbar.solutions.solutions}
+                  {navbar.solutions.title}
                   <span class="caret" />
                 </a>
 
-                {this.state.check ? (
-                  <SolutionsDropdown props={data} />
-                ) : null}
+                {this.state.check ? <SolutionsDropdown handleClick={this.handleClick} translations={data} /> : null}
               </div>
             </li>
             <li class="nav-item d-block d-lg-none">
@@ -133,18 +134,21 @@ export default () => (
         translationsJson {
           navbar {
             solutions {
-              solutions
-              standard
-              addOns
-              GDPR
-              verticals
-              sales
-              utility
-              realEstate
-              construction
-              consultancy
-              membership
-              machinery
+              title
+              landingPages {
+                title
+                pageArray {
+                  linkText
+                  href
+                }
+              }
+              verticals {
+                title
+                verticalsArray {
+                  linkText
+                  href
+                }
+              }
             }
             material {
               material

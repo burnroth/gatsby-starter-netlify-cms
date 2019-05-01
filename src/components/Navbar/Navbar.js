@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, StaticQuery, graphql } from "gatsby";
 import SolutionsDropdown from "./SolutionsDropdown";
+import ResourcesDropdown from "./ResourcesDropdown";
 import logo from "../../../static/img/lime-crm-logo.svg";
 
 class Navbar extends Component {
@@ -8,107 +9,141 @@ class Navbar extends Component {
     super(props);
 
     this.state = {
-      check: false
+      solutionsDropdown: false,
+      resourcesDropdown: false
     };
-    this.handleClick = this.handleClick.bind(this);
 
+    this.handleClick = this.handleClick.bind(this);
+    this.close = this.close.bind(this);
   }
-  
 
   handleClick(event) {
+    const name = event.target.name;
     this.setState(prevState => ({
-      check: !prevState.check
+      [name]: !prevState.name
     }));
+  }
+
+  close() {
+    this.setState({
+      solutionsDropdown: false,
+      resourcesDropdown: false
+    });
   }
 
   render() {
     const { data } = this.props;
     const { navbar } = data.translationsJson;
+    const { buttons } = data.translationsJson;
+    const { metaData } = data.translationsJson;
 
     return (
       <nav class="navbar navbar-expand-lg shadow-navbar navbar-default">
-        <a class="navbar-brand" href="/">
+        <Link class="navbar-brand" to="/">
           <img
             src={logo}
-            alt="Vår vackra Lime CRM logo som alla säljare älskar att se"
+            alt={metaData.logoAltText}
             class="img-fluid"
             width="50"
             height="50"
           />
-        </a>
+        </Link>
+
         <ul class="nav d-block d-lg-none navbar-nav">
           <li class="">
-            <a
-              href="/signup/"
+            <Link
+              to="/signup/"
               id="try-button-nav-mobile"
               type="button"
-              class="btn btn-orange btn-signup-mobile"
+              class="btn btn-turq"
               name="check"
             >
-              Testa gratis
-            </a>
+              {buttons.testForFree}
+            </Link>
           </li>
         </ul>
+
         <button class="navbar-toggler" type="button">
-          <span class="">
-            <i class="fas fa-bars fa-2x" />
-          </span>
+          <span class="">|||</span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item d-none d-lg-block">
               <div class="dropdown">
-                <a
+                <Link
                   id="dropdownMenuButton"
+                  name="solutionsDropdown"
                   class="dropdown-toggle nav-link"
                   onClick={this.handleClick}
                   style={{ cursor: "pointer" }}
-                  href="#"
+                  to="#"
                 >
                   {navbar.solutions.title}
                   <span class="caret" />
-                </a>
+                </Link>
 
-                {this.state.check ? <SolutionsDropdown handleClick={this.handleClick} translations={data} /> : null}
+                {this.state.solutionsDropdown ? (
+                  <SolutionsDropdown
+                    close={this.close}
+                    handleClick={this.handleClick}
+                    translations={data}
+                  />
+                ) : null}
               </div>
             </li>
             <li class="nav-item d-block d-lg-none">
-              <a class="nav-link" href="/losningar">
-                Funktioner
-              </a>
+              <Link class="nav-link" href={navbar.solutions.href}>
+                {navbar.solutions.title}
+              </Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/kunder">
-                {navbar.customers}
-              </a>
+              <Link class="nav-link" href={navbar.customers.href}>
+                {navbar.customers.title}
+              </Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                {navbar.pricing}
-              </a>
+              <Link class="nav-link" href={navbar.pricing.href}>
+                {navbar.pricing.title}
+              </Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                {navbar.material.material}
-              </a>
+              <div class="dropdown">
+                <Link
+                  name="resourcesDropdown"
+                  class="dropdown-toggle nav-link"
+                  onClick={this.handleClick}
+                  style={{ cursor: "pointer" }}
+                  to="#"
+                >
+                  {navbar.resources.title}
+                  <span class="caret" />
+                </Link>
+                {this.state.resourcesDropdown ? (
+                  <ResourcesDropdown
+                    close={this.close}
+                    handleClick={this.handleClick}
+                    translations={data}
+                  />
+                ) : null}
+              </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                {navbar.about}
-              </a>
+              <Link class="nav-link" href={navbar.about.href}>
+                {navbar.about.title}
+              </Link>
             </li>
           </ul>
         </div>
         <ul class="nav d-none d-lg-flex navbar-nav">
           <li>
-            <a
+            <Link
               class="nav-link login-link"
               href="https://go.lime-go.com"
               rel="noopener"
             >
-              Logga in
-            </a>
+              {buttons.login}
+            </Link>
           </li>
           <li>
             <button
@@ -118,7 +153,7 @@ class Navbar extends Component {
               data-toggle="modal"
               data-target="#signupModal"
             >
-              Testa gratis
+              {buttons.testForFree}
             </button>
           </li>
         </ul>
@@ -132,6 +167,13 @@ export default () => (
     query={graphql`
       query NavbarQuery {
         translationsJson {
+          metaData {
+            logoAltText
+          }
+          buttons {
+            login
+            testForFree
+          }
           navbar {
             solutions {
               title
@@ -150,14 +192,25 @@ export default () => (
                 }
               }
             }
-            material {
-              material
-              whatIsCrm
-              blog
+            resources {
+              title
+              resourcesArray {
+                linkText
+                href
+              }
             }
-            customers
-            pricing
-            about
+            customers {
+              title
+              href
+            }
+            pricing {
+              title
+              href
+            }
+            about {
+              title
+              href
+            }
           }
         }
       }

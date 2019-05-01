@@ -22,11 +22,13 @@
     "testForFree": "Testa gratis",
     "freeDemo": "Få en personlig demo",
     "readMore": "Läs mer",
-    "download": "Ladda hem"
+    "download": "Ladda hem",
+    "login" : "Logga in"
   },
   "navbar": {
     "solutions": {
       "title": "Lösningar",
+      "href": "/losningar",
 
       "landingPages": {
         "title": "Lime CRM",
@@ -80,11 +82,17 @@
         ]
       }
     },
-    "customers": "Kunder",
-    "pricing": "Pris",
-    "material": {
+    "customers": {
+      "title" : "Kunder",
+      "href" : "/kunder"
+    },
+    "pricing": {
+      "title" : "Pris",
+      "href" : "/pris"
+    },
+    "resources": {
       "title" : "Material",
-      "materialArray": [
+      "resourcesArray": [
         {
           "linkText": "Standard",
           "href": "/losningar/crm"
@@ -99,12 +107,18 @@
         }
       ]
     },
-    "about": "Om oss"
+    "about":{
+      "title" : "Om oss",
+      "href" : "/om-oss"
+    }
   },
   "alreadyCustomer": "Redan kund?",
   "contact": "Kontakta oss",
 
   "usps": {
     "numberOfUsers": "Fler än <b>40 000</b> användare har redan Lime CRM"
+  },
+  "metaData" : {
+    "logoAltText" : "Vår vackra Lime CRM logo som alla säljare älskar att se"
   }
 }

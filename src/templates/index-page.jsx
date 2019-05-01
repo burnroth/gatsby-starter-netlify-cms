@@ -5,7 +5,8 @@ import Layout from "../components/Layout";
 import Button from "../components/Button";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
-import References from "../components/References";
+import ReferenceGrid from "../components/HomePage/ReferenceGrid";
+import Pyramid from "../components/HomePage/Pyramid";
 import SEO from "../components/SEO";
 import TrialForm from "../components/TrialForm/TrialForm";
 
@@ -23,6 +24,7 @@ export const IndexPageTemplate = ({
 }) => (
   <div>
     <SEO title={title} desc={description} slug={slug} />
+    
     <section id="hero" className="gradient">
       <div className="container">
         <div className="row">
@@ -47,6 +49,8 @@ export const IndexPageTemplate = ({
       </div>
     </section>
 
+    <ReferenceGrid />
+    
     <section id="social-proof">
       <div className="container">
         <div className="row">
@@ -59,11 +63,7 @@ export const IndexPageTemplate = ({
       </div>
     </section>
 
-    <section id="references">
-      <div className="container">
-        <References refImg={references} />
-      </div>
-    </section>
+
 
     <section id="video" className="bg-grey">
       <div className="container">
@@ -100,12 +100,13 @@ export const IndexPageTemplate = ({
     <section id="cases">
       <BlogRoll />
     </section>
+    <Pyramid/>
   </div>
 );
 
 const IndexPage = ({ data }) => {
   const { frontmatter, fields } = data.markdownRemark;
-  const { node } = data.allTranslationsJson.edges[0];
+  const { buttons } = data.translationsJson;
   return (
     <Layout>
       <IndexPageTemplate
@@ -116,8 +117,8 @@ const IndexPage = ({ data }) => {
         references={frontmatter.references}
         videoSection={frontmatter.videoSection}
         whyImages={frontmatter.why.blurbs}
-        testForFree={node.buttons.testForFree}
-        freeDemo={node.buttons.freeDemo}
+        testForFree={buttons.testForFree}
+        freeDemo={buttons.freeDemo}
         slug={fields.slug}
       />
     </Layout>
@@ -128,21 +129,19 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
-          allTranslationsJson {
-            edges {
-              node {
-                buttons {
-                  testForFree
-                  freeDemo
-                  readMore
-                  download
-                }
-                usps {
-                  numberOfUsers
-                }
-              }
-            }
-          }
+    translationsJson {
+      buttons {
+        testForFree
+        freeDemo
+        readMore
+        download
+        login
+      }
+      usps {
+        numberOfUsers
+      }
+    }
+
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       fields {
         slug

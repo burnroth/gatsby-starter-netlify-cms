@@ -22,14 +22,16 @@
     "testForFree": "Testa gratis",
     "freeDemo": "Få en personlig demo",
     "readMore": "Läs mer",
-    "download": "Ladda hem"
+    "download": "Ladda hem",
+    "login" : "Logga in"
   },
   "navbar": {
-    "solutions" : {
+    "solutions": {
       "title": "Lösningar",
+      "href": "/losningar",
 
-      "landingPages" : {
-        "title" : "Lime CRM",
+      "landingPages": {
+        "title": "Lime CRM",
         "pageArray": [
           {
             "linkText": "Standard",
@@ -46,7 +48,7 @@
         ]
       },
 
-      "verticals" : {
+      "verticals": {
         "title": "Branschlösningar",
         "verticalsArray": [
           {
@@ -79,21 +81,44 @@
           }
         ]
       }
-      
     },
-    "customers": "Kunder",
-    "pricing": "Pris",
-    "material": {
-      "material": "Material",
-      "whatIsCrm": "Vad är CRM?",
-      "blog": "Blogg"
+    "customers": {
+      "title" : "Kunder",
+      "href" : "/kunder"
     },
-    "about": "Om oss"
+    "pricing": {
+      "title" : "Pris",
+      "href" : "/pris"
+    },
+    "resources": {
+      "title" : "Material",
+      "resourcesArray": [
+        {
+          "linkText": "Standard",
+          "href": "/losningar/crm"
+        },
+        {
+          "linkText": "Add-ons",
+          "href": "/addons"
+        },
+        {
+          "linkText": "GDPR",
+          "href": "/resurser/gdpr"
+        }
+      ]
+    },
+    "about":{
+      "title" : "Om oss",
+      "href" : "/om-oss"
+    }
   },
   "alreadyCustomer": "Redan kund?",
   "contact": "Kontakta oss",
 
-  "usps" : {
+  "usps": {
     "numberOfUsers": "Fler än <b>40 000</b> användare har redan Lime CRM"
+  },
+  "metaData" : {
+    "logoAltText" : "Vår vackra Lime CRM logo som alla säljare älskar att se"
   }
 }

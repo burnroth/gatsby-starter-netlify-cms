@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 /* eslint-disable */
-class SolutionsDropdown extends Component {
+class ResourcesDropdown extends Component {
   constructor(props) {
     super(props);
     this.handleClickOutside = this.handleClickOutside.bind(this);
@@ -16,15 +16,17 @@ class SolutionsDropdown extends Component {
   }
 
   handleClickOutside = event => {
-    if (!this.node.contains(event.target)){
+    // const resourcesDropdown = document.querySelector(
+    //   `a[name=${event.target.name}]`
+    // );}
+    if (!this.node.contains(event.target)) {
       this.props.close();
     }
   };
 
   render() {
     const { navbar } = this.props.translations.translationsJson;
-    const verticalsArray = navbar.solutions.verticals.verticalsArray;
-    const landingPageArray = navbar.solutions.landingPages.pageArray;
+    const resourcesArray = navbar.resources.resourcesArray;
     return (
       <div
         className="dropdown-menu"
@@ -33,26 +35,11 @@ class SolutionsDropdown extends Component {
       >
         <div className="container-fluid">
           <div className="row">
-            <div className="col-12 col-md-4">
+            <div className="col-12">
               <a className="dropdown-heading">
-                <b>{navbar.solutions.landingPages.title}</b>
+                <b>{navbar.resources.title}</b>
               </a>
-              {landingPageArray.map(item => (
-                <Link
-                  key={Math.random() * 10}
-                  className="dropdown-item"
-                  to={item.href}
-                >
-                  {item.linkText}
-                </Link>
-              ))}
-            </div>
-
-            <div className="col-12 col-md-6">
-              <a className="dropdown-heading">
-                <b>{navbar.solutions.verticals.title}</b>
-              </a>
-              {verticalsArray.map(item => (
+              {resourcesArray.map(item => (
                 <Link
                   key={Math.random() * 10}
                   className="dropdown-item"
@@ -69,4 +56,4 @@ class SolutionsDropdown extends Component {
   }
 }
 
-export default SolutionsDropdown;
+export default ResourcesDropdown;

@@ -1,5 +1,6 @@
 ---
 templateKey: case-page
+page: true
 title: BMW Financial Services
 
 subtitle: FRÅN 25 % TILL 40 % I RETENTION RATE

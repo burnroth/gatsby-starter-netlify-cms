@@ -16,7 +16,10 @@ class SolutionsDropdown extends Component {
   }
 
   handleClickOutside = event => {
-    if (!this.node.contains(event.target)){
+    const solutionsDropdown = document.querySelector(
+      `a[name=${event.target.name}]`
+    );
+    if (!this.node.contains(event.target) && !solutionsDropdown ){
       this.props.close();
     }
   };
@@ -28,7 +31,7 @@ class SolutionsDropdown extends Component {
     return (
       <div
         className="dropdown-menu"
-        style={{ display: "block" }}
+        style={{ display: "block", position: "absolute" }}
         ref={node => (this.node = node)}
       >
         <div className="container-fluid">

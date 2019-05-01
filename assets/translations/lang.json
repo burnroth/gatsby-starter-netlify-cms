@@ -110,10 +110,11 @@
     "about":{
       "title" : "Om oss",
       "href" : "/om-oss"
-    }
+    },
+    "alreadyCustomer": "Redan kund?",
+    "contact": "Kontakta oss"
   },
-  "alreadyCustomer": "Redan kund?",
-  "contact": "Kontakta oss",
+
 
   "usps": {
     "numberOfUsers": "Fler än <b>40 000</b> användare har redan Lime CRM"

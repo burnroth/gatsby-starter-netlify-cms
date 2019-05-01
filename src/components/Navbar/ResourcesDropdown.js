@@ -16,10 +16,10 @@ class ResourcesDropdown extends Component {
   }
 
   handleClickOutside = event => {
-    // const resourcesDropdown = document.querySelector(
-    //   `a[name=${event.target.name}]`
-    // );}
-    if (!this.node.contains(event.target)) {
+     const resourcesDropdown = document.querySelector(
+       `a[name=${event.target.name}]`
+     );
+    if (!this.node.contains(event.target) && !resourcesDropdown ) {
       this.props.close();
     }
   };
@@ -30,7 +30,7 @@ class ResourcesDropdown extends Component {
     return (
       <div
         className="dropdown-menu"
-        style={{ display: "block" }}
+        style={{ display: "block", position: "absolute" }}
         ref={node => (this.node = node)}
       >
         <div className="container-fluid">

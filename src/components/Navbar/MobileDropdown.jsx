@@ -17,7 +17,7 @@ class SolutionsDropdown extends Component {
           position: "absolute",
           backgroundColor: "white",
           zIndex: 1,
-          boxShadow: "0px 15px 15px 0px #00000045",
+          boxShadow: "0px 15px 15px 0px #00000025",
           padding: "16px 16px"
         }}
         className="container-fluid"

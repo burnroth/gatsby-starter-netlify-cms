@@ -19,7 +19,7 @@ class SolutionsDropdown extends Component {
     const solutionsDropdown = document.querySelector(
       `a[name=${event.target.name}]`
     );
-    if (!this.node.contains(event.target) && !solutionsDropdown ){
+    if (!this.node.contains(event.target) && !solutionsDropdown) {
       this.props.close();
     }
   };
@@ -30,8 +30,8 @@ class SolutionsDropdown extends Component {
     const landingPageArray = navbar.solutions.landingPages.pageArray;
     return (
       <div
-        className="dropdown-menu"
-        style={{ display: "block", position: "absolute" }}
+        className="dropdown"
+        style={{ width: 370 }}
         ref={node => (this.node = node)}
       >
         <div className="container-fluid">

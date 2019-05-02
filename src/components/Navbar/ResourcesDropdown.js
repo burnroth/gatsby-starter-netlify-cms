@@ -29,8 +29,8 @@ class ResourcesDropdown extends Component {
     const resourcesArray = navbar.resources.resourcesArray;
     return (
       <div
-        className="dropdown-menu"
-        style={{ display: "block", position: "absolute" }}
+        className="dropdown"
+        style={{ width: 160 }}
         ref={node => (this.node = node)}
       >
         <div className="container-fluid">

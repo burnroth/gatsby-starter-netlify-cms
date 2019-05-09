@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 import Button from "../components/Button";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
-import ReferenceGrid from "../components/HomePage/ReferenceGrid";
+import ReferenceGrid from "../components/ReferenceGrid";
 import Pyramid from "../components/HomePage/Pyramid";
 import SEO from "../components/SEO";
 import TrialForm from "../components/TrialForm/TrialForm";

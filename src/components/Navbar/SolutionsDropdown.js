@@ -17,9 +17,9 @@ class SolutionsDropdown extends Component {
 
   handleClickOutside = event => {
     const solutionsDropdown = document.querySelector(
-      `a[name=${event.target.name}]`
+      `a[name="solutionsDropdown"]` ||  null
     );
-    if (!this.node.contains(event.target) && !solutionsDropdown) {
+    if (!this.node.contains(event.target) && event.target.name !== "solutionsDropdown" ) {
       this.props.close();
     }
   };

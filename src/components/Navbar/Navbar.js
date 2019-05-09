@@ -60,16 +60,15 @@ class Navbar extends Component {
               <div className="col-6 col-lg-7 d-flex">
                 <div className="align-items-center d-none d-lg-flex">
                   <div style={{ position: "relative" }}>
-                    <Link
+                    <a
                       name="solutionsDropdown"
                       class="dropdown-toggle nav-link"
                       onClick={this.handleClick}
                       style={{ cursor: "pointer" }}
-                      to="#"
                     >
                       {navbar.solutions.title}
                       <span class="caret" />
-                    </Link>
+                    </a>
                     {this.state.solutionsDropdown ? (
                       <SolutionsDropdown
                         close={this.close}

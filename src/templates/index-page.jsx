@@ -1,56 +1,25 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Img from "gatsby-image";
 import Layout from "../components/Layout";
 import Button from "../components/Button";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import ReferenceGrid from "../components/ReferenceGrid";
 import Pyramid from "../components/HomePage/Pyramid";
+import Hero from "../components/HomePage/Hero";
 import SEO from "../components/SEO";
-import TrialForm from "../components/TrialForm/TrialForm";
 
 export const IndexPageTemplate = ({
   title,
-  heading,
   description,
-  references,
-  heroImage,
   videoSection,
   whyImages,
-  testForFree,
-  freeDemo,
   slug
 }) => (
   <div>
     <SEO title={title} desc={description} slug={slug} />
-    
-    <section id="hero" className="gradient">
-      <div className="container">
-        <div className="row">
-          <div className="col-12 justify-content-center">
-            <h1>
-              <strong>{title}</strong>
-            </h1>
-            <p>{description}</p>
-          </div>
-          <div className="btn-wrapper">
-            <Button buttonText={testForFree} buttonColor="btn-white" />
-            <Button buttonText={freeDemo} buttonColor="btn-white-ghost" />
-          </div>
-          <div className="col-12 mx-auto">
-            <Img
-              fluid={heroImage.image.childImageSharp.fluid}
-              alt={heroImage.alt}
-            />
-            <TrialForm />
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <Hero />
     <ReferenceGrid />
-    
     <section id="social-proof">
       <div className="container">
         <div className="row">
@@ -62,8 +31,6 @@ export const IndexPageTemplate = ({
         </div>
       </div>
     </section>
-
-
 
     <section id="video" className="bg-grey">
       <div className="container">
@@ -100,7 +67,7 @@ export const IndexPageTemplate = ({
     <section id="cases">
       <BlogRoll />
     </section>
-    <Pyramid/>
+    <Pyramid />
   </div>
 );
 

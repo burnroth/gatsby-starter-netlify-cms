@@ -1,4 +1,4 @@
-{
+export const lang = {
   "forms": {
     "firstName": "Ditt förnamn?",
     "lastName": "Ditt efternamn?",
@@ -19,6 +19,15 @@
     "licenseCountMissinig": "Hur många licenser vill du ha?",
     "licenseCountInvalid": "Vi gillar siffror. Skriv hur många licenser du vill ha i siffror."
   },
+  "trialModal": {
+    "heading": "Testa Lime CRM",
+    "description": "Låt oss visa vad Lime CRM går för. <br \/> Du får fri tillgång till vår webbklient, <b>helt gratis.<b \/>"
+  },
+  "demoModal": {
+    "heading": "En demo av Lime CRM",
+    "description": "När du fyllt i dina uppgifter kommer du bli kontaktad av en av våra duktiga experter som visar dig systemet, helt gratis."
+  },
+
   "buttons": {
     "testForFree": "Testa gratis",
     "freeDemo": "Få en personlig demo",

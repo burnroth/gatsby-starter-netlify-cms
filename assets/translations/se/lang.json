@@ -1,10 +1,11 @@
 {
   "forms": {
-    "firstName": "Förnamn",
-    "lastName": "Efternamn",
-    "company": "Ditt företag",
-    "email": "Din e-postadress",
-    "phone": "Ditt telefonnummer",
+    "firstName": "Ditt förnamn?",
+    "lastName": "Ditt efternamn?",
+    "company": "Vilket företag jobbar du på?",
+    "email": "Har du en företagsmail vi kan nå dig på?",
+    "phone": "Och ett telefonnummer?",
+    
     "emailMissing": "Vi behöver din epostaddress för att sätta upp ditt konto.",
     "invalidEmail": "Bra försök! Använd en riktig epostadress. :)",
     "termsMissing": "Du måste acceptera licensvillkoren.",

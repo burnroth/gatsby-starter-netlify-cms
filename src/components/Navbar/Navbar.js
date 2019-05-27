@@ -47,11 +47,11 @@ class Navbar extends Component {
           <div className="container">
             <div className="row justify-content-between">
               <div className="col-3 col-lg-1 align-items-center">
-                <Link class="navbar-brand" to="/">
+                <Link className="navbar-brand" to="/">
                   <img
                     src={logo}
                     alt={metaData.logoAltText}
-                    class="img-fluid d-flex align-self-center"
+                    className="img-fluid d-flex align-self-center"
                     width="50"
                     height="50"
                   />
@@ -62,12 +62,12 @@ class Navbar extends Component {
                   <div style={{ position: "relative" }}>
                     <a
                       name="solutionsDropdown"
-                      class="dropdown-toggle nav-link"
+                      className="dropdown-toggle nav-link"
                       onClick={this.handleClick}
                       style={{ cursor: "pointer" }}
                     >
                       {navbar.solutions.title}
-                      <span class="caret" />
+                      <span className="caret" />
                     </a>
                     {this.state.solutionsDropdown ? (
                       <SolutionsDropdown
@@ -77,22 +77,22 @@ class Navbar extends Component {
                       />
                     ) : null}
                   </div>
-                  <Link class="nav-link" to={navbar.customers.href}>
+                  <Link className="nav-link" to={navbar.customers.href}>
                     {navbar.customers.title}
                   </Link>
-                  <Link class="nav-link" to={navbar.pricing.href}>
+                  <Link className="nav-link" to={navbar.pricing.href}>
                     {navbar.pricing.title}
                   </Link>
                   <div style={{ position: "relative" }}>
                     <Link
                       name="resourcesDropdown"
-                      class="dropdown-toggle nav-link"
+                      className="dropdown-toggle nav-link"
                       onClick={this.handleClick}
                       style={{ cursor: "pointer" }}
                       to="#"
                     >
                       {navbar.resources.title}
-                      <span class="caret" />
+                      <span className="caret" />
                     </Link>
                     {this.state.resourcesDropdown ? (
                       <ResourcesDropdown
@@ -124,7 +124,7 @@ class Navbar extends Component {
                   style={{ width: "100%" }}
                   className="d-none d-lg-flex justify-content-around align-items-center"
                 >
-                  <Link style={{ display: "flex" }}>{navbar.contact}</Link>
+                  <Link style={{ display: "flex" }} to="/">{navbar.contact}</Link>
                   <Button
                     buttonClass="d-flex"
                     buttonText={navbar.alreadyCustomer}

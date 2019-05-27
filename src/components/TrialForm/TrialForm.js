@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import { graphql, StaticQuery } from "gatsby";
 import Button from "../Button";
 import AutoComplete from "./AutoComplete";
 import Suggestions from "./Suggestions";
+import Validator from "./Validator";
 
-const API_URL =
+const endpoint =
   "https://gcqupcrlpd.execute-api.eu-west-1.amazonaws.com/v1/staging/search";
 
 class TrialForm extends Component {
@@ -41,7 +43,7 @@ class TrialForm extends Component {
       variables: { query: postQuery }
     });
 
-    fetch(API_URL, {
+    fetch(endpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -116,17 +118,21 @@ class TrialForm extends Component {
     event.preventDefault();
   }
 
-
   render() {
+    const form = this.props.data.translationsJson.forms;
+
     return (
       <form onSubmit={this.handleSubmit} action="#">
+        <Validator state={this.state} />
         <div className="form-group form-2col-left">
           <input
             onChange={this.handleInputChange}
             type="text"
             id="formInputFirstName"
             name="firstName"
+            placeholder={form.firstName}
           />
+          {}
         </div>
         <div className="form-group form-2col-right">
           <input
@@ -134,6 +140,7 @@ class TrialForm extends Component {
             type="text"
             id="formInputLastName"
             name="lastName"
+            placeholder={form.lastName}
           />
         </div>
         <div id="moreInfoFormAutocompleteContainer" className="form-group">
@@ -141,6 +148,7 @@ class TrialForm extends Component {
             query={this.state.query}
             getSearchQuery={this.getSearchQuery}
             getResults={this.getResults}
+            placeholder={form.company}
           />
           <Suggestions
             results={this.state.results}
@@ -153,6 +161,7 @@ class TrialForm extends Component {
             type="email"
             id="formInputEmail"
             name="email"
+            placeholder={form.email}
           />
         </div>
         <div className="form-group">
@@ -161,6 +170,7 @@ class TrialForm extends Component {
             type="tel"
             id="formInputTelId"
             name="phone"
+            placeholder={form.phone}
           />
           <input type="checkbox" name="checkbox" />
         </div>
@@ -170,4 +180,43 @@ class TrialForm extends Component {
   }
 }
 
-export default TrialForm;
+export default () => (
+  <StaticQuery
+    query={graphql`
+      query TrialFormQuery {
+        translationsJson {
+          buttons {
+            testForFree
+          }
+          forms {
+            firstName
+            lastName
+            company
+            email
+            phone
+            emailMissing
+            invalidEmail
+            dataTermsMissing
+            orgNoMissing
+            firstNameMissing
+            lastNameMissing
+            companyMissing
+            phoneMissing
+            phoneInvalid
+            licenseCountMissinig
+            licenseCountInvalid
+          }
+        }
+
+        markdownRemark(frontmatter: { component: { eq: "TrialModal" } }) {
+          frontmatter {
+            component
+            heading
+            description
+          }
+        }
+      }
+    `}
+    render={(data, count) => <TrialForm data={data} count={count} />}
+  />
+);

@@ -15,6 +15,7 @@ class AutoComplete extends Component {
           type="text"
           value={this.props.query}
           onChange={this.handleInputChange}
+          placeholder={this.props.placeholder}
         />
       </div>
     );

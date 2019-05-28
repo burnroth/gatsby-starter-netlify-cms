@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import Button from "../components/Button";
+import Button from "../components/Buttons/Button";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import ReferenceGrid from "../components/ReferenceGrid";
@@ -125,7 +125,6 @@ export const pageQuery = graphql`
                 ...GatsbyImageSharpFluid
               }
             }
-            publicURL
           }
         }
         references {
@@ -138,7 +137,6 @@ export const pageQuery = graphql`
                 }
               }
               id
-              publicURL
             }
           }
         }
@@ -158,7 +156,6 @@ export const pageQuery = graphql`
                   }
                 }
                 id
-                publicURL
               }
             }
             rubrik

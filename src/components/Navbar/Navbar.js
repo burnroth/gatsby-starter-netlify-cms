@@ -5,7 +5,7 @@ import ResourcesDropdown from "./ResourcesDropdown";
 import MobileDropdown from "./MobileDropdown";
 import logo from "../../../static/img/lime-crm-logo.svg";
 import menu from "../../../static/img/menu.svg";
-import Button from "../Button";
+import Button from "../Buttons/Button";
 
 class Navbar extends Component {
   constructor(props) {
@@ -23,6 +23,7 @@ class Navbar extends Component {
 
   handleClick(event) {
     const name = event.target.name;
+
     this.setState(prevState => ({
       [name]: !prevState[name]
     }));
@@ -36,7 +37,7 @@ class Navbar extends Component {
     });
   }
 
-  render() {
+  render(){
     const { data } = this.props;
     const { navbar } = data.translationsJson;
     const { metaData } = data.translationsJson;
@@ -60,15 +61,16 @@ class Navbar extends Component {
               <div className="col-6 col-lg-7 d-flex">
                 <div className="align-items-center d-none d-lg-flex">
                   <div style={{ position: "relative" }}>
-                    <a
+                    <Link
                       name="solutionsDropdown"
                       className="dropdown-toggle nav-link"
                       onClick={this.handleClick}
                       style={{ cursor: "pointer" }}
+                      to={window.document.location.pathname}
                     >
                       {navbar.solutions.title}
                       <span className="caret" />
-                    </a>
+                    </Link>
                     {this.state.solutionsDropdown ? (
                       <SolutionsDropdown
                         close={this.close}
@@ -89,7 +91,7 @@ class Navbar extends Component {
                       className="dropdown-toggle nav-link"
                       onClick={this.handleClick}
                       style={{ cursor: "pointer" }}
-                      to="#"
+                      to={window.document.location.pathname}
                     >
                       {navbar.resources.title}
                       <span className="caret" />
@@ -124,7 +126,9 @@ class Navbar extends Component {
                   style={{ width: "100%" }}
                   className="d-none d-lg-flex justify-content-around align-items-center"
                 >
-                  <Link style={{ display: "flex" }} to="/">{navbar.contact}</Link>
+                  <Link style={{ display: "flex" }} to="/">
+                    {navbar.contact}
+                  </Link>
                   <Button
                     buttonClass="d-flex"
                     buttonText={navbar.alreadyCustomer}

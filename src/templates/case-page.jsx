@@ -105,7 +105,6 @@ export const casePageQuery = graphql`
                     ...GatsbyImageSharpFluid
                   }
                 }
-                publicURL
                 id
               }
             rubrik

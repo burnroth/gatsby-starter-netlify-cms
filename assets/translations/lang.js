@@ -21,7 +21,7 @@ export const lang = {
   },
   "trialModal": {
     "heading": "Testa Lime CRM",
-    "description": "Låt oss visa vad Lime CRM går för. <br \/> Du får fri tillgång till vår webbklient, <b>helt gratis.<b \/>"
+    "description": "Låt oss visa vad Lime CRM går för. <br/> Du får fri tillgång till vår webbklient, <b>helt gratis.<b/>"
   },
   "demoModal": {
     "heading": "En demo av Lime CRM",

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StaticQuery, graphql } from "gatsby";
-import Button from "../Button";
+import Button from "../Buttons/Button";
 import Img from "gatsby-image";
 import TrialModal from "../Modals/TrialModal";
 import DemoModal from "../Modals/DemoModal";

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { graphql, StaticQuery } from "gatsby";
-import Button from "../Button";
+import Button from "../Buttons/Button";
 import AutoComplete from "./AutoComplete";
 import Suggestions from "./Suggestions";
 import Validator from "./Validator";
@@ -21,7 +21,8 @@ class TrialForm extends Component {
       phone: "",
       company: "",
       companyId: "",
-      checked: false
+      checked: false,
+      selected: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -65,6 +66,7 @@ class TrialForm extends Component {
   getSearchQuery(value) {
     this.setState(
       {
+        selected: false,
         query: value
       },
       () => {
@@ -82,7 +84,8 @@ class TrialForm extends Component {
     this.setState({
       company: event.target.title,
       companyId: event.target.value,
-      query: event.target.text
+      query: event.target.text,
+      selected: true
     });
   }
 
@@ -91,7 +94,8 @@ class TrialForm extends Component {
     const value = event.target.value;
 
     this.setState({
-      [name]: value
+      [name]: value,
+      selected: false
     });
   }
 
@@ -127,6 +131,7 @@ class TrialForm extends Component {
         <div className="form-group form-2col-left">
           <input
             onChange={this.handleInputChange}
+            className="form-control"
             type="text"
             id="formInputFirstName"
             name="firstName"
@@ -137,6 +142,7 @@ class TrialForm extends Component {
         <div className="form-group form-2col-right">
           <input
             onChange={this.handleInputChange}
+            className="form-control"
             type="text"
             id="formInputLastName"
             name="lastName"
@@ -150,14 +156,17 @@ class TrialForm extends Component {
             getResults={this.getResults}
             placeholder={form.company}
           />
-          <Suggestions
-            results={this.state.results}
-            handleUserChoice={this.handleUserChoice}
-          />
+          {this.state.selected ? null : (
+            <Suggestions
+              results={this.state.results}
+              handleUserChoice={this.handleUserChoice}
+            />
+          )}
         </div>
         <div className="form-group">
           <input
             onChange={this.handleInputChange}
+            className="form-control"
             type="email"
             id="formInputEmail"
             name="email"
@@ -167,6 +176,7 @@ class TrialForm extends Component {
         <div className="form-group">
           <input
             onChange={this.handleInputChange}
+            className="form-control"
             type="tel"
             id="formInputTelId"
             name="phone"

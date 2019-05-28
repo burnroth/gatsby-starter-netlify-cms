@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 class AutoComplete extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   handleInputChange = event => {
     this.props.getSearchQuery(event.target.value)
   };
@@ -13,6 +9,7 @@ class AutoComplete extends Component {
       <div>
         <input
           type="text"
+          className="form-control"
           value={this.props.query}
           onChange={this.handleInputChange}
           placeholder={this.props.placeholder}

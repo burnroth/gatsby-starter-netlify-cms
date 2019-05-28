@@ -5,13 +5,23 @@ background-color:#00000033;
 
 #trialModal.lime-modal,
 #demoModal.lime-modal {
+
   background-color: white;
   color: black!important;
-  position: fixed;
-  width: 40vw;
-  height: auto;
-  margin-top: 4%;
+
   display: block;
+  position: fixed;
   top:0;
   z-index:1050;
+
+  width: 90vw;
+  height: auto;
+  margin-top: 4%;
+
+  input{
+    width: 90%;
+    height: 34px;
+    border-radius:4px;
+  }
+
 }

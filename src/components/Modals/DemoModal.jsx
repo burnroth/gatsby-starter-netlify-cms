@@ -16,7 +16,6 @@ class DemoModal extends Component {
 
   componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleClickOutside);
-    console.log("will unmount")
   }
 
   handleClickOutside(event) {

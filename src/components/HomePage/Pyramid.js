@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StaticQuery, graphql } from "gatsby";
 import Image from "gatsby-image";
-import Button from "../Button"
+import Button from "../Buttons/Button";
 
 class Pyramid extends Component {
   render() {

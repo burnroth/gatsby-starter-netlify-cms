@@ -4,7 +4,7 @@ import Img from "gatsby-image";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BulletList from "../components/BulletList";
-import Button from "../components/Button";
+import Button from "../components/Buttons/Button";
 import SEO from "../components/SEO";
 
 export const VerticalPageTemplate = ({
@@ -108,7 +108,6 @@ export const verticalPageQuery = graphql`
                   ...GatsbyImageSharpFluid
                 }
               }
-              publicURL
             }
             alt
           }
@@ -126,7 +125,6 @@ export const verticalPageQuery = graphql`
                   ...GatsbyImageSharpFluid
                 }
               }
-              publicURL
             }
             }
             rubrik
@@ -144,7 +142,6 @@ export const verticalPageQuery = graphql`
                   ...GatsbyImageSharpFluid
                 }
               }
-              publicURL
             }
           }
           string

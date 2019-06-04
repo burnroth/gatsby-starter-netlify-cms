@@ -7,24 +7,23 @@ class WhySection extends Component {
     const { blurbs } = this.props.data.markdownRemark.frontmatter.why;
 
     return (
-      <div className="container">
-        <div className="row">
-          {blurbs.map(item => (
-            <div
-              key={Math.random()}
-              className="col-12 col-md-3 text-center"
-            >
-              {/* <Img
-                fluid={item.image1.image.childImageSharp.fluid}
-                alt={item.image1.alt}
-              /> */}
-              <img src={item.image1.image.publicURL} alt=""/>
-              <h2>{item.rubrik}</h2>
-              <p>{item.text}</p>
-            </div>
-          ))}
+      <section id="why">
+        <div className="container">
+          <div className="row">
+            {blurbs.map(item => (
+              <div key={Math.random()} className="col-12 col-md-3">
+                <img
+                  className="icon"
+                  src={item.image1.image.publicURL}
+                  alt=""
+                />
+                <h4>{item.rubrik}</h4>
+                <p>{item.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     );
   }
 }

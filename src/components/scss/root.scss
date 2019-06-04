@@ -1,5 +1,35 @@
 
+@font-face {
+	font-family: 'GalanoGrotesque';
+	font-style: normal;
+	font-weight: 400;
+	font-display: auto;
+	src: url('/assets/fonts/GalanoGrotesque-Regular.woff') format('woff');
+}
 
+@font-face {
+	font-family: 'GalanoGrotesque';
+	font-style: normal;
+	font-weight: 700;
+	font-display: auto;
+	src: url('/assets/fonts/GalanoGrotesque-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'GalanoGrotesque';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/assets/fonts/GalanoGrotesque-Thin.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'GalanoGrotesque';
+	font-style: normal;
+	font-weight: 300;
+	font-display: auto;
+	src: url('/assets/fonts/GalanoGrotesque-Light.woff') format('woff');
+}
 
 :root{
 	font-size: 10px;

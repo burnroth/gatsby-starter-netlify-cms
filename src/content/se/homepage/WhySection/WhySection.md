@@ -4,36 +4,33 @@ why:
   blurbs:
     - image1:
         alt: haj
-        image: "/meeting.png"
-      rubrik: Kunde- og ejendomsoversigt
+        image: "/apartment.svg"
+      rubrik: Erfarenhet
       text: >-
-        Kobl dit ejendomssystem til Lime CRM og saml al nødvendig information,
-        så du kan håndtere sager og pleje relationer på bedste vis. Her er det
-        nemt at finde alle data!
+        Med över 25 års erfarenhet av CRM och mer än 250 installationer av Lime CRM per år har vi sett och upplevt det mesta – och tacklat alla utmaningar längs vägen.
+
+
     - image1:
         alt: aaaaa
-        image: "/maggan.svg"
-      rubrik: Teknisk forvaltning og sager
+        image: "/hammer.svg"
+      rubrik: Branschlösningar
       text: >-
-        Et spørgsmål om den seneste kvittering for husleje, en vandhane, der er
-        sprunget læk, eller et job til en underentreprenør – i Lime CRM
-        håndterer du nemt alle sager, arbejdsordrer og den planlagte
-        vedligeholdelse.
+        Erfarenhet ger visdom. Våra genomarbetade CRM för olika branscher bidrar väsentligt till att förenkla din vardag.
+
+
     - image1:
         alt: gggg
-        image: "/meeting.png"
-      rubrik: Publicering af annoncer
+        image: "/weightlifting.svg"
+      rubrik: Flexibilitet
       text: >-
-        Publicér hurtigt ledige objekter, hvor du vil, direkte fra Lime CRM. Det
-        kunne eksempelvis være på din hjemmeside, Objektvision eller Newst.
-        Tilmeldingerne lander herefter i systemet.
+        Lime CRM kan anpassas efter din verksamhet och bli så stort eller litet som dina behov kräver. Gör som över 1000 andra kunder och väx tillsammans med oss.
+
+
     - image1:
         alt: ffff
-        image: "/meeting.png"
-      rubrik: Kundepleje og udlejning
+        image: "/home.svg"
+      rubrik: En partner att förhålla sig till
       text: >-
-        Gør det daglige arbejde nemmere med eksisterende og potentielle kunder.
-        Med Lime CRM har du styr på dine udlejningsgæster og prospekter, og du
-        får hjælp til at arbejde proaktivt.
+        "Vi utvecklar CRM. Vi säljer CRM. Vi driftsätter CRM. Vi ger support för CRM. Kort och gott: vi hjälper dig under hela din resa med CRM."
 
 ---

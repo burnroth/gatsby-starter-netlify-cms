@@ -196,7 +196,7 @@ export default () => (
       query TrialFormQuery {
         translationsJson {
           buttons {
-            testForFree
+            freeTrial
           }
           forms {
             firstName

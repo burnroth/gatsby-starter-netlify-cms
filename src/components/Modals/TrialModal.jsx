@@ -16,7 +16,6 @@ class TrialModal extends Component {
 
   componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleClickOutside);
-    console.log("will unmount")
   }
 
   handleClickOutside(event) {
@@ -32,23 +31,15 @@ class TrialModal extends Component {
         <div
           ref={node => (this.node = node)}
           id="trialModal"
-          className="lime-modal"
+          className="lime-modal shadow"
         >
           <div className="container">
             <div className="row">
               <div className="col-12 justify-content-center">
-                <h1
-                  style={{
-                    color: "black"
-                  }}
-                >
+                <h1>
                   <strong>{modal.heading}</strong>
                 </h1>
-                <p
-                  style={{
-                    color: "black"
-                  }}
-                >
+                <p>
                   {modal.description}
                 </p>
                 <TrialForm />

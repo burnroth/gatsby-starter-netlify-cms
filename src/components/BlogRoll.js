@@ -71,8 +71,8 @@ export default () => (
                 subtitle
                 linkedinbild {
                   childImageSharp {
-                    fixed(width: 350, height: 220, quality: 60) {
-                      ...GatsbyImageSharpFixed
+                    fixed(width: 350, height: 220, quality: 100) {
+                      ...GatsbyImageSharpFixed_withWebp_noBase64
                     }
                   }
                   publicURL

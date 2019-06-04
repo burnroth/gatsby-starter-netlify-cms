@@ -90,8 +90,8 @@ export const casePageQuery = graphql`
         intro {
           card {
           childImageSharp {
-            fixed(width: 350, height: 220, quality: 80) {
-              ...GatsbyImageSharpFixed
+            fixed(width: 350, height: 220, quality: 100) {
+              ...GatsbyImageSharpFixed_withWebp_noBase64
             }
           }
           publicURL
@@ -102,7 +102,7 @@ export const casePageQuery = graphql`
               image {
                 childImageSharp {
                   fluid(maxWidth: 350, quality: 80) {
-                    ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluid_withWebp_noBase64
                   }
                 }
                 id

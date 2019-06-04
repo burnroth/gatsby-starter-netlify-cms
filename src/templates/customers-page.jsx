@@ -29,7 +29,7 @@ const CustomersPage = ({ data }) => {
         title={frontmatter.title}
         heading={frontmatter.heading}
         description={frontmatter.description}
-        testForFree={buttons.testForFree}
+        freeTrial={buttons.freeTrial}
         freeDemo={buttons.freeDemo}
         readMore={buttons.readMore}
         slug={data.markdownRemark.fields.slug}
@@ -44,7 +44,7 @@ export const pageQuery = graphql`
   query CustomersPageTemplate {
   translationsJson {
     buttons {
-      testForFree
+      freeTrial
       freeDemo
       readMore
       download

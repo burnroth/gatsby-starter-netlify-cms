@@ -1,5 +1,5 @@
 ---
-templateKey: 'index-page'
+templateKey: 'homepage'
 title: 'Nordens ledande CRM-system'
 heading: Välkommen till Lime CRM
 description: Inget Lime CRM är det andra likt. Vi anpassar systemet, så att det passar just ditt

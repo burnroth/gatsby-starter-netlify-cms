@@ -1,4 +1,5 @@
 export const lang = {
+  "language": "se",
   "forms": {
     "firstName": "Ditt förnamn?",
     "lastName": "Ditt efternamn?",
@@ -29,7 +30,7 @@ export const lang = {
   },
 
   "buttons": {
-    "testForFree": "Testa gratis",
+    "freeTrial": "Testa gratis",
     "freeDemo": "Få en personlig demo",
     "readMore": "Läs mer",
     "download": "Ladda hem",
@@ -127,7 +128,7 @@ export const lang = {
 
 
   "usps": {
-    "numberOfUsers": "Fler än <b>40 000</b> användare har redan Lime CRM"
+    "numberOfUsers": "Fler än 40 000 användare har redan Lime CRM"
   },
   "metaData" : {
     "logoAltText" : "Vår vackra Lime CRM logo som alla säljare älskar att se"

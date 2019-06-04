@@ -1,27 +1,36 @@
-.modal-backdrop{
-background-color:#00000033;
-
+.modal-backdrop {
+  background-color: #00000033;
 }
 
 #trialModal.lime-modal,
 #demoModal.lime-modal {
-
-  background-color: white;
-  color: black!important;
+  background-color: $turquoise;
 
   display: block;
   position: fixed;
-  top:0;
-  z-index:1050;
+  top: 4%;
+  left: 50%;
+  z-index: 1050;
 
   width: 90vw;
   height: auto;
   margin-top: 4%;
-
-  input{
-    width: 90%;
-    height: 34px;
-    border-radius:4px;
+  margin-left: -45%;
+  padding: {
+    top: 20px;
+    right: 20px;
+    bottom:40px;
+    left:20px;
   }
 
+  @media (min-width: 992px) {
+    width: 70vw;
+    margin-top: 1%;
+    margin-left: -35%;
+  }
+  @media (min-width: 1200px) {
+    width: 40vw;
+    margin-top: 1%;
+    margin-left: -20%;
+  }
 }

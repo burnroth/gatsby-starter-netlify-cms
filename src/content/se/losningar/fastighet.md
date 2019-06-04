@@ -1,6 +1,5 @@
 ---
 templateKey: vertical-page
-page: true
 title: Fastighetsbranschen
 description: >-
   Som du ved, findes der en del udfordringer i ejendomsbranchen.

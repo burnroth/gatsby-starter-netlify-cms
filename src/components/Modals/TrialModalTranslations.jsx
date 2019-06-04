@@ -26,7 +26,7 @@
 //       query TrialModalQuery {
 //         translationsJson {
 //           buttons {
-//             testForFree
+//             freeTrial
 //           }
 //           forms {
 //             firstName

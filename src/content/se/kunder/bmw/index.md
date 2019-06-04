@@ -6,7 +6,7 @@ title: BMW Financial Services
 subtitle: FRÅN 25 % TILL 40 % I RETENTION RATE
 
 date: 2019-02-19T19:02:16.732Z
-linkedinbild: "./bmw-linkedin.jpg"
+linkedinbild: "./bmw-card.jpg"
 metaDescription: En beskrivning som fungerar som meta för google och sociala medier bla
 intro:
   description: >

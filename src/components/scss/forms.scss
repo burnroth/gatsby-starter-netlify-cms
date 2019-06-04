@@ -63,121 +63,9 @@ input[type="checkbox"] {
   background-color: $white;
 }
 
-/*
-* ----------------------------------------------------------------------------------
-* Signupform v 2.0
-* ----------------------------------------------------------------------------------
-*/
 
-.formLayoutGo {
-  .form-group {
-    margin: 0;
 
-    .form-control {
 
-      &:active,
-      &:focus {
-        background-color: $white;
-        border: 1px solid $grey-lighter;
-        border-color: $grey-lighter;
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-        outline: none;
-      }
-    }
-
-    input {
-      border-radius: 0;
-      height: 56px;
-    }
-
-    &:first-child {
-      &>input {
-        border-bottom: 0;
-        border-radius: 4px 4px 0 0;
-      }
-    }
-
-    &:last-of-type {
-      &>input {
-        border-top: 0;
-        border-radius: 0 0 4px 4px;
-      }
-    }
-
-    &:only-of-type {
-      &>input {
-        border: 1px solid #e8e8e8;
-        border-radius: 4px;
-      }
-    }
-  }
-}
-
-.col-form-fname {
-  position: relative;
-  min-height: 1px;
-  padding-right: 7px;
-  width: 50%;
-  float: left;
-}
-
-.col-form-lname {
-  position: relative;
-  min-height: 1px;
-  padding-left: 7px;
-  width: 50%;
-  float: left;
-}
-
-.col-form-agree {
-  position: relative;
-  min-height: 1px;
-  padding-left: 7px;
-  width: 80%;
-  float: right;
-}
-
-/*
-* ----------------------------------------------------------------------------------
-* Mailchimp embedded forms
-* ----------------------------------------------------------------------------------
-*/
-
-.mailchimp-form {
-
-  input[type="email"],
-  input[type="text"] {
-    background-color: $white;
-    border: 1px solid #e8e8e8;
-    box-shadow: 0px -3px 0px 0px #e8e8e8;
-    -moz-box-shadow: 0px -3px 0px 0px #e8e8e8;
-    -webkit-box-shadow: 0px -3px 0px 0px #e8e8e8;
-    color: #545454;
-    padding: 0.5rem 0.5rem 0.5rem 1rem;
-    width: 100%;
-
-    &:focus {
-      border: 1px solid #aaa;
-      outline: none;
-    }
-  }
-
-  input[type="submit"] {
-    background-color: #4673ed;
-    border: 0;
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    color: #ffffff;
-    float: left;
-    padding: 1rem 1.5rem;
-
-    &:hover {
-      background-color: darken(#4673ed, 3%);
-      outline: none;
-    }
-  }
-}
 
 .modal-body {
   background: linear-gradient(120deg,
@@ -190,53 +78,6 @@ input[type="checkbox"] {
   }
 }
 
-.animated {
-  -webkit-animation-duration: 2.5s;
-  animation-duration: 2.5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-}
-
-@-webkit-keyframes bounce {
-
-  0%,
-  20%,
-  40%,
-  60%,
-  80%,
-  100% {
-    -webkit-transform: translateY(0);
-  }
-
-  50% {
-    -webkit-transform: translateY(-5px);
-  }
-}
-
-@keyframes bounce {
-
-  0%,
-  20%,
-  40%,
-  60%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-.bounce {
-  -webkit-animation-name: bounce;
-  animation-name: bounce;
-}
 
 .logo-wrapper {
   padding-bottom: 30px;
@@ -259,4 +100,25 @@ span>a.underline {
     width: 640px;
     margin: 30px auto;
   }
+}
+
+div.suggestions-list{
+
+  position: absolute;
+  border: 1px solid $grey-light;
+  background: white;
+  max-height: 230px;
+  overflow: auto;
+  border-radius: 4px;
+
+option.suggestion{
+  cursor: pointer;
+  font-size: 16px;
+  padding: {
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left:10px;
+  }
+}
 }

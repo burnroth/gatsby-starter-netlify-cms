@@ -66,7 +66,7 @@ class Navbar extends Component {
                       className="dropdown-toggle nav-link"
                       onClick={this.handleClick}
                       style={{ cursor: "pointer" }}
-                      to={window.document.location.pathname}
+                      to="#"
                     >
                       {navbar.solutions.title}
                       <span className="caret" />
@@ -91,7 +91,7 @@ class Navbar extends Component {
                       className="dropdown-toggle nav-link"
                       onClick={this.handleClick}
                       style={{ cursor: "pointer" }}
-                      to={window.document.location.pathname}
+                      to="#"
                     >
                       {navbar.resources.title}
                       <span className="caret" />
@@ -160,7 +160,7 @@ export default () => (
           }
           buttons {
             login
-            testForFree
+            freeTrial
           }
           navbar {
             solutions {

@@ -39,7 +39,7 @@ export default () => (
                 image {
                   childImageSharp {
                     fixed(width: 130, height: 86, quality: 60) {
-                      ...GatsbyImageSharpFixed
+                      ...GatsbyImageSharpFixed_withWebp_noBase64
                     }
                   }
                   id

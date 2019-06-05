@@ -17,7 +17,7 @@ class Hero extends Component {
     } = data.markdownRemark.frontmatter;
 
     return (
-      <section id="hero" className="gradient">
+      <section id="hero" className="bg-turq">
         <div className="container">
           <div className="row">
             <div className="col-12 justify-content-center">

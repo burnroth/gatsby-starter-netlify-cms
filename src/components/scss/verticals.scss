@@ -1,9 +1,12 @@
 main#vertical {
 
   section#hero {
-    @include gradient-background($turquoise, $turquoise2);
 
+    background-color: $turquoise;
 
+    .heading-vertical {
+      padding-bottom: 40px;
+  }
 
     h1,
     p,
@@ -23,6 +26,16 @@ main#vertical {
       }
     }
 
+    ul>li{
+      margin-top:10px;
+      margin-bottom:4px;
+    }
+
+    @media(min-width:768px){
+      .heading-vertical {
+        padding: 8% 10% 10% 16%;
+    }
+    }
 
     @media (min-width: 1200px) {
       .hero-copy {

@@ -31,7 +31,7 @@ class TrialFormButton extends Component {
     const buttonText = lang.buttons.freeTrial;
 
     return (
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div style={{ display: "flex" }}>
         <button
           onClick={this.handleClick}
           id={id}

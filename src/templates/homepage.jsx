@@ -16,7 +16,7 @@ export const IndexPageTemplate = ({
 	whyImages,
 	slug
 }) => (
-	<div>
+	<main id="home">
 		<SEO title={title} desc={description} slug={slug} />
 		<Hero />
 		<ReferenceGrid />
@@ -29,7 +29,7 @@ export const IndexPageTemplate = ({
 			<BlogRoll />
 		</section>
 		<Pyramid />
-	</div>
+	</main>
 );
 
 const IndexPage = ({ data }) => {

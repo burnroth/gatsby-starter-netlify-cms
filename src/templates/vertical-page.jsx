@@ -4,11 +4,11 @@ import Img from "gatsby-image";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BulletList from "../components/BulletList";
-import Button from "../components/Buttons/Button";
+import TrialFormButton from "../components/Buttons/TrialFormButton";
 import SEO from "../components/SEO";
 
 export const VerticalPageTemplate = ({
-  heroImage,
+  hero,
   title,
   heading,
   description,
@@ -19,53 +19,44 @@ export const VerticalPageTemplate = ({
   ogImage
 }) => (
   <main id="vertical">
-    <SEO title={title} desc={description} ogImage={ogImage} slug={slug} />
+    <SEO title={title} desc={description} ogImage={ogImage} />
     <section id="hero">
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-12 col-md-6 hero-copy">
-            <h1>
-              <strong>Öka din hit rate med Lime CRM</strong>
-            </h1>
-            <ul>
-              <li>
-                360 graders vy över kunderna med ERP-koppling och all kunddata
-                samlad.
-              </li>
-              <li>
-                Kampanjhantering för mässor, utskick och andra
-                marknadsaktiviteter.
-              </li>
-              <li>
-                Effektiv säljstyrning med klassificering och potential på
-                kunderna i en enda vy.
-              </li>
-              <li>…och mycket mer.</li>
-            </ul>
-            <button
-              className="btn btn-white"
-              dataToggle="modal"
-              dataTarget="#signupModal"
-            >
-              Testa gratis
-            </button>
+      <div className="container-fluid container-fluid-vertical-hero">
+        <div className="row row-vertical-hero">
+          <div className="col-sm-12 col-md-6 col-vertical-hero">
+            <div className="heading-vertical">
+              <h1 className="title-large-light text-white h1-vertical-hero">
+                <strong>{hero.heading} </strong>
+              </h1>
+              <BulletList listItem={list} />
+              <TrialFormButton
+                buttonColor="btn-white"
+                buttonText={usp.string}
+              />
+            </div>
           </div>
-          <div className="col-12 col-md-6 d-none d-md-flex lp-hero-sales" />
+          <div
+            className="col-sm-6 hidden-xs col-md-6 hidden-sm col-vertical-hero"
+            style={{
+              backgroundImage : `url(${hero.image.image.publicURL})`,
+              backgroundPosition: "center top",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover"
+            }}
+          >
+            <div className="lp-hero-overlay" />
+          </div>
         </div>
       </div>
     </section>
-    <h2>{title}</h2>
 
     <Features gridItems={blurbs} />
     <h3 className="has-text-weight-semibold is-size-2">{heading}</h3>
-    <BulletList listItem={list} />
     <p>{description}</p>
-
-    <Img fluid={heroImage.image.childImageSharp.fluid} alt="Halloj" />
 
     <h3>{usp.heading}</h3>
     <p>{usp.text}</p>
-    <Button buttonText={usp.string} />
+    <TrialFormButton />
   </main>
 );
 
@@ -75,7 +66,7 @@ const VerticalPage = ({ data }) => {
   return (
     <Layout>
       <VerticalPageTemplate
-        heroImage={frontmatter.hero.image}
+        hero={frontmatter.hero}
         title={frontmatter.title}
         heading={frontmatter.heading}
         description={frontmatter.description}
@@ -108,6 +99,7 @@ export const verticalPageQuery = graphql`
                   ...GatsbyImageSharpFluid
                 }
               }
+              publicURL
             }
             alt
           }
@@ -119,13 +111,13 @@ export const verticalPageQuery = graphql`
           blurbs {
             image1 {
               alt
-              image{
-              childImageSharp {
-                fluid(maxWidth: 448, quality: 100) {
-                  ...GatsbyImageSharpFluid
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 448, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
                 }
               }
-            }
             }
             rubrik
             text

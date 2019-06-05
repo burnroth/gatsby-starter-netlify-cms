@@ -8,18 +8,18 @@ description: >-
   er oftest ikke tilstrækkeligt enkle til at kunne håndtere alle kunderelationer
   og sager på effektiv vis.
 hero:
-  heading: 'Et CRM, du vil flytte til '
+  heading: 'Ett CRM du vill flytta till'
   image: 
-    image: "./meeting.png"
-    alt: hero bild
+    image: "/real-estate-crm.png"
+    alt: Ett CRM du vill flytta till
 
   list:
     - listObject: >-
-        Få et samlet billede af udlejningsgæster, udlejningsobjekter, ejendomme
-        og kontrakter.
-    - listObject: 'Saml arbejdsordrer og sager i et fælles, letanvendeligt flow.'
-    - listObject: 'Publicér ledige objekter på nettet, direkte fra Lime CRM.'
-    - listObject: ...og meget mere.
+       Få en samlad bild av hyresgäster, hyresobjekt, fastigheter och kontrakt.
+    - listObject: Samla arbetsorder och ärenden i ett gemensamt, lättanvänt flöde.
+    - listObject: Publicera lediga objekt på nätet, direkt från Lime CRM.
+    - listObject: …och mycket mer.
+
 intro:
   blurbs:
     - image1:
@@ -68,6 +68,5 @@ usp:
     informationsstrukturen ofte er kompleks. Ejendomssystemer løser meget, men
     de er oftest ikke tilstrækkeligt enkle til at kunne håndtere alle
     kunderelationer og sager på effektiv vis.
-heading: Ett CRM-system du vill flytta in i
 ---
 

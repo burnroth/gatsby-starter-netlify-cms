@@ -1,20 +1,19 @@
 import React from "react";
-import Img from "gatsby-image";
 
 const Features = ({ gridItems }) => (
   <div className="container">
-	<div className="row">
-    {gridItems.map(item => (
-      <div key={item.image1.image.id + Math.random()} className="col-12 col-md-3 text-center">
-          <Img
-            fluid={item.image1.image.childImageSharp.fluid}
-            alt={item.image1.alt}
-          />
-          <h2>{item.rubrik}</h2>
+    <div className="row">
+      {gridItems.map(item => (
+        <div
+          key={item.image1.image.id + Math.random()}
+          className="col-12 col-md-3"
+        >
+          <img className="icon" src={item.image1.image.publicURL} alt="" />
+          <h4>{item.rubrik}</h4>
           <p>{item.text}</p>
         </div>
-		))}
-		</div>
+      ))}
+    </div>
   </div>
 );
 

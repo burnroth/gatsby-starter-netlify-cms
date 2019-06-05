@@ -6,6 +6,7 @@ import Features from "../components/Features";
 import BulletList from "../components/BulletList";
 import TrialFormButton from "../components/Buttons/TrialFormButton";
 import SEO from "../components/SEO";
+import DynamicReferenceGrid from "../components/DynamicReferenceGrid";
 
 export const VerticalPageTemplate = ({
   hero,
@@ -16,7 +17,8 @@ export const VerticalPageTemplate = ({
   list,
   usp,
   slug,
-  ogImage
+  ogImage,
+  references
 }) => (
   <main id="vertical">
     <SEO title={title} desc={description} ogImage={ogImage} />
@@ -38,7 +40,7 @@ export const VerticalPageTemplate = ({
           <div
             className="col-sm-6 hidden-xs col-md-6 hidden-sm col-vertical-hero"
             style={{
-              backgroundImage : `url(${hero.image.image.publicURL})`,
+              backgroundImage: `url(${hero.image.image.publicURL})`,
               backgroundPosition: "center top",
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover"
@@ -49,11 +51,11 @@ export const VerticalPageTemplate = ({
         </div>
       </div>
     </section>
+    <DynamicReferenceGrid references={references} />
 
     <Features gridItems={blurbs} />
     <h3 className="has-text-weight-semibold is-size-2">{heading}</h3>
     <p>{description}</p>
-
     <h3>{usp.heading}</h3>
     <p>{usp.text}</p>
     <TrialFormButton />
@@ -71,9 +73,10 @@ const VerticalPage = ({ data }) => {
         heading={frontmatter.heading}
         description={frontmatter.description}
         list={frontmatter.hero.list}
-        blurbs={frontmatter.intro.blurbs}
+        blurbs={frontmatter.features.blurbs}
         usp={frontmatter.usp}
         slug={fields.slug}
+        references={frontmatter.references}
       />
     </Layout>
   );
@@ -107,16 +110,24 @@ export const verticalPageQuery = graphql`
             listObject
           }
         }
-        intro {
+        references {
+          image1 {
+            alt
+            image {
+              childImageSharp {
+                fixed(width: 130, height: 86, quality: 60) {
+                  ...GatsbyImageSharpFixed_withWebp_noBase64
+                }
+              }
+            }
+          }
+        }
+        features {
           blurbs {
             image1 {
               alt
               image {
-                childImageSharp {
-                  fluid(maxWidth: 448, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
+                publicURL
               }
             }
             rubrik

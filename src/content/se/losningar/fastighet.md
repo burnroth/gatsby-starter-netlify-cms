@@ -8,53 +8,69 @@ description: >-
   er oftest ikke tilstrækkeligt enkle til at kunne håndtere alle kunderelationer
   og sager på effektiv vis.
 hero:
-  heading: 'Ett CRM du vill flytta till'
-  image: 
+  heading: "Ett CRM du vill flytta till"
+  image:
     image: "/real-estate-crm.png"
     alt: Ett CRM du vill flytta till
 
   list:
     - listObject: >-
-       Få en samlad bild av hyresgäster, hyresobjekt, fastigheter och kontrakt.
+        Få en samlad bild av hyresgäster, hyresobjekt, fastigheter och kontrakt.
     - listObject: Samla arbetsorder och ärenden i ett gemensamt, lättanvänt flöde.
     - listObject: Publicera lediga objekt på nätet, direkt från Lime CRM.
     - listObject: …och mycket mer.
 
-intro:
+references:
+  - image1:
+      alt: haj
+      image: /skandia-fastigheter-logo.png
+  - image1:
+      alt: haj
+      image: /castellum-logo.png
+  - image1:
+      alt: haj
+      image: /svenska-bostader.png
+  - image1:
+      alt: haj
+      image: /fabege-logo.png
+  - image1:
+      alt: haj
+      image: /familjebostader-logo.png
+
+features:
   blurbs:
     - image1:
         alt: haj
-        image: "./meeting.png"
-      rubrik: Kunde- og ejendomsoversigt
+        image: "/apartment.svg"
+      rubrik: Kund- och fastighetsöversikt
+
       text: >-
-        Kobl dit ejendomssystem til Lime CRM og saml al nødvendig information,
-        så du kan håndtere sager og pleje relationer på bedste vis. Her er det
-        nemt at finde alle data!
+        Koppla ditt fastighetssystem till Lime CRM och samla all information du behöver för att på bästa sätt hantera ärenden och vårda relationerna. Här är allt lätt att hitta!
+
     - image1:
         alt: aaaaa
-        image: "./meeting.png"
-      rubrik: Teknisk forvaltning og sager
+        image: "/contract-job.svg"
+      rubrik: Kundvård och uthyrning
+
       text: >-
-        Et spørgsmål om den seneste kvittering for husleje, en vandhane, der er
-        sprunget læk, eller et job til en underentreprenør – i Lime CRM
-        håndterer du nemt alle sager, arbejdsordrer og den planlagte
-        vedligeholdelse.
+        Förenkla det dagliga arbetet med befintliga och potentiella kunder. Med Lime CRM har du koll på dina hyresgäster och prospekt, samt får hjälp att jobba proaktivt.
+
     - image1:
         alt: gggg
-        image: "./meeting.png"
-      rubrik: Publicering af annoncer
+        image: "/technology-items.svg"
+      rubrik: Publicering av annonser
+
       text: >-
-        Publicér hurtigt ledige objekter, hvor du vil, direkte fra Lime CRM. Det
-        kunne eksempelvis være på din hjemmeside, Objektvision eller Newst.
-        Tilmeldingerne lander herefter i systemet.
+        Publicera snabbt lediga objekt där du önskar, direkt från Lime CRM. Exempelvis på din webbplats, Objektvision eller Newst. Intresseanmälningarna landar sedan i systemet.
+
     - image1:
         alt: ffff
-        image: "./meeting.png"
-      rubrik: Kundepleje og udlejning
+        image: "/report-card.svg"
+      rubrik: Teknisk förvaltning och ärenden
+
       text: >-
-        Gør det daglige arbejde nemmere med eksisterende og potentielle kunder.
-        Med Lime CRM har du styr på dine udlejningsgæster og prospekter, og du
-        får hjælp til at arbejde proaktivt.
+        En fråga om senaste hyresavin, en kran som läcker eller ett jobb till en underentreprenör – i Lime CRM hanterar du enkelt alla ärenden, arbetsorder och det planerade underhållet.
+
   heading: What we offer
 usp:
   heading: Når dit ejendomssystem ikke dur
@@ -69,4 +85,3 @@ usp:
     de er oftest ikke tilstrækkeligt enkle til at kunne håndtere alle
     kunderelationer og sager på effektiv vis.
 ---
-

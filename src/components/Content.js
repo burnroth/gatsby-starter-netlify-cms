@@ -2,11 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 export const HTMLContent = ({ content }) => (
-  <div dangerouslySetInnerHTML={{ __html: content }} />
+  <div className="row" >
+  <div className="col-12">
+    <div dangerouslySetInnerHTML={{ __html: content }}  ></div>
+  </div>
+  </div>
 )
 
 const Content = ({ content }) => (
-  <div>{content}</div>
+  <div className="row">
+    <div className="col-12">
+    {content}
+    </div>
+  </div>
 )
 
 Content.propTypes = {

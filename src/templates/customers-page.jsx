@@ -47,7 +47,6 @@ export const pageQuery = graphql`
       freeTrial
       freeDemo
       readMore
-      download
     }
   }
     markdownRemark(frontmatter: { templateKey: { eq: "customers-page" } }) {
@@ -58,6 +57,7 @@ export const pageQuery = graphql`
         title
         heading
         description
+        
       }
     }
   }

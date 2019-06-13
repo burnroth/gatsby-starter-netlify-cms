@@ -2,9 +2,11 @@
 templateKey: case-page
 title: HSB Malmö
 subtitle: MINDRE PAPPER OCH MER FOKUS PÅ KUNDERNA
-date: 2019-02-19T19:02:16.732Z
+date: 2019-02-01
 linkedinbild: "./hsb.jpg"
-metaDescription: HSB är Sveriges största bostadskooperation och planerar, finansierar, bygger och förvaltar bostäder över hela landet. Med engagemang, trygghet, hållbarhet, omtanke och samverkan har man sedan 1923 verkat för det goda boendet och att skapa värde för sina medlemmar.
+card: "./hsb.jpg"
+metaDescription: "HSB är Sveriges största bostadskooperation och planerar, finansierar, bygger och förvaltar bostäder över hela landet. Med engagemang, trygghet, hållbarhet, omtanke och samverkan har man sedan 1923 verkat för det goda boendet och att skapa värde för sina medlemmar."
+quote: "”Ett tydligt resultat sen vi implementerade Lime är att vi inte behöver ta med oss lika mycket papper ut på fältet. Vi har all information vi behöver i det mobila gränssnittet.”"
 
 intro:
   description: >
@@ -12,26 +14,23 @@ intro:
 
    HSB Malmö är Skånes största HSB-förening, med ungefär 250 bostadsrättföreningar som medlemmar och ca 140 anställda. I föreningen ingår totalt runt 30 000 bostadsrätter och drygt 2 200 hyresrätter i Burlöv, Lomma, Malmö, Svedala, Trelleborg och Vellinge.
 
-
-
-
   card: "./hsb.jpg"
 
   blurbs:
   - blurb:
-      image: "./hsb.jpg"
+      image: "/assistant.svg"
       rubrik: SPARA TID
       text: >
         Supportens administration vid utträden har minskat och rapporteringen till ledningsgrupp, styrelse och chefer har blivit smidigare.
 
   - blurb:
-      image: "./hsb.jpg"
+      image: "/assistant.svg"
       rubrik: BÄTTRE UPPFÖLJNING
       text: >
         Information faller inte mellan stolarna och såväl affärer som ärenden följs upp i högre grad, när allt finns samlat digitalt.
 
   - blurb:
-      image: "./hsb.jpg"
+      image: "/assistant.svg"
       rubrik: STARKARE KUNDRELATIONER
       text: >
         Med all kundinformation samlad kan medarbetarna ge snabbare service och föra personligare dialoger med alla medlemmar och prospekt.

@@ -2,12 +2,12 @@
 templateKey: case-page
 page: true
 title: BMW Financial Services
-
 subtitle: FRÅN 25 % TILL 40 % I RETENTION RATE
-
 date: 2019-02-19T19:02:16.732Z
-linkedinbild: "./bmw-card.jpg"
+linkedinbild: "./bmw-linkedin.jpg"
+card: "./bmw-card.jpg"
 metaDescription: En beskrivning som fungerar som meta för google och sociala medier bla
+quote: "”Med Lime Technologies fick vi ett fungerande CRM-system och nya CRM-processer som ledde till en ökning av retention rate redan första året – från 25% till 40%.”"
 intro:
   description: >
    BMW Financial Services är BMW:s eget finansbolag. Totalt finansieras idag ca 3,1 miljoner bilar via bolaget i hela världen. BMW Financial Services har funnits i Sverige sedan 1999 och huvudkontoret för Norden ligger i Stockholm.
@@ -17,19 +17,19 @@ intro:
 
   blurbs:
   - blurb:
-      image: "./bmw-card.jpg"
+      image: "/assistant.svg"
       rubrik: ENAD KUNDBILD
       text: >
         Allt som rör kunden samlat på ett ställe ger ett större kundfokus och effektivare arbetssätt.
 
   - blurb:
-      image: "./bmw-card.jpg"
+      image: "/assistant.svg"
       rubrik: EFFEKTIVARE ÄRENDEHANTERING
       text: >
         Kundcentret har effektiviserats och standardiserats med hjälp av automatisk inläsning av e-post och en Knowledge Base.
 
   - blurb:
-      image: "./bmw-card.jpg"
+      image: "/assistant.svg"
       rubrik: HÖGRE RETENTION RATE
       text: >
         De nya CRM-processerna ledde redan under första året till en ökning av retention rate - från 25 % till 40 %.

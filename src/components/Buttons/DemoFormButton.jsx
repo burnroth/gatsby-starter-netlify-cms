@@ -17,17 +17,19 @@ class DemoFormButton extends Component {
       isClicked: true
     });
   }
+
   closeModal() {
     this.setState({
       isClicked: false
     });
   }
+
   render() {
     const buttonColor = this.props.buttonColor
       ? this.props.buttonColor
       : "btn-white-ghost";
     const buttonClass = this.props.buttonClass;
-    const id = this.props.id ? this.props.id : "demoButtonMaggan";
+    const id = this.props.id ? this.props.id : "demoButton";
     const buttonText = lang.buttons.freeDemo;
 
     return (

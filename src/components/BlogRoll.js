@@ -17,10 +17,9 @@ class BlogRoll extends React.Component {
                 <div className="card-customer">
                   <div className="card-image">
                     <Link className="" to={post.fields.slug}>
-                      {" "}
                       <Img
                         fixed={
-                          post.frontmatter.linkedinbild.childImageSharp.fixed
+                          post.frontmatter.card.childImageSharp.fixed
                         }
                       />
                     </Link>
@@ -28,7 +27,7 @@ class BlogRoll extends React.Component {
                   <div className="card-body">
                     <h3>{post.frontmatter.title}</h3>
                     <h4>{post.frontmatter.subtitle}</h4>
-                    <p>{post.excerpt}</p>
+                    <p>{post.frontmatter.quote}</p>
                     <Link className="btn btn-turq button" to={post.fields.slug}>
                       Läs mer
                     </Link>
@@ -61,7 +60,6 @@ export default () => (
         ) {
           edges {
             node {
-              excerpt(pruneLength: 200)
               id
               fields {
                 slug
@@ -69,7 +67,7 @@ export default () => (
               frontmatter {
                 title
                 subtitle
-                linkedinbild {
+                card {
                   childImageSharp {
                     fixed(width: 350, height: 220, quality: 100) {
                       ...GatsbyImageSharpFixed_withWebp_noBase64
@@ -78,6 +76,7 @@ export default () => (
                   publicURL
                 }
                 metaDescription
+                quote
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
               }

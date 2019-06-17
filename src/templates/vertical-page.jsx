@@ -52,12 +52,20 @@ export const VerticalPageTemplate = ({
       </div>
     </section>
     <DynamicReferenceGrid references={references} />
-
+    <section id="usp">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-6">
+            <h2></h2>
+            <p></p>
+            <TrialFormButton buttonText="Kom igång nu" />
+          </div>
+          <div className="col-12 col-md-6"></div>
+        </div>
+      </div>
+    </section>
     <Features gridItems={blurbs} />
-    <h3 className="has-text-weight-semibold is-size-2">{heading}</h3>
-    <p>{description}</p>
-    <h3>{usp.heading}</h3>
-    <p>{usp.text}</p>
+
     <TrialFormButton />
   </main>
 );

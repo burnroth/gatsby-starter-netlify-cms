@@ -28,7 +28,7 @@ class TrialFormButton extends Component {
       : "btn-turq";
     const buttonClass = this.props.buttonClass;
     const id = this.props.id ? this.props.id : "demoButtonMaggan";
-    const buttonText = lang.buttons.freeTrial;
+    const buttonText = this.props.buttonText ? this.props.buttonText : lang.buttons.freeTrial;
 
     return (
       <div style={{ display: "flex" }}>

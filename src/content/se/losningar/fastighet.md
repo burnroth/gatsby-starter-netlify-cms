@@ -71,17 +71,15 @@ features:
       text: >-
         En fråga om senaste hyresavin, en kran som läcker eller ett jobb till en underentreprenör – i Lime CRM hanterar du enkelt alla ärenden, arbetsorder och det planerade underhållet.
 
-  heading: What we offer
+  heading: Lime CRM för fastighetsbranschen
+
+
 usp:
-  heading: Når dit ejendomssystem ikke dur
+  heading: När ditt fastighetssystem inte duger
   image1:
-    alt: haj
-    image: "./meeting.png"
-  string: Köp nu
+    alt: En bild på Lime CRM
+    image: "./crm-screenshot.png"
+  string: Kom igång nu
   text: >-
-    Som du ved, findes der en del udfordringer i ejendomsbranchen.
-    Udlejningsgæster har høje forventninger til serviceniveauet, samtidig med at
-    informationsstrukturen ofte er kompleks. Ejendomssystemer løser meget, men
-    de er oftest ikke tilstrækkeligt enkle til at kunne håndtere alle
-    kunderelationer og sager på effektiv vis.
+    Som du vet så finns det en del utmaningar i fastighetsbranschen. Hyresgäster har höga förväntningar på servicenivå, samtidigt som informationsstrukturen ofta är komplex. Fastighetssystemen löser mycket, men de är oftast inte tillräckligt enkla för att effektivt hantera alla kundrelationer och ärenden. Det är här Lime CRM kommer in i bilden.
 ---

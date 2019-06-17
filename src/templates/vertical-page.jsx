@@ -14,6 +14,7 @@ export const VerticalPageTemplate = ({
   heading,
   description,
   blurbs,
+  features,
   list,
   usp,
   slug,
@@ -56,15 +57,17 @@ export const VerticalPageTemplate = ({
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6">
-            <h2></h2>
-            <p></p>
-            <TrialFormButton buttonText="Kom igång nu" />
+            <h2>{usp.heading}</h2>
+            <p>{usp.text} </p>
+            <TrialFormButton buttonText={usp.string} />
           </div>
-          <div className="col-12 col-md-6"></div>
+          <div className="col-12 col-md-6 order-first order-md-last">
+            <Img alt={usp.image1.alt} fluid={usp.image1.image.childImageSharp.fluid} />
+          </div>
         </div>
       </div>
     </section>
-    <Features gridItems={blurbs} />
+    <Features heading={features.heading} gridItems={blurbs} />
 
     <TrialFormButton />
   </main>
@@ -82,6 +85,7 @@ const VerticalPage = ({ data }) => {
         description={frontmatter.description}
         list={frontmatter.hero.list}
         blurbs={frontmatter.features.blurbs}
+        features={frontmatter.features}
         usp={frontmatter.usp}
         slug={fields.slug}
         references={frontmatter.references}
@@ -131,6 +135,7 @@ export const verticalPageQuery = graphql`
           }
         }
         features {
+          heading
           blurbs {
             image1 {
               alt
@@ -141,7 +146,6 @@ export const verticalPageQuery = graphql`
             rubrik
             text
           }
-          heading
         }
         usp {
           heading
@@ -149,7 +153,7 @@ export const verticalPageQuery = graphql`
             alt
             image {
               childImageSharp {
-                fluid(maxWidth: 448, quality: 100) {
+                fluid(maxWidth: 540, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }

@@ -1,6 +1,6 @@
 ---
 templateKey: 'customers-page'
-title: Våra nöjda kunder
-heading: Heading
-description: Våra nöjda kunder
+title: Vi älskar nöjda kunder
+subtitle: Från småföretag till jättekoncerner – här är våra kunder
+description: Ett urval av våra kunder
 ---

@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import CaseSidebar from "../components/CaseSidebar";
 import Content, { HTMLContent } from "../components/Content";
 import SEO from "../components/SEO";
+import Button from '../components/Buttons/Button'
 
 export const CaseTemplate = ({
   content,
@@ -35,20 +36,44 @@ export const CaseTemplate = ({
           </div>
         </div>
       </section>
-
       <section id="body">
         <div className="container">
-          <div className="row justify-content-around">
+          <div
+            className="row justify-content-around"
+            style={{
+              marginTop: 100
+            }}
+          >
             <div className="col-md-8">
               <article>
                 <PostContent content={content} />
+                <Button buttonClass="top60" href="/kunder" buttonText="Läs fler kundcase" />
+
               </article>
             </div>
-            <div className="col-md-4">
-                <Img fixed={card.childImageSharp.fixed} alt={title} />
-                <h4>{title}</h4>
-                <p>{descriptionSidebar}</p>
+            <div
+              style={{
+                backgroundColor: "#f5f5f5"
+              }}
+              className="col-md-4"
+            >
+              <Img
+                style={{
+                  marginTop: 20
+                }}
+                fixed={card.childImageSharp.fixed}
+                alt={title}
+              />
+              <h4
+                style={{
+                  marginTop: 20
+                }}
+              >
+                {title.toUpperCase()}
+              </h4>
+              <p>{descriptionSidebar}</p>
               <CaseSidebar content={blurbs} />
+
             </div>
           </div>
         </div>

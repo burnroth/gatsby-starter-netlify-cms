@@ -4,20 +4,36 @@ import Layout from "../components/Layout";
 import BlogRoll from "../components/BlogRoll";
 import SEO from "../components/SEO";
 
-export const CustomersPageTemplate = ({ title, description, slug }) => (
-  <div>
-    <SEO title={title} desc={description} slug={slug} />
-    <section id="cases">
+export const CustomersPageTemplate = ({
+  title,
+  description,
+  slug,
+  subtitle
+}) => (
+  <main id="customers">
+    <SEO title={`Lime CRM - ${title}`} desc={description} slug={slug} />
+    <section id="hero">
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <h1>{description}</h1>
+            <h1>{title}</h1>
+            <p>{subtitle}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="cases">
+      <div className="container">
+        <div style={{
+          marginTop: 100
+        }} className="row">
+          <div className="col-12">
             <BlogRoll />
           </div>
         </div>
       </div>
     </section>
-  </div>
+  </main>
 );
 
 const CustomersPage = ({ data }) => {
@@ -27,7 +43,7 @@ const CustomersPage = ({ data }) => {
     <Layout>
       <CustomersPageTemplate
         title={frontmatter.title}
-        heading={frontmatter.heading}
+        subtitle={frontmatter.subtitle}
         description={frontmatter.description}
         freeTrial={buttons.freeTrial}
         freeDemo={buttons.freeDemo}
@@ -42,22 +58,21 @@ export default CustomersPage;
 
 export const pageQuery = graphql`
   query CustomersPageTemplate {
-  translationsJson {
-    buttons {
-      freeTrial
-      freeDemo
-      readMore
+    translationsJson {
+      buttons {
+        freeTrial
+        freeDemo
+        readMore
+      }
     }
-  }
     markdownRemark(frontmatter: { templateKey: { eq: "customers-page" } }) {
       fields {
         slug
       }
       frontmatter {
         title
-        heading
+        subtitle
         description
-        
       }
     }
   }

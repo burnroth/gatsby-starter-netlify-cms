@@ -56,15 +56,16 @@ Curonova Consulting implementerade Lime CRM hösten 2015. Idag använder alla 14
 Sedan Curonova Consulting började med Lime CRM har faktureringsunderlaget förbättrats och bolaget kan nu ta betalt för hela kedjan: från att medarbetarna träffar en kund för första gången till avtal och genomförda aktiviteter. Dessutom har e-postfunktionen gjort det enklare att mejla befintliga kunder med relevant information.
 
 
-<div class="col-md-3 rounded-image-inside">
-<img src="./pernilla-axflo.png">
+<div class="row top60">
+  <div class="col-md-3 rounded-image-inside">
+    <img src="./pernilla-axflo.png">
+  </div>
+  <div class="col-md-9">
+    <p>
+      “Lime är duktiga på att utbilda och stötta sina kunder. En underbar användarsupport och mycket digitalt
+      utbildningsmaterial underlättar både för mig som administratör och för mina kollegor. Slutresultatet blir ett
+      CRM-system som verkligen används.”
+    </p>
+    <p>- <i>Pernilla Axflo, analytiker, <a href="www.curonova.se">Curonova Consulting AB</a> </i></p>
+  </div>
 </div>
-
-<div class="col-md-9">
-<p>
-“Lime är duktiga på att utbilda och stötta sina kunder. En underbar användarsupport och mycket digitalt utbildningsmaterial underlättar både för mig som administratör och för mina kollegor. Slutresultatet blir ett CRM-system som verkligen används.”
-
-</p>
-</div>
-
-_\- Pernilla Axflo, analytiker, [Curonova Consulting AB]()_

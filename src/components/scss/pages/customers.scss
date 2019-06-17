@@ -1,4 +1,4 @@
-main#case{
+main#customers{
   section#hero {
     @include gradient-background($turquoise, $turquoise2);
   
@@ -29,32 +29,4 @@ main#case{
     }
     @media (min-width: 1200px) {}
   }
-
-section#body{
-  article{
-    padding: {
-      bottom: 40px;
-    }
-  }
-
-
-    
-
-  @media (min-width: 576px) {}
-  @media (min-width: 768px) {}
-  @media (min-width: 992px) {
-    article{
-      padding: {
-        right: 100px;
-        bottom: 40px;
-      }
-    }
-  }
 }
-
-
-  #CaseSidebar{
-    background-color: #f5f5f5;
-  }
-}
-

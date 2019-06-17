@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 
 export const HTMLContent = ({ content }) => (
   <div className="row" >
-  <div className="col-12">
-    <div dangerouslySetInnerHTML={{ __html: content }}  ></div>
+  <div className="col-12" dangerouslySetInnerHTML={{ __html: content }}>
   </div>
   </div>
 )

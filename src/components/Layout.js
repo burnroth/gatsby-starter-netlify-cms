@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Navbar from './navbar/Navbar'
 import Footer from './Footer'
 
-import './scss/imports.scss'
+import '../../assets/scss/imports.scss'
 import './Sections/font.css'
 
 const TemplateWrapper = ({ children }) => (

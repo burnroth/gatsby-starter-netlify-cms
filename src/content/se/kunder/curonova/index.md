@@ -4,7 +4,7 @@ title: Curonova Consulting AB
 subtitle: SÄKER FAKTURERING OCH ENKLARE KUNDUTSKICK
 date: 2019-02-01
 linkedinbild: "/hsb.jpg"
-card: "/hsb.jpg"
+card: "/curonova-card.jpg"
 metaDescription: "När bolaget grundades 2014 hanterade Curonova Consulting inledningsvis sina affärer i Excel. Men bara efter några månader.."
 quote: "“Vi arbetar inte i Lime CRM varje dag och systemet är lättillgängligt. Tack vare molnlagringen slipper vi dessutom göra serveruppdateringar och säkerhetskopieringar på egen hand.”"
 

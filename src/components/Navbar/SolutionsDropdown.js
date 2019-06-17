@@ -17,17 +17,19 @@ class SolutionsDropdown extends Component {
 
   handleClickOutside = event => {
     const solutionsDropdown = document.querySelector(
-      `a[name="solutionsDropdown"]` ||  null
+      `li[data-name="solutionsDropdown"]` ||  null
     );
-    if (!this.node.contains(event.target) && event.target.name !== "solutionsDropdown" ) {
+    if (!this.node.contains(event.target) && event.target.dataset.name !== "solutionsDropdown" ) {
       this.props.close();
     }
   };
 
   render() {
+
     const { navbar } = this.props.translations.translationsJson;
     const verticalsArray = navbar.solutions.verticals.verticalsArray;
     const landingPageArray = navbar.solutions.landingPages.pageArray;
+
     return (
       <div
         className="dropdown"

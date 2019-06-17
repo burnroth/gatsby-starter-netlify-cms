@@ -17,9 +17,9 @@ class ResourcesDropdown extends Component {
 
   handleClickOutside = event => {
      const resourcesDropdown = document.querySelector(
-       `a[name="resourcesDropdown"]` || null
+       `li[data-name="resourcesDropdown"]` || null
      );
-    if (!this.node.contains(event.target) && event.target.name !== "resourcesDropdown" ) {
+    if (!this.node.contains(event.target) && event.target.dataset.name !== "resourcesDropdown" ) {
       this.props.close();
     }
   };

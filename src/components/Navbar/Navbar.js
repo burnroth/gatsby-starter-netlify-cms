@@ -22,7 +22,7 @@ class Navbar extends Component {
   }
 
   handleClick(event) {
-    const name = event.target.name;
+    const name = event.target.dataset.name;
 
     this.setState(prevState => ({
       [name]: !prevState[name]
@@ -37,7 +37,7 @@ class Navbar extends Component {
     });
   }
 
-  render(){
+  render() {
     const { data } = this.props;
     const { navbar } = data.translationsJson;
     const { metaData } = data.translationsJson;
@@ -61,16 +61,20 @@ class Navbar extends Component {
               <div className="col-6 col-lg-7 d-flex">
                 <div className="align-items-center d-none d-lg-flex">
                   <div style={{ position: "relative" }}>
-                    <Link
-                      name="solutionsDropdown"
+                    <li
+                      data-name="solutionsDropdown"
                       className="dropdown-toggle nav-link"
                       onClick={this.handleClick}
-                      style={{ cursor: "pointer" }}
+                      style={{
+                        cursor: "pointer",
+                        userSelect: "none",
+                        fontSize: 16
+                      }}
                       to="#"
                     >
                       {navbar.solutions.title}
                       <span className="caret" />
-                    </Link>
+                    </li>
                     {this.state.solutionsDropdown ? (
                       <SolutionsDropdown
                         close={this.close}
@@ -86,16 +90,20 @@ class Navbar extends Component {
                     {navbar.pricing.title}
                   </Link>
                   <div style={{ position: "relative" }}>
-                    <Link
-                      name="resourcesDropdown"
+                    <li
+                      data-name="resourcesDropdown"
                       className="dropdown-toggle nav-link"
                       onClick={this.handleClick}
-                      style={{ cursor: "pointer" }}
+                      style={{
+                        cursor: "pointer",
+                        userSelect: "none",
+                        fontSize: 16
+                      }}
                       to="#"
                     >
                       {navbar.resources.title}
                       <span className="caret" />
-                    </Link>
+                    </li>
                     {this.state.resourcesDropdown ? (
                       <ResourcesDropdown
                         close={this.close}

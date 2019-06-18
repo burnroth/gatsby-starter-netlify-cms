@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Img from "gatsby-image";
 import { StaticQuery, graphql } from "gatsby";
 
 class WhySection extends Component {

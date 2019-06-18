@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BulletList from "../components/BulletList";
 import TrialFormButton from "../components/Buttons/TrialFormButton";
+import Button from "../components/Buttons/Button";
 import SEO from "../components/SEO";
 import DynamicReferenceGrid from "../components/DynamicReferenceGrid";
 
@@ -18,8 +19,12 @@ export const VerticalPageTemplate = ({
   list,
   usp,
   slug,
+  addon,
   ogImage,
-  references
+  references,
+  caseStudy,
+  contact,
+  download
 }) => (
   <main id="vertical">
     <SEO title={title} desc={description} ogImage={ogImage} />
@@ -62,14 +67,109 @@ export const VerticalPageTemplate = ({
             <TrialFormButton buttonText={usp.string} />
           </div>
           <div className="col-12 col-md-6 order-first order-md-last">
-            <Img alt={usp.image1.alt} fluid={usp.image1.image.childImageSharp.fluid} />
+            <Img
+              alt={usp.image1.alt}
+              fluid={usp.image1.image.childImageSharp.fluid}
+            />
           </div>
         </div>
       </div>
     </section>
     <Features heading={features.heading} gridItems={blurbs} />
 
-    <TrialFormButton />
+    <section id="addon" className="bg-grey-body btm60">
+      <div className="container-fluid">
+        <div
+          style={{
+            justifyContent: "space-evenly"
+          }}
+          className="row"
+        >
+          <div className="col-12 col-md-5">
+            <Img fluid={addon.image.childImageSharp.fluid} />
+          </div>
+          <div className="col-12 col-md-5">
+            <h2>{addon.heading}</h2>
+            <p>{addon.content}</p>
+            <Button href={addon.href} buttonText={addon.button} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="caseStudy">
+      <div className="container">
+        <div className="row justify-content-around">
+          <div className="col-12 col-md-6 col-lg-4">
+            <Img
+              fluid={caseStudy.image1.image.childImageSharp.fluid}
+              alt={caseStudy.image1.alt}
+            />
+          </div>
+          <div className="col-12 col-md-6 col-lg-6">
+            <h2>{caseStudy.heading} </h2>
+            <p>{caseStudy.quote}</p>
+
+            <p>
+              <i
+                style={{
+                  color: "#00b3a7",
+                  marginTop: 10
+                }}
+              >
+                {caseStudy.quotee}
+              </i>
+            </p>
+            <Button href={caseStudy.href} buttonText={caseStudy.button} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-6">
+            <h2>{contact.heading} </h2>
+            <p> {contact.content} </p>
+            <a className="btn btn-white" href={contact.href}>
+              {contact.button}
+            </a>
+          </div>
+          <div className="col-12 col-md-6">
+            <Img
+              fluid={contact.image1.image.childImageSharp.fluid}
+              alt={contact.image1.alt}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="download">
+      <div className="container">
+        <div className="row justify-content-around">
+          <div className="col-12 col-md-5">
+            <Img
+              fluid={download.image1.image.childImageSharp.fluid}
+              alt={download.image1.alt}
+            />
+          </div>
+          <div className="col-12 col-md-6">
+            <h2>{download.heading} </h2>
+            <p>{download.content} </p>
+            <Button
+              href={download.leftButton.href}
+              buttonText={download.leftButton.cta}
+            />
+            <Button
+              href={download.rightButton.href}
+              buttonText={download.rightButton.cta}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 );
 
@@ -87,8 +187,12 @@ const VerticalPage = ({ data }) => {
         blurbs={frontmatter.features.blurbs}
         features={frontmatter.features}
         usp={frontmatter.usp}
+        addon={frontmatter.addon}
         slug={fields.slug}
         references={frontmatter.references}
+        caseStudy={frontmatter.caseStudy}
+        contact={frontmatter.contact}
+        download={frontmatter.download}
       />
     </Layout>
   );
@@ -154,13 +258,80 @@ export const verticalPageQuery = graphql`
             image {
               childImageSharp {
                 fluid(maxWidth: 540, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
                 }
               }
             }
           }
           string
           text
+        }
+        addon {
+          href
+          heading
+          content
+          button
+          image {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
+          }
+        }
+        caseStudy {
+          heading
+          quote
+          quotee
+          button
+          href
+          image1 {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 350, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
+                }
+              }
+            }
+            alt
+          }
+        }
+        contact {
+          heading
+          content
+          button
+          href
+          image1 {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 650, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
+                }
+              }
+            }
+          }
+        }
+        download {
+          heading
+          content
+          leftButton {
+            cta
+            href
+          }
+          rightButton {
+            cta
+            href
+          }
+          image1 {
+            alt
+            image {
+              childImageSharp {
+                fluid(maxWidth: 800, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
+                }
+              }
+            }
+          }
         }
       }
     }

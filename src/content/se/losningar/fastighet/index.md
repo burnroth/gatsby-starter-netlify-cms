@@ -82,4 +82,47 @@ usp:
   string: Kom igång nu
   text: >-
     Som du vet så finns det en del utmaningar i fastighetsbranschen. Hyresgäster har höga förväntningar på servicenivå, samtidigt som informationsstrukturen ofta är komplex. Fastighetssystemen löser mycket, men de är oftast inte tillräckligt enkla för att effektivt hantera alla kundrelationer och ärenden. Det är här Lime CRM kommer in i bilden.
+
+addon:
+  href: /addons/#newsletter
+  heading: Bättre kont(r)akt med hyresgäster och köpare
+  content: Bygg en närmare relation till dina hyresgäster eller köpare av kommande nyproduktion genom relevanta utskick. Med Newsletter add-on till Lime CRM är det enkelt att skapa nischade mottagarlistor och att kommunicera rätt sak till rätt person. Så att du i slutändan kan förlänga, behålla eller teckna fler kontrakt.
+  button: Läs mer om Newsletter och våra andra add-ons
+  image: /addon.png
+
+caseStudy:
+  heading: Lyssna på din branschkollega!
+  quote: 
+    "“Lime CRM kändes direkt som ett modernt, snabbt och mycket smidigt verktyg. Dessutom kände vi att Lime som företag förstod vår verksamhet, gav oss mycket god input, och framförallt: de sålde ett färdigt system, inte en massa konsulttimmar”"
+  quotee: Peter Sandell, sälj- och avtalsansvarig på HSB Malmö
+  button: Läs mer
+  href: /kunder/hsb
+  image1:
+    alt: HSB Malmö är en av våra nöjda kunder
+    image: /hsb-card.jpg
+
+contact:
+  heading: CRM-experter utan fasad
+  content:
+    Vi har många fastighetslösningar i bakfickan och vet vad som krävs för att du ska få en enklare vardag – oavsett om du arbetar på ett kommunalt bostadsbolag, ett kommersiellt fastighetsbolag eller ett bostadsutvecklingsbolag. Vi hjälper dig gärna.
+  button: Kontakta Jonas
+  href: "mailto:jonas.jakobsson@lime.tech"
+  image1:
+    image: /kontakta-jonas.png
+    alt: Jonas Jakobsson Lime CRM
+
+download:
+  heading: Bli en expert du också
+  content: Med mer än 25 års erfarenhet kan vi det mesta om ärendehantering, säljstöd och annat inom CRM. Och vi delar gärna vår kunskap med dig! I våra posters kan du till exempel läsa mer om hur ett CRM-system förenklar din vardag och hur du lyckas med ditt CRM-projekt. Allt är gratis, så klart.
+  image1:
+    alt: Lyckas med din e-postmarknadsföring
+    image: /poster-magenta.jpg
+  leftButton:
+    cta: Nedladdningsbart material
+    href: /resurser
+  rightButton:
+    cta: CRM-bloggen
+    href: https://blogg.lime-crm.se
+
+
 ---

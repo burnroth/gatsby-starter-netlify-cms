@@ -31,7 +31,7 @@ export const VerticalPageTemplate = ({
     <section id="hero">
       <div className="container-fluid container-fluid-vertical-hero">
         <div className="row row-vertical-hero">
-          <div className="col-sm-12 col-md-6 col-vertical-hero">
+          <div className="col-sm-12 col-md-8 col-lg-6 col-vertical-hero">
             <div className="heading-vertical">
               <h1 className="title-large-light text-white h1-vertical-hero">
                 <strong>{hero.heading} </strong>
@@ -44,15 +44,18 @@ export const VerticalPageTemplate = ({
             </div>
           </div>
           <div
-            className="col-sm-6 hidden-xs col-md-6 hidden-sm col-vertical-hero"
-            style={{
-              backgroundImage: `url(${hero.image.image.publicURL})`,
-              backgroundPosition: "center top",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover"
-            }}
+          style={{
+            padding:0
+          }}
+            className="col-sm-6 col-md-6 col-vertical-hero d-none d-lg-block"
+            // style={{
+            //   backgroundImage: `url(${hero.image.image.publicURL})`,
+            //   backgroundPosition: "center top",
+            //   backgroundRepeat: "no-repeat",
+            //   backgroundSize: "cover"
+            // }}
           >
-            <div className="lp-hero-overlay" />
+            <Img fluid={hero.image.image.childImageSharp.fluid} />
           </div>
         </div>
       </div>
@@ -79,16 +82,12 @@ export const VerticalPageTemplate = ({
 
     <section id="addon" className="bg-grey-body btm60">
       <div className="container-fluid">
-        <div
-          style={{
-            justifyContent: "space-evenly"
-          }}
-          className="row"
+        <div className="row justify-content-center"
         >
-          <div className="col-12 col-md-5">
-            <Img fluid={addon.image.childImageSharp.fluid} />
+          <div className="col-12 col-md-4">
+            <Img fixed={addon.image.childImageSharp.fixed} />
           </div>
-          <div className="col-12 col-md-5">
+          <div className="col-12 col-md-4">
             <h2>{addon.heading}</h2>
             <p>{addon.content}</p>
             <Button href={addon.href} buttonText={addon.button} />
@@ -162,10 +161,9 @@ export const VerticalPageTemplate = ({
               href={download.leftButton.href}
               buttonText={download.leftButton.cta}
             />
-            <Button
-              href={download.rightButton.href}
-              buttonText={download.rightButton.cta}
-            />
+            <a className="btn btn-turq" href={download.rightButton.href}>
+              {download.rightButton.cta}
+            </a>
           </div>
         </div>
       </div>
@@ -215,7 +213,7 @@ export const verticalPageQuery = graphql`
             image {
               childImageSharp {
                 fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
               publicURL
@@ -242,7 +240,6 @@ export const verticalPageQuery = graphql`
           heading
           blurbs {
             image1 {
-              alt
               image {
                 publicURL
               }
@@ -273,8 +270,8 @@ export const verticalPageQuery = graphql`
           button
           image {
             childImageSharp {
-              fluid(maxWidth: 800, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
+              fixed(width: 540, quality: 100) {
+                ...GatsbyImageSharpFixed_withWebp_noBase64
               }
             }
           }

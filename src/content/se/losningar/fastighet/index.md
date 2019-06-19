@@ -13,7 +13,7 @@ hero:
     image: "/real-estate-crm.png"
     alt: Ett CRM du vill flytta till
 
-  list:
+  list: 
     - listObject: >-
         Få en samlad bild av hyresgäster, hyresobjekt, fastigheter och kontrakt.
     - listObject: Samla arbetsorder och ärenden i ett gemensamt, lättanvänt flöde.
@@ -22,25 +22,25 @@ hero:
 
 references:
   - image1:
-      alt: haj
+      alt: Skandia Fastigheter logo
       image: /skandia-fastigheter-logo.png
   - image1:
-      alt: haj
+      alt: Castellum logo
       image: /castellum-logo.png
   - image1:
-      alt: haj
+      alt: Svenska Bostäder logo
       image: /svenska-bostader.png
   - image1:
-      alt: haj
+      alt: Fabege logo
       image: /fabege-logo.png
   - image1:
-      alt: haj
+      alt: Familjebostäder logo
       image: /familjebostader-logo.png
 
 features:
   blurbs:
     - image1:
-        alt: haj
+        alt:  
         image: "/apartment.svg"
       rubrik: Kund- och fastighetsöversikt
 

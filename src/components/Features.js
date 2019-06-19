@@ -11,7 +11,7 @@ const Features = ({ gridItems, heading }) => (
         </div>
         {gridItems.map(item => (
           <div key={item.image1.image.id} className="col-12 col-md-3">
-            <img className="icon" src={item.image1.image.publicURL} alt="" />
+            <img className="icon" src={item.image1.image.publicURL} alt={item.rubrik} />
             <h4>{item.rubrik}</h4>
             <p>{item.text}</p>
           </div>

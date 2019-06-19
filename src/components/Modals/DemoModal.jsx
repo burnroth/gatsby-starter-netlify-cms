@@ -38,14 +38,14 @@ class DemoModal extends Component {
               <div className="col-12 justify-content-center">
                 <h1
                   style={{
-                    color: "black"
+                    color: "white"
                   }}
                 >
                   <strong>{modal.heading}</strong>
                 </h1>
                 <p
                   style={{
-                    color: "black"
+                    color: "white"
                   }}
                 >
                   {modal.description}

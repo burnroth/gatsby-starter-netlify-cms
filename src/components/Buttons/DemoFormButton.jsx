@@ -33,7 +33,7 @@ class DemoFormButton extends Component {
     const buttonText = lang.buttons.freeDemo;
 
     return (
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div style={{ display: "flex"}}>
         <button
           onClick={this.handleClick}
           id={id}

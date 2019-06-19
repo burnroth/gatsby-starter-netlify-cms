@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BulletList from "../components/BulletList";
 import TrialFormButton from "../components/Buttons/TrialFormButton";
+import DemoFormButton from "../components/Buttons/DemoFormButton";
 import Button from "../components/Buttons/Button";
 import SEO from "../components/SEO";
 import DynamicReferenceGrid from "../components/DynamicReferenceGrid";
@@ -44,9 +45,9 @@ export const VerticalPageTemplate = ({
             </div>
           </div>
           <div
-          style={{
-            padding:0
-          }}
+            style={{
+              padding: 0
+            }}
             className="col-sm-6 col-md-6 col-vertical-hero d-none d-lg-block"
             // style={{
             //   backgroundImage: `url(${hero.image.image.publicURL})`,
@@ -82,12 +83,18 @@ export const VerticalPageTemplate = ({
 
     <section id="addon" className="bg-grey-body btm60">
       <div className="container-fluid">
-        <div className="row justify-content-center"
-        >
+        <div className="row justify-content-center">
           <div className="col-12 col-md-4">
             <Img fixed={addon.image.childImageSharp.fixed} />
           </div>
-          <div className="col-12 col-md-4">
+          <div
+            className="col-12 col-md-4"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center"
+            }}
+          >
             <h2>{addon.heading}</h2>
             <p>{addon.content}</p>
             <Button href={addon.href} buttonText={addon.button} />
@@ -119,7 +126,9 @@ export const VerticalPageTemplate = ({
                 {caseStudy.quotee}
               </i>
             </p>
-            <Button href={caseStudy.href} buttonText={caseStudy.button} />
+            {caseStudy.href ? (
+              <Button href={caseStudy.href} buttonText={caseStudy.button} />
+            ) : null}
           </div>
         </div>
       </div>
@@ -131,13 +140,16 @@ export const VerticalPageTemplate = ({
           <div className="col-12 col-md-6">
             <h2>{contact.heading} </h2>
             <p> {contact.content} </p>
-            <a className="btn btn-white" href={contact.href}>
-              {contact.button}
-            </a>
+
+            {contact.button === "demo" ? (
+              <DemoFormButton buttonColor="btn-white" btn- />
+            ) : <a className="btn btn-white" href={contact.href}>
+            {contact.button}
+          </a>}
           </div>
           <div className="col-12 col-md-6">
             <Img
-              fluid={contact.image1.image.childImageSharp.fluid}
+              fixed={contact.image1.image.childImageSharp.fixed}
               alt={contact.image1.alt}
             />
           </div>
@@ -301,8 +313,8 @@ export const verticalPageQuery = graphql`
           image1 {
             image {
               childImageSharp {
-                fluid(maxWidth: 650, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp_noBase64
+                fixed(height: 282, quality: 100) {
+                  ...GatsbyImageSharpFixed_withWebp_noBase64
                 }
               }
             }

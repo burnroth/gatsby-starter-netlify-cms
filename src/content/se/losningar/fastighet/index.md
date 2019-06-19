@@ -108,7 +108,7 @@ contact:
   button: Kontakta Jonas
   href: "mailto:jonas.jakobsson@lime.tech"
   image1:
-    image: /kontakta-jonas.png
+    image: "./kontakta-jonas.png"
     alt: Jonas Jakobsson Lime CRM
 
 download:

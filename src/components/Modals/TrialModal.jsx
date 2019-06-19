@@ -36,10 +36,14 @@ class TrialModal extends Component {
           <div className="container">
             <div className="row">
               <div className="col-12 justify-content-center">
-                <h1>
+                <h1 style={{
+                  color: "white"
+                }}>
                   <strong>{modal.heading}</strong>
                 </h1>
-                <p>
+                <p style={{
+                  color: "white"
+                }}>
                   {modal.description}
                 </p>
                 <TrialForm />

@@ -80,7 +80,6 @@ addon:
 caseStudy:
   heading: Lyssna på din branschkollega!
   quote: “Det har blivit som ett socialt nätverk för företaget. Alla är inne och är aktiva, och skämtar och skojar. Det är ett starkt kulturskapande i det. Samtidigt ökar aktiviteten och alla kan se sin progress.”
-
   quotee: Olle Tjälldin, operativ chef och vVD Infometric
   button: Läs mer
   href: /kunder/infometric
@@ -89,17 +88,20 @@ caseStudy:
     image: /infometric-card.jpg
 
 contact:
-  heading: CRM-experter utan fasad
-  content: Vi har många fastighetslösningar i bakfickan och vet vad som krävs för att du ska få en enklare vardag – oavsett om du arbetar på ett kommunalt bostadsbolag, ett kommersiellt fastighetsbolag eller ett bostadsutvecklingsbolag. Vi hjälper dig gärna.
-  button: Kontakta Jonas
-  href: "mailto:jonas.jakobsson@lime.tech"
+  heading: Säljexperter med passion för B2B
+
+  content: Vi har levererat många CRM-lösningar för säljdrivna bolag genom åren. Mediq, Würth Industri Sverige, Malux och Swedol är bara några exempel. Dessutom har vi mer än 25 års egen erfarenhet. Nu ser vi fram emot att hjälpa ditt företag.
+
+
+  button: Kontakta Ted
+  href: "mailto:ted.bragfeldt@lime.tech"
   image1:
-    image: /kontakta-jonas.png
-    alt: Jonas Jakobsson Lime CRM
+    image: "./kontakta-ted.png"
+    alt: Ted Bragfeldt Lime CRM
 
 download:
   heading: Bli en expert du också
-  content: Med mer än 25 års erfarenhet kan vi det mesta om ärendehantering, säljstöd och annat inom CRM. Och vi delar gärna vår kunskap med dig! I våra posters kan du till exempel läsa mer om hur ett CRM-system förenklar din vardag och hur du lyckas med ditt CRM-projekt. Allt är gratis, så klart.
+  content: Med mer än 25 års erfarenhet kan vi det mesta om säljstöd, ärendehantering, kampanjhantering och annat inom CRM. Och vi delar gärna vår kunskap med dig! I våra posters kan du till exempel läsa mer om hur ett CRM-system förenklar din vardag och hur du lyckas med ditt CRM-projekt. Allt är gratis, så klart.
   image1:
     alt: Lyckas med din e-postmarknadsföring
     image: /poster-magenta.jpg

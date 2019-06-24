@@ -36,7 +36,7 @@ usp:
   heading: Minska din personalomsättning
   image1:
     alt: En bild på Lime CRM
-    image: "./crm-mobilanpassat.png"
+    image: "/crm-mobilanpassat.png"
   string: Kom igång nu
   text: >-
     Känns vardagen som en kamp mot klockan? Vi vet vet hur det är. Medarbetarna ska helst lägga minimalt med tid på administration för att kunna debitera fler timmar och höja marginalerna. Samtidigt måste all kund-, konsult- och projektinformation vara uppdaterad och tillgänglig för att alla ska kunna ge en bra leverans. Och stressen får inte ta över. Lösningen? Lime CRM.

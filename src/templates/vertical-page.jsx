@@ -134,28 +134,32 @@ export const VerticalPageTemplate = ({
       </div>
     </section>
 
-    <section id="contact">
-      <div className="container">
-        <div className="row">
-          <div className="col-12 col-md-6">
-            <h2>{contact.heading} </h2>
-            <p> {contact.content} </p>
+    {contact ? (
+      <section id="contact">
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-md-6">
+              <h2>{contact.heading} </h2>
+              <p> {contact.content} </p>
 
-            {contact.button === "demo" ? (
-              <DemoFormButton buttonColor="btn-white" btn- />
-            ) : <a className="btn btn-white" href={contact.href}>
-            {contact.button}
-          </a>}
-          </div>
-          <div className="col-12 col-md-6">
-            <Img
-              fixed={contact.image1.image.childImageSharp.fixed}
-              alt={contact.image1.alt}
-            />
+              {contact.button === "demo" ? (
+                <DemoFormButton buttonColor="btn-white" btn- />
+              ) : (
+                <a className="btn btn-white" href={contact.href}>
+                  {contact.button}
+                </a>
+              )}
+            </div>
+            <div className="col-12 col-md-6">
+              <Img
+                fixed={contact.image1.image.childImageSharp.fixed}
+                alt={contact.image1.alt}
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    ) : null}
 
     <section id="download">
       <div className="container">

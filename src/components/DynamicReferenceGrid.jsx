@@ -10,7 +10,7 @@ class DynamicReferenceGrid extends Component {
         <div className="container">
           <div className="row justify-content-center">
             {references.map(reference => (
-              <div key={reference.image1.image.id} className="col-6 col-md-2">
+              <div key={Math.random()} className="col-6 col-md-2">
                 <Image
                   fixed={reference.image1.image.childImageSharp.fixed}
                   alt={reference.alt}

@@ -21,7 +21,6 @@ class VideoWithText extends Component {
                   className="embed-responsive-item"
                   src={`https://www.youtube.com/embed/${frontmatter.videoId}`}
                   frameBorder="0"
-                  title="maggan"
                   cc_load_policy="1"
                   allowFullScreen
                 />
@@ -30,7 +29,7 @@ class VideoWithText extends Component {
           </div>
           <div className="row">
             <div
-              style={{ marginTop: "40px" }}
+              style={{ marginTop: 40 }}
               className="col-12 justify-content-between align-items-center"
             >
               <DemoFormButton buttonClass="mx-auto" buttonColor="btn-turq" />

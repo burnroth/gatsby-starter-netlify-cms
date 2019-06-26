@@ -12,8 +12,8 @@ cards:
       heading: Sälj & CRM
       price: 329kr
       priceSmall: Per månad & användare
-      content: |
-       "Effektiv affärshantering och lätt att hitta nya potentiella kunder. Bra stöd för dina vanligaste arbetsuppgifter. '<br>' En roligare och bättre arbetsvardag med vårt enklaste CRM-system!"
+      content: 
+       'Effektiv affärshantering och lätt att hitta nya potentiella kunder. Bra stöd för dina vanligaste arbetsuppgifter. En roligare och bättre arbetsvardag med vårt enklaste CRM-system!'
       button:
         text: Testa Lime Go
         href: https://lime-go.se
@@ -34,6 +34,7 @@ cards:
       content: 
         "Ett partnerskap som lyfter er verksamhet. Med över 1000 CRM-införanden varje år vet vi vad som krävs. 
         För en dialog med våra branschexperter.
+        <br><br>
         Dina behov är unika. När vi vet hur vi ska hjälpa dig så erbjuder vi en konkurrenskraftig offert."
       button:
         text: Kontakta oss

@@ -33,7 +33,7 @@ export const PricePageTemplate = ({ title, description, hero, cards }) => {
                   <p className="card-subtitle mb-2">{card.card.title} </p>
                   <h5 className="card-title">{card.card.heading} </h5>
                   <h1 className="title-light">{card.card.price} </h1>
-                  <p className="card-text">{card.card.content}</p>
+                  <p dangerouslySetInnerHTML={{ __html: card.card.content }} className="card-text"/>
                 </div>
                 {card.card.button.href ? (
                     <a href={card.card.button.href} className="btn btn-turq-ghost">

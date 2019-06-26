@@ -21,6 +21,7 @@ class VideoWithText extends Component {
                   className="embed-responsive-item"
                   src={`https://www.youtube.com/embed/${frontmatter.videoId}`}
                   frameBorder="0"
+                  title={frontmatter.videoId}
                   cc_load_policy="1"
                   allowFullScreen
                 />

@@ -228,8 +228,8 @@ export const verticalPageQuery = graphql`
           image {
             image {
               childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
+                fluid(maxWidth: 1000, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
                 }
               }
               publicURL

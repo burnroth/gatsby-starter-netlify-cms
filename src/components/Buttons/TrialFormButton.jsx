@@ -29,9 +29,10 @@ class TrialFormButton extends Component {
     const buttonClass = this.props.buttonClass;
     const id = this.props.id ? this.props.id : "demoButtonMaggan";
     const buttonText = this.props.buttonText ? this.props.buttonText : lang.buttons.freeTrial;
+    const wrapperClass = this.props.wrapperClass;
 
     return (
-      <div style={{ display: "flex" }}>
+      <div className={wrapperClass} style={{ display: "flex" }}>
         <button
           onClick={this.handleClick}
           id={id}

@@ -8,7 +8,10 @@ class ReferenceGrid extends Component {
     const references = data.markdownRemark.frontmatter.references;
 
     return (
-      <section id="references">
+      <section style={{
+        marginTop: 40,
+        marginBottom: 20
+      }} id="references">
         <div className="container">
           <div className="row">
             {references.map(reference => (

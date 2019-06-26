@@ -18,7 +18,7 @@ class SEO extends Component {
 
   render() {
     const title = this.props.title;
-    const desc = this.props.description;
+    const desc = this.props.desc;
     const ogImage = this.props.ogImage;
     const pointToSelf = this.state.pointToSelf;
 
@@ -50,6 +50,7 @@ class SEO extends Component {
         <title>{title}</title>
         <meta name="description" content={desc} />
         <link rel="canonical" href={pointToSelf} />
+        <meta name="robots" content="noindex, nofollow"/>
         <link
           rel="apple-touch-icon"
           sizes="180x180"

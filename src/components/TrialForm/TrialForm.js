@@ -1,83 +1,83 @@
-import React, { Component } from "react";
-import { graphql, StaticQuery } from "gatsby";
-import Button from "../Buttons/Button";
-import AutoComplete from "./AutoComplete";
-import Suggestions from "./Suggestions";
-import Validator from "./Validator";
+import React, { Component } from 'react'
+import { graphql, StaticQuery } from 'gatsby'
+import Button from '../Buttons/Button'
+import AutoComplete from './AutoComplete'
+import Suggestions from './Suggestions'
+import Validator from './Validator'
 
 const endpoint =
-  "https://gcqupcrlpd.execute-api.eu-west-1.amazonaws.com/v1/staging/search";
+  'https://gcqupcrlpd.execute-api.eu-west-1.amazonaws.com/v1/staging/search'
 
 class TrialForm extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
-      query: "",
+      query: '',
       results: [],
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      company: "",
-      companyId: "",
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      company: '',
+      companyId: '',
       checked: false,
-      selected: false
-    };
+      selected: false,
+    }
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.getResults = this.getResults.bind(this);
-    this.handleUserChoice = this.handleUserChoice.bind(this);
-    this.getSearchQuery = this.getSearchQuery.bind(this);
-    this.getInfo = this.getInfo.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleInputChange = this.handleInputChange.bind(this)
+    this.getResults = this.getResults.bind(this)
+    this.handleUserChoice = this.handleUserChoice.bind(this)
+    this.getSearchQuery = this.getSearchQuery.bind(this)
+    this.getInfo = this.getInfo.bind(this)
   }
 
   getInfo = () => {
-    const postQuery = this.state.query;
+    const postQuery = this.state.query
     const postBody = JSON.stringify({
       query:
-        "query findOrganizations($query: String!) { " +
-        "organizations(query: $query) { " +
-        "id name city " +
-        "}}",
-      variables: { query: postQuery }
-    });
+        'query findOrganizations($query: String!) { ' +
+        'organizations(query: $query) { ' +
+        'id name city ' +
+        '}}',
+      variables: { query: postQuery },
+    })
 
     fetch(endpoint, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json"
+        'Content-Type': 'application/json',
       },
-      body: postBody
+      body: postBody,
     })
       .then(response => response.json())
       .then(orgArray => {
-        this.getResults(orgArray.data.organizations);
-      });
-  };
+        this.getResults(orgArray.data.organizations)
+      })
+  }
 
   getResults(results) {
     this.setState({
-      results: results
-    });
+      results: results,
+    })
   }
 
   getSearchQuery(value) {
     this.setState(
       {
         selected: false,
-        query: value
+        query: value,
       },
       () => {
         if (this.state.query && this.state.query.length > 1) {
           if (this.state.query.length % 2 === 0) {
-            this.getInfo();
+            this.getInfo()
           }
         } else if (!this.state.query) {
         }
       }
-    );
+    )
   }
 
   handleUserChoice(event) {
@@ -85,45 +85,45 @@ class TrialForm extends Component {
       company: event.target.title,
       companyId: event.target.value,
       query: event.target.text,
-      selected: true
-    });
+      selected: true,
+    })
   }
 
   handleInputChange(event) {
-    const name = event.target.name;
-    const value = event.target.value;
+    const name = event.target.name
+    const value = event.target.value
 
     this.setState({
       [name]: value,
-      selected: false
-    });
+      selected: false,
+    })
   }
 
   handleSubmit(event) {
-    const endpoint = "https://postb.in/zOfWyxHz";
+    const endpoint = 'https://postb.in/zOfWyxHz'
     const data = {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       email: this.state.email,
       phone: this.state.phone,
       company: this.state.company,
-      companyId: this.state.companyId
-    };
-    const payload = JSON.stringify(data);
+      companyId: this.state.companyId,
+    }
+    const payload = JSON.stringify(data)
 
     fetch(endpoint, {
-      method: "POST",
-      body: payload
+      method: 'POST',
+      body: payload,
     })
-      .then(console.log("Signup submitted"))
+      .then(console.log('Signup submitted'))
       .catch(err => {
-        console.error(err);
-      });
-    event.preventDefault();
+        console.error(err)
+      })
+    event.preventDefault()
   }
 
   render() {
-    const form = this.props.data.translationsJson.forms;
+    const form = this.props.data.translationsJson.forms
 
     return (
       <form onSubmit={this.handleSubmit} action="#">
@@ -186,7 +186,7 @@ class TrialForm extends Component {
         </div>
         <Button buttonText="Skapa ditt konto" buttonColor="btn-white" />
       </form>
-    );
+    )
   }
 }
 
@@ -229,4 +229,4 @@ export default () => (
     `}
     render={(data, count) => <TrialForm data={data} count={count} />}
   />
-);
+)

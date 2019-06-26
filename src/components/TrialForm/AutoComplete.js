@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 class AutoComplete extends Component {
   handleInputChange = event => {
     this.props.getSearchQuery(event.target.value)
-  };
-  
+  }
+
   render() {
     return (
       <div>
@@ -15,8 +15,8 @@ class AutoComplete extends Component {
           placeholder={this.props.placeholder}
         />
       </div>
-    );
+    )
   }
 }
 
-export default AutoComplete;
+export default AutoComplete

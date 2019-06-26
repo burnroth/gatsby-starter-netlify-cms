@@ -2,8 +2,7 @@ module.exports = {
   siteMetadata: {
     language: 'fi',
     title: 'Lime CRM',
-    description:
-    'Lime CRM marketsites'
+    description: 'Lime CRM marketsites',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -26,10 +25,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-          bucketName: 'hacktuesday-fi',
-          region: 'eu-west-1',
+        bucketName: 'hacktuesday-fi',
+        region: 'eu-west-1',
       },
-  },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -74,9 +73,9 @@ module.exports = {
       },
     },
     {
-      resolve:'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
+      resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
-        develop: true,            // Activates purging in npm run develop
+        develop: true, // Activates purging in npm run develop
         purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
       },
     }, // must be after other CSS plugins

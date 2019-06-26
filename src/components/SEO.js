@@ -1,47 +1,48 @@
-import React, { Component } from "react";
-import Helmet from "react-helmet";
-import { lang } from "../../assets/translations/lang";
+import React, { Component } from 'react'
+import Helmet from 'react-helmet'
+import { lang } from '../../assets/translations/lang'
 
 class SEO extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      pointToSelf: ""
-    };
+      pointToSelf: '',
+    }
   }
 
   componentDidMount() {
     this.setState({
-      pointToSelf: document.URL
-    });
+      pointToSelf: document.URL,
+    })
   }
 
   render() {
-    const title = this.props.title;
-    const desc = this.props.desc;
-    const ogImage = this.props.ogImage;
-    const pointToSelf = this.state.pointToSelf;
+    const title = this.props.title
+    const desc = this.props.desc
+    const ogImage = this.props.ogImage
+    const pointToSelf = this.state.pointToSelf
 
-    const language = lang.language;
-    let languageAttribute = "";
+    const language = lang.language
+    let languageAttribute = ''
 
     switch (language) {
-      case "se":
-        languageAttribute = "sv-SE";
-        break;
-      case "dk":
-        languageAttribute = "da-DK";
-        break;
-      case "no":
-        languageAttribute = "nb-NO";
-        break;
-      case "fi":
-        languageAttribute = "fi-FI";
-        break;
-      case "com":
-        languageAttribute = "en-GB";
-        break;
-      default : languageAttribute = "sv-SE";
+      case 'se':
+        languageAttribute = 'sv-SE'
+        break
+      case 'dk':
+        languageAttribute = 'da-DK'
+        break
+      case 'no':
+        languageAttribute = 'nb-NO'
+        break
+      case 'fi':
+        languageAttribute = 'fi-FI'
+        break
+      case 'com':
+        languageAttribute = 'en-GB'
+        break
+      default:
+        languageAttribute = 'sv-SE'
     }
 
     return (
@@ -50,7 +51,7 @@ class SEO extends Component {
         <title>{title}</title>
         <meta name="description" content={desc} />
         <link rel="canonical" href={pointToSelf} />
-        <meta name="robots" content="noindex, nofollow"/>
+        <meta name="robots" content="noindex, nofollow" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -83,12 +84,12 @@ class SEO extends Component {
           content={
             ogImage
               ? ogImage
-              : "https://lime-crm.se/assets/img/lime-crm-sveriges-basta-crm-system.16838ad4.png"
+              : 'https://lime-crm.se/assets/img/lime-crm-sveriges-basta-crm-system.16838ad4.png'
           }
         />
       </Helmet>
-    );
+    )
   }
 }
 
-export default SEO;
+export default SEO

@@ -2,17 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 export const HTMLContent = ({ content }) => (
-  <div className="row" >
-  <div className="col-12" dangerouslySetInnerHTML={{ __html: content }}>
-  </div>
+  <div className="row">
+    <div className="col-12" dangerouslySetInnerHTML={{ __html: content }} />
   </div>
 )
 
 const Content = ({ content }) => (
   <div className="row">
-    <div className="col-12">
-    {content}
-    </div>
+    <div className="col-12">{content}</div>
   </div>
 )
 

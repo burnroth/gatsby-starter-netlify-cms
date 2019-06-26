@@ -1,46 +1,46 @@
-import React, { Component } from "react";
-import { Link, StaticQuery, graphql } from "gatsby";
-import SolutionsDropdown from "./SolutionsDropdown";
-import ResourcesDropdown from "./ResourcesDropdown";
-import MobileDropdown from "./MobileDropdown";
-import logo from "../../../static/img/lime-crm-logo.svg";
-import menu from "../../../static/img/menu.svg";
-import Button from "../Buttons/Button";
+import React, { Component } from 'react'
+import { Link, StaticQuery, graphql } from 'gatsby'
+import SolutionsDropdown from './SolutionsDropdown'
+import ResourcesDropdown from './ResourcesDropdown'
+import MobileDropdown from './MobileDropdown'
+import logo from '../../../static/img/lime-crm-logo.svg'
+import menu from '../../../static/img/menu.svg'
+import Button from '../Buttons/Button'
 
 class Navbar extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       solutionsDropdown: false,
       resourcesDropdown: false,
-      navbarToggler: false
-    };
+      navbarToggler: false,
+    }
 
-    this.handleClick = this.handleClick.bind(this);
-    this.close = this.close.bind(this);
+    this.handleClick = this.handleClick.bind(this)
+    this.close = this.close.bind(this)
   }
 
   handleClick(event) {
-    const name = event.target.dataset.name;
+    const name = event.target.dataset.name
 
     this.setState(prevState => ({
-      [name]: !prevState[name]
-    }));
+      [name]: !prevState[name],
+    }))
   }
 
   close() {
     this.setState({
       solutionsDropdown: false,
       resourcesDropdown: false,
-      navbarToggler: false
-    });
+      navbarToggler: false,
+    })
   }
 
   render() {
-    const { data } = this.props;
-    const { navbar } = data.translationsJson;
-    const { metaData } = data.translationsJson;
+    const { data } = this.props
+    const { navbar } = data.translationsJson
+    const { metaData } = data.translationsJson
 
     return (
       <div>
@@ -60,15 +60,15 @@ class Navbar extends Component {
               </div>
               <div className="col-6 col-lg-7 d-flex">
                 <div className="align-items-center d-none d-lg-flex">
-                  <div style={{ position: "relative" }}>
+                  <div style={{ position: 'relative' }}>
                     <li
                       data-name="solutionsDropdown"
                       className="dropdown-toggle nav-link"
                       onClick={this.handleClick}
                       style={{
-                        cursor: "pointer",
-                        userSelect: "none",
-                        fontSize: 16
+                        cursor: 'pointer',
+                        userSelect: 'none',
+                        fontSize: 16,
                       }}
                       to="#"
                     >
@@ -89,15 +89,15 @@ class Navbar extends Component {
                   <Link className="nav-link" to={navbar.pricing.href}>
                     {navbar.pricing.title}
                   </Link>
-                  <div style={{ position: "relative" }}>
+                  <div style={{ position: 'relative' }}>
                     <li
                       data-name="resourcesDropdown"
                       className="dropdown-toggle nav-link"
                       onClick={this.handleClick}
                       style={{
-                        cursor: "pointer",
-                        userSelect: "none",
-                        fontSize: 16
+                        cursor: 'pointer',
+                        userSelect: 'none',
+                        fontSize: 16,
                       }}
                       to="#"
                     >
@@ -131,10 +131,10 @@ class Navbar extends Component {
                   onClick={this.handleClick}
                 />
                 <div
-                  style={{ width: "100%" }}
+                  style={{ width: '100%' }}
                   className="d-none d-lg-flex justify-content-around align-items-center"
                 >
-                  <Link style={{ display: "flex" }} to="/">
+                  <Link style={{ display: 'flex' }} to="/">
                     {navbar.contact}
                   </Link>
                   <Button
@@ -154,7 +154,7 @@ class Navbar extends Component {
           />
         ) : null}
       </div>
-    );
+    )
   }
 }
 
@@ -215,4 +215,4 @@ export default () => (
     `}
     render={(data, count) => <Navbar data={data} count={count} />}
   />
-);
+)

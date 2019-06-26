@@ -1,17 +1,20 @@
-import React, { Component } from "react";
-import { StaticQuery, graphql } from "gatsby";
-import Image from "gatsby-image";
+import React, { Component } from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import Image from 'gatsby-image'
 
 class ReferenceGrid extends Component {
   render() {
-    const { data } = this.props;
-    const references = data.markdownRemark.frontmatter.references;
+    const { data } = this.props
+    const references = data.markdownRemark.frontmatter.references
 
     return (
-      <section style={{
-        marginTop: 40,
-        marginBottom: 20
-      }} id="references">
+      <section
+        style={{
+          marginTop: 40,
+          marginBottom: 20,
+        }}
+        id="references"
+      >
         <div className="container">
           <div className="row">
             {references.map(reference => (
@@ -25,7 +28,7 @@ class ReferenceGrid extends Component {
           </div>
         </div>
       </section>
-    );
+    )
   }
 }
 
@@ -56,4 +59,4 @@ export default () => (
     `}
     render={(data, count) => <ReferenceGrid data={data} count={count} />}
   />
-);
+)

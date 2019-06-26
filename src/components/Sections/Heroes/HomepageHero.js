@@ -1,20 +1,14 @@
-import React, { Component } from "react";
-import { StaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
-import TrialFormButton from "../../Buttons/TrialFormButton";
-import DemoFormButton from "../../Buttons/DemoFormButton";
-
+import React, { Component } from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import TrialFormButton from '../../Buttons/TrialFormButton'
+import DemoFormButton from '../../Buttons/DemoFormButton'
 
 class Hero extends Component {
-
   render() {
-    const { data } = this.props;
-    const { freeDemo, freeTrial } = data.translationsJson.buttons;
-    const {
-      heroImage1,
-      heading,
-      description
-    } = data.markdownRemark.frontmatter;
+    const { data } = this.props
+    const { freeDemo, freeTrial } = data.translationsJson.buttons
+    const { heroImage1, heading, description } = data.markdownRemark.frontmatter
 
     return (
       <section id="hero" className="bg-turq">
@@ -45,12 +39,11 @@ class Hero extends Component {
                 fluid={heroImage1.image.childImageSharp.fluid}
                 alt={heroImage1.alt}
               />
-
             </div>
           </div>
         </div>
       </section>
-    );
+    )
   }
 }
 
@@ -86,4 +79,4 @@ export default () => (
     `}
     render={(data, count) => <Hero data={data} count={count} />}
   />
-);
+)

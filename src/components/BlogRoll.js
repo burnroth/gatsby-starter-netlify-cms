@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link, graphql, StaticQuery } from "gatsby";
-import Img from "gatsby-image";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link, graphql, StaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
 class BlogRoll extends React.Component {
   render() {
-    const { data } = this.props;
-    const { edges: posts } = data.allMarkdownRemark;
+    const { data } = this.props
+    const { edges: posts } = data.allMarkdownRemark
 
     return (
       <div className="container">
@@ -18,9 +18,7 @@ class BlogRoll extends React.Component {
                   <div className="card-image">
                     <Link className="" to={post.fields.slug}>
                       <Img
-                        fixed={
-                          post.frontmatter.card.childImageSharp.fixed
-                        }
+                        fixed={post.frontmatter.card.childImageSharp.fixed}
                       />
                     </Link>
                   </div>
@@ -37,17 +35,17 @@ class BlogRoll extends React.Component {
             ))}
         </div>
       </div>
-    );
+    )
   }
 }
 
 BlogRoll.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array
-    })
-  })
-};
+      edges: PropTypes.array,
+    }),
+  }),
+}
 
 export default () => (
   <StaticQuery
@@ -87,4 +85,4 @@ export default () => (
     `}
     render={(data, count) => <BlogRoll data={data} count={count} />}
   />
-);
+)

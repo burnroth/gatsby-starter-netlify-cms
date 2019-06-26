@@ -1,8 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Lime CRM Website 2.0',
-    description:
-      'We create customer magnets',
+    description: 'We create customer magnets',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -25,10 +24,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-          bucketName: 'hacktuesday-dk',
-          region: 'eu-west-1',
+        bucketName: 'hacktuesday-dk',
+        region: 'eu-west-1',
       },
-  },
+    },
     // {
     //   resolve: 'gatsby-source-filesystem',
     //   options: {
@@ -73,10 +72,10 @@ module.exports = {
       },
     },
     {
-      resolve:'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
+      resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
-        develop: true,            // Activates purging in npm run develop
-        // purgeOnly: ['/all.scss'], 
+        develop: true, // Activates purging in npm run develop
+        // purgeOnly: ['/all.scss'],
       },
     }, // must be after other CSS plugins
     'gatsby-plugin-netlify', // make sure to keep it last in the array

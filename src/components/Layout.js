@@ -20,7 +20,6 @@ const TemplateWrapper = ({ children }) => (
     `}
     render={data => (
       <div>
-
         <Navbar />
         <div>{children}</div>
         <Footer />

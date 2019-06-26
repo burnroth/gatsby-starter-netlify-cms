@@ -1,34 +1,36 @@
-import React, { Component } from "react";
-import { Link } from "gatsby";
+import React, { Component } from 'react'
+import { Link } from 'gatsby'
 /* eslint-disable */
 class SolutionsDropdown extends Component {
   constructor(props) {
-    super(props);
-    this.handleClickOutside = this.handleClickOutside.bind(this);
+    super(props)
+    this.handleClickOutside = this.handleClickOutside.bind(this)
   }
 
   componentDidMount() {
-    document.addEventListener("mousedown", this.handleClickOutside);
+    document.addEventListener('mousedown', this.handleClickOutside)
   }
 
   componentWillUnmount() {
-    document.removeEventListener("mousedown", this.handleClickOutside);
+    document.removeEventListener('mousedown', this.handleClickOutside)
   }
 
   handleClickOutside = event => {
     const solutionsDropdown = document.querySelector(
-      `li[data-name="solutionsDropdown"]` ||  null
-    );
-    if (!this.node.contains(event.target) && event.target.dataset.name !== "solutionsDropdown" ) {
-      this.props.close();
+      `li[data-name="solutionsDropdown"]` || null
+    )
+    if (
+      !this.node.contains(event.target) &&
+      event.target.dataset.name !== 'solutionsDropdown'
+    ) {
+      this.props.close()
     }
-  };
+  }
 
   render() {
-
-    const { navbar } = this.props.translations.translationsJson;
-    const verticalsArray = navbar.solutions.verticals.verticalsArray;
-    const landingPageArray = navbar.solutions.landingPages.pageArray;
+    const { navbar } = this.props.translations.translationsJson
+    const verticalsArray = navbar.solutions.verticals.verticalsArray
+    const landingPageArray = navbar.solutions.landingPages.pageArray
 
     return (
       <div
@@ -70,8 +72,8 @@ class SolutionsDropdown extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default SolutionsDropdown;
+export default SolutionsDropdown

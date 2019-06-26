@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { StaticQuery, graphql } from "gatsby";
-import Image from "gatsby-image";
-import Button from "../../Buttons/Button";
+import React, { Component } from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import Image from 'gatsby-image'
+import Button from '../../Buttons/Button'
 
 class Pyramid extends Component {
   render() {
-    const { data } = this.props;
-    const { html, frontmatter } = data.markdownRemark;
+    const { data } = this.props
+    const { html, frontmatter } = data.markdownRemark
     const buttonText = data.translationsJson.buttons.freeDemo
 
     return (
@@ -22,11 +22,11 @@ class Pyramid extends Component {
               className="col-12 col-md-6 content"
               dangerouslySetInnerHTML={{ __html: html }}
             />
-            <Button buttonText={buttonText} buttonClass="mx-auto"/>
+            <Button buttonText={buttonText} buttonClass="mx-auto" />
           </div>
         </div>
       </section>
-    );
+    )
   }
 }
 
@@ -59,4 +59,4 @@ export default () => (
     `}
     render={(data, count) => <Pyramid data={data} count={count} />}
   />
-);
+)

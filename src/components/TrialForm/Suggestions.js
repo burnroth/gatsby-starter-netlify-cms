@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
 class Suggestions extends Component {
   render() {
@@ -11,13 +11,12 @@ class Suggestions extends Component {
             title={result.name}
             value={result.id}
             className="suggestion"
-            
           >
             {result.name}, {result.city}
           </option>
         ))}
       </div>
-    );
+    )
   }
 }
-export default Suggestions;
+export default Suggestions

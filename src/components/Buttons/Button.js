@@ -1,16 +1,16 @@
-import React from "react";
-import {Link} from 'gatsby'
+import React from 'react'
+import { Link } from 'gatsby'
 
 const Button = ({
   buttonText,
-  buttonColor = "btn-turq",
-  buttonClass = "",
+  buttonColor = 'btn-turq',
+  buttonClass = '',
   onClick = null,
-  id = "",
-  href = ""
+  id = '',
+  href = '',
 }) =>
   href ? (
-    <Link to={href} className={`btn ${buttonClass} ${buttonColor}`} >
+    <Link to={href} className={`btn ${buttonClass} ${buttonColor}`}>
       {buttonText}
     </Link>
   ) : (
@@ -21,6 +21,6 @@ const Button = ({
     >
       {buttonText}
     </button>
-  );
+  )
 
-export default Button;
+export default Button

@@ -27,7 +27,8 @@ class TrialFormButton extends Component {
       ? this.props.buttonColor
       : "btn-turq";
     const buttonClass = this.props.buttonClass;
-    const id = this.props.id ? this.props.id : "demoButtonMaggan";
+    const id = this.props.id ? this.props.id : "trialButton";
+    
     const buttonText = this.props.buttonText ? this.props.buttonText : lang.buttons.freeTrial;
     const wrapperClass = this.props.wrapperClass;
 

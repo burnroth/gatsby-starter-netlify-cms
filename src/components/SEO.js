@@ -48,7 +48,7 @@ class SEO extends Component {
     return (
       <Helmet>
         <html lang={languageAttribute} />
-        <title>{title}</title>
+        <title>{`Lime CRM - ${title}`}</title>
         <meta name="description" content={desc} />
         <link rel="canonical" href={pointToSelf} />
         <meta name="robots" content="noindex, nofollow" />

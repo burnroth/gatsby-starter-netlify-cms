@@ -1,74 +1,138 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React, { Component } from "react";
+import { Link, StaticQuery, graphql } from "gatsby";
+import logo from "../../static/img/lime-crm-logo.svg";
 
-const Footer = class extends React.Component {
+class Footer extends Component {
   render() {
+    const { data } = this.props;
+    const { footer } = data.translationsJson;
+
+    const internalLink = key => {
+      return (
+        <li>
+          <a href={key.href}>{key.linkText} </a>
+        </li>
+      );
+    };
+    const externalLink = key => {
+      return (
+        <li>
+          <a href={key.href}>{key.linkText} </a>
+        </li>
+      );
+    };
+
     return (
-      <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
-          <img alt="Kaldi" style={{ width: '14em', height: '10em' }} />
-        </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
-            <div className="columns">
-              <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/about">
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
-                        Latest Stories
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
-              </div>
+      <footer>
+        <div className="container">
+          <div className="row justify-content-end">
+            <div className="col-lg-3">
+              <h6>{footer.about.title.toUpperCase()} </h6>
+
+              <ul className="list-unstyled">
+                {footer.about.aboutArray.map(key => {
+                  const href = key.href;
+
+                  if (href.includes("www") || href.includes("https")) {
+                    return externalLink(key);
+                  } else {
+                    return internalLink(key);
+                  }
+                })}
+              </ul>
+            </div>
+
+            <div className="col-lg-3">
+              <h6>{footer.crmSystems.title.toUpperCase()} </h6>
+
+              <ul className="list-unstyled">
+                {footer.crmSystems.crmArray.map(key => {
+                  const href = key.href;
+
+                  if (href.includes("www") || href.includes("https")) {
+                    return externalLink(key);
+                  } else {
+                    return internalLink(key);
+                  }
+                })}
+              </ul>
+            </div>
+
+            <div className="col-lg-3">
+              <h6>{footer.investors.title.toUpperCase()} </h6>
+
+              <ul className="list-unstyled">
+                {footer.investors.investorsArray.map(key => {
+                  const href = key.href;
+
+                  if (href.includes("www") || href.includes("https")) {
+                    return externalLink(key);
+                  } else {
+                    return internalLink(key);
+                  }
+                })}
+              </ul>
+            </div>
+            <div className="col-lg-2">
+              <h6>{footer.language.title.toUpperCase()} </h6>
+
+              <ul className="list-unstyled">
+                {footer.language.languageArray.map(key => {
+                  const href = key.href;
+
+                  if (href.includes("www") || href.includes("https")) {
+                    return externalLink(key);
+                  } else {
+                    return internalLink(key);
+                  }
+                })}
+              </ul>
             </div>
           </div>
         </div>
       </footer>
-    )
+    );
   }
 }
 
-export default Footer
+export default () => (
+  <StaticQuery
+    query={graphql`
+      query FooterQuery {
+        translationsJson {
+          footer {
+            about {
+              title
+              aboutArray {
+                linkText
+                href
+              }
+            }
+            crmSystems {
+              title
+              crmArray {
+                linkText
+                href
+              }
+            }
+            investors {
+              title
+              investorsArray {
+                linkText
+                href
+              }
+            }
+            language {
+              title
+              languageArray {
+                linkText
+                href
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={(data, count) => <Footer data={data} count={count} />}
+  />
+);

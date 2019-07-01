@@ -11,7 +11,7 @@ export const CustomersPageTemplate = ({
   subtitle
 }) => (
   <main id="customers">
-    <SEO title={`Lime CRM - ${title}`} desc={description} slug={slug} />
+    <SEO title={title} desc={description} slug={slug} />
     <section id="hero">
       <div className="container">
         <div className="row">

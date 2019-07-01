@@ -56,7 +56,6 @@ module.exports = {
     },
     `gatsby-transformer-json`,
 
-    `gatsby-transformer-xml`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

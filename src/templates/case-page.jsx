@@ -23,7 +23,7 @@ export const CaseTemplate = ({
   return (
     <main id="case">
       <SEO
-        title={`Lime CRM - ${title} är en av våra nöjda kunder`}
+        title={`${title} är en av våra nöjda kunder`}
         desc={description}
       />
       <section id="hero">

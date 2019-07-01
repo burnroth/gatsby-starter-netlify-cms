@@ -5,4 +5,4 @@ const translations = shell.ls(`./assets/translations/${language}/lang.json`);
 
 shell.cp(translations[0], './assets/translations/lang.json');
 shell.cp(fileArray[0], 'gatsby-config.js');
-shell.exec('npm run clean && gatsby develop');
+shell.exec('npm run rmCache && gatsby develop');

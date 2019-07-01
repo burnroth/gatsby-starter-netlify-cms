@@ -56,7 +56,6 @@ module.exports = {
     },
     `gatsby-transformer-json`,
 
-    `gatsby-transformer-xml`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -71,12 +70,12 @@ module.exports = {
         region: 'eu-west-1',
       },
     },
-    {
-      resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
-      options: {
-        develop: true, // Activates purging in npm run develop
-        // purgeOnly: ['/all.scss'],
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-purgecss", // purges all unused/unreferenced css rules
+    //   options: {
+    //     develop: false // Activates purging in npm run develop
+    //     // purgeOnly: ['/all.scss'],
+    //   }
+    // }
   ],
 }

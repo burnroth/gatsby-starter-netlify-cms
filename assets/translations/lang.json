@@ -5,7 +5,7 @@
     "company": "Vilket företag jobbar du på?",
     "email": "Har du en företagsmail vi kan nå dig på?",
     "phone": "Och ett telefonnummer?",
-    
+
     "emailMissing": "Vi behöver din epostaddress för att sätta upp ditt konto.",
     "invalidEmail": "Bra försök! Använd en riktig epostadress. :)",
     "termsMissing": "Du måste acceptera licensvillkoren.",
@@ -24,7 +24,7 @@
     "freeDemo": "Få en personlig demo",
     "readMore": "Läs mer",
     "download": "Ladda hem",
-    "login" : "Logga in"
+    "login": "Logga in"
   },
   "navbar": {
     "solutions": {
@@ -84,15 +84,15 @@
       }
     },
     "customers": {
-      "title" : "Kunder",
-      "href" : "/kunder"
+      "title": "Kunder",
+      "href": "/kunder"
     },
     "pricing": {
-      "title" : "Pris",
-      "href" : "/pris"
+      "title": "Pris",
+      "href": "/pris"
     },
     "resources": {
-      "title" : "Material",
+      "title": "Material",
       "resourcesArray": [
         {
           "linkText": "Standard",
@@ -108,19 +108,130 @@
         }
       ]
     },
-    "about":{
-      "title" : "Om oss",
-      "href" : "/om-oss"
+    "about": {
+      "title": "Om oss",
+      "href": "/om-oss"
     },
     "alreadyCustomer": "Redan kund?",
     "contact": "Kontakta oss"
   },
 
 
-  "usps": {
-    "numberOfUsers": "Fler än <b>40 000</b> användare har redan Lime CRM"
+"maggan": [
+  {
+    "maggan": [
+      {
+        "linkText": "halloj",
+        "href": "hallöj"
+      }
+    ]
+  }
+],
+
+  "footer": {
+
+    "about": {
+      "title": "Om oss",
+      "aboutArray": [
+        {
+          "linkText": "Om oss",
+          "href": "/om-oss"
+        },
+        {
+          "linkText": "Nyhetsrum",
+          "href": "https://investors.lime-technologies.com/nyhetsrum/"
+        },
+        {
+          "linkText": "Vi som jobbar på Lime",
+          "href": "https://www.lime-technologies.se/om-oss/vi-som-jobbar-har/"
+        },
+        {
+          "linkText": "Karriär",
+          "href": "https://www.lime-technologies.se/arbeta-hos-lime/"
+        },
+        {
+          "linkText": "Säkerhet",
+          "href": "https://lime-crm.se/resurser/sakerhet/"
+        }
+      ]
+    },
+
+    "crmSystems": {
+      "title": "CRM-system",
+      "crmArray": [
+        {
+          "linkText": "Våra lösningar",
+          "href": "https://www.lime-technologies.se/crm-system/#produkter"
+        },
+        {
+          "linkText": "Lime Go",
+          "href": "https://www.lime-go.se/"
+        },
+        {
+          "linkText": "Lime CRM",
+          "href": "/"
+        },
+        {
+          "linkText": "Varför CRM?",
+          "href": "/vad-ar-crm"
+        },
+        {
+          "linkText": "Kundportalen",
+          "href": "https://customer.lime-technologies.se/"
+        }
+      ]
+    }, 
+
+    "investors": {
+      "title": "För investerare",
+      "investorsArray": [
+        {
+          "linkText": "Rapporter & presentationer",
+          "href": "/om-oss"
+        },
+        {
+          "linkText": "Aktien",
+          "href": "https://investors.lime-technologies.com/investor-relations/aktien/"
+        },
+        {
+          "linkText": "Bolagsstyrning",
+          "href": "https://investors.lime-technologies.com/bolagsstyrning/"
+        },
+        {
+          "linkText": "Finansiell kalender",
+          "href": "https://investors.lime-technologies.com/investor-relations/kalender/"
+        },
+        {
+          "linkText": "Kontakt",
+          "href": "https://investors.lime-technologies.com/#kontakt"
+        }
+      ]
+    },
+
+    "language": {
+      "title": "Språk",
+      "languageArray": [
+        {
+          "linkText": "Norsk",
+          "href": "https://lime-crm.no"
+        },
+        {
+          "linkText": "Dansk",
+          "href": "https://lime-crm.dk"
+        },
+        {
+          "linkText": "Suomi",
+          "href": "https://lime-crm.fi"
+        }
+      ]
+    }
+
   },
-  "metaData" : {
-    "logoAltText" : "Vår vackra Lime CRM logo som alla säljare älskar att se"
+
+  "usps": {
+    "numberOfUsers": "Fler än 40 000 användare har redan Lime CRM"
+  },
+  "metaData": {
+    "logoAltText": "Vår vackra Lime CRM logo som alla säljare älskar att se"
   }
 }

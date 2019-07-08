@@ -1,5 +1,5 @@
 import React from "react";
-import { lang } from "../../assets/translations/lang"
+import lang from "../../assets/translations/lang.json"
 
 const usp = lang.usps.numberOfUsers
 

@@ -1,26 +1,31 @@
 import React, { Component } from "react";
 import DemoModal from "../Modals/DemoModal";
-import { lang } from "../../../assets/translations/lang";
+import lang from "../../../assets/translations/lang.json";
 
 class DemoFormButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isClicked: false
+      isClicked: false,
+      formIsSubmitted: false
     };
     this.handleClick = this.handleClick.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this.hideForm = this.hideForm.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener("submit", this.hideForm);
   }
 
   handleClick() {
-    this.setState({
-      isClicked: true
-    });
+    this.setState(prevState => ({
+      isClicked: !prevState.isClicked
+    }));
   }
 
-  closeModal() {
+  hideForm() {
     this.setState({
-      isClicked: false
+      formIsSubmitted: true
     });
   }
 
@@ -33,7 +38,7 @@ class DemoFormButton extends Component {
     const buttonText = lang.buttons.freeDemo;
 
     return (
-      <div style={{ display: "flex"}}>
+      <div style={{ display: "flex" }}>
         <button
           onClick={this.handleClick}
           id={id}
@@ -42,7 +47,10 @@ class DemoFormButton extends Component {
           {buttonText}
         </button>
         {this.state.isClicked ? (
-          <DemoModal closeModal={this.closeModal} />
+          <DemoModal
+            submitted={this.state.formIsSubmitted}
+            handleClick={this.handleClick}
+          />
         ) : null}
       </div>
     );

@@ -1,36 +1,40 @@
 import React, { Component } from "react";
 import TrialModal from "../Modals/TrialModal";
-import { lang } from "../../../assets/translations/lang";
+import lang from "../../../assets/translations/lang.json";
 
 class TrialFormButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isClicked: false
+      isClicked: false,
+      formIsSubmitted: false
     };
     this.handleClick = this.handleClick.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this.hideForm = this.hideForm.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener("submit", this.hideForm);
   }
 
   handleClick() {
+    this.setState(prevState =>({
+      isClicked: !prevState.isClicked
+    }))
+  }
+
+  hideForm() {
     this.setState({
-      isClicked: true
+      formIsSubmitted: true
     });
   }
-  closeModal() {
-    this.setState({
-      isClicked: false
-    });
-  }
+
   render() {
-    const buttonColor = this.props.buttonColor
-      ? this.props.buttonColor
-      : "btn-turq";
-    const buttonClass = this.props.buttonClass;
-    const id = this.props.id ? this.props.id : "trialButton";
-    
-    const buttonText = this.props.buttonText ? this.props.buttonText : lang.buttons.freeTrial;
+    const id = this.props.id || "trialButton";
+    const buttonText = this.props.buttonText || lang.buttons.freeTrial;
+    const buttonColor = this.props.buttonColor || "btn-turq";
     const wrapperClass = this.props.wrapperClass;
+    const buttonClass = this.props.buttonClass;
 
     return (
       <div className={wrapperClass} style={{ display: "flex" }}>
@@ -42,7 +46,10 @@ class TrialFormButton extends Component {
           {buttonText}
         </button>
         {this.state.isClicked ? (
-          <TrialModal closeModal={this.closeModal} />
+          <TrialModal
+            submitted={this.state.formIsSubmitted}
+            handleClick={this.handleClick}
+          />
         ) : null}
       </div>
     );

@@ -9,14 +9,14 @@ class Footer extends Component {
 
     const internalLink = key => {
       return (
-        <li>
-          <a href={key.href}>{key.linkText} </a>
+        <li key={Math.random()}>
+          <Link to={key.href}>{key.linkText} </Link>
         </li>
       );
     };
     const externalLink = key => {
       return (
-        <li>
+        <li key={Math.random()}>
           <a href={key.href}>{key.linkText} </a>
         </li>
       );

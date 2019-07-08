@@ -3,7 +3,6 @@ import { graphql, StaticQuery } from 'gatsby'
 import Button from '../Buttons/Button'
 import AutoComplete from './AutoComplete'
 import Suggestions from './Suggestions'
-import Validator from './Validator'
 
 const endpoint =
   'https://gcqupcrlpd.execute-api.eu-west-1.amazonaws.com/v1/staging/search'
@@ -127,7 +126,6 @@ class TrialForm extends Component {
 
     return (
       <form onSubmit={this.handleSubmit} action="#">
-        <Validator state={this.state} />
         <div className="form-group form-2col-left">
           <input
             onChange={this.handleInputChange}

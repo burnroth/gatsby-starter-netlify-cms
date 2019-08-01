@@ -1,4 +1,6 @@
 {
+  "lang": "swedish",
+  "shortLang" : "se",
   "forms": {
     "firstName": "Ditt förnamn?",
     "lastName": "Ditt efternamn?",
@@ -21,7 +23,7 @@
   },
   "trialModal": {
     "heading": "Testa Lime CRM",
-    "description": "Låt oss visa vad Lime CRM går för. <br/> Du får fri tillgång till vår webbklient, <b>helt gratis.<b/>"
+    "description": "Låt oss visa vad Lime CRM går för. Du får fri tillgång till vår webbklient, helt gratis."
   },
   "demoModal": {
     "heading": "En demo av Lime CRM",
@@ -32,6 +34,7 @@
     "freeDemo": "Få en personlig demo",
     "readMore": "Läs mer",
     "download": "Ladda hem",
+    "downloadPoster": "Ladda hem vår poster",
     "login": "Logga in"
   },
   "navbar": {
@@ -124,20 +127,18 @@
     "contact": "Kontakta oss"
   },
 
-
-"maggan": [
-  {
-    "maggan": [
-      {
-        "linkText": "halloj",
-        "href": "hallöj"
-      }
-    ]
-  }
-],
+  "maggan": [
+    {
+      "maggan": [
+        {
+          "linkText": "halloj",
+          "href": "hallöj"
+        }
+      ]
+    }
+  ],
 
   "footer": {
-
     "about": {
       "title": "Om oss",
       "aboutArray": [
@@ -188,7 +189,7 @@
           "href": "https://customer.lime-technologies.se/"
         }
       ]
-    }, 
+    },
 
     "investors": {
       "title": "För investerare",
@@ -233,11 +234,11 @@
         }
       ]
     }
-
   },
 
   "usps": {
-    "numberOfUsers": "Fler än 40 000 användare har redan Lime CRM"
+    "numberOfUsers": "Fler än 40 000 användare har redan Lime CRM",
+    "footerCTA": "Fler än 40 000 användare är redan igång"
   },
   "metaData": {
     "logoAltText": "Vår vackra Lime CRM logo som alla säljare älskar att se"

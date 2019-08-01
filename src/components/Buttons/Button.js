@@ -8,6 +8,7 @@ const Button = ({
   onClick = null,
   id = '',
   href = '',
+  disabled = false
 }) =>
   href ? (
     <Link to={href} className={`btn ${buttonClass} ${buttonColor}`}>
@@ -18,6 +19,7 @@ const Button = ({
       id={id}
       onClick={onClick}
       className={`btn ${buttonClass} ${buttonColor}`}
+      disabled={disabled}
     >
       {buttonText}
     </button>

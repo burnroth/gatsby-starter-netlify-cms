@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
-import { lang } from "../../assets/translations/lang";
+import lang from "../../assets/translations/lang.json"
 import defaultOgImage from '../img/crm-skiss.png'
 
 class SEO extends Component {
@@ -12,18 +12,19 @@ class SEO extends Component {
   }
   
 
-  componentWillMount() {
+  componentDidMount() {
 
     this.setState({
       pointToSelf: document.URL
     });
 
     const referrer = document.referrer;
-
     if (!referrer.includes("lime-crm")) {
-      var ref = document.URL;
-      var utm = ref.split(/[&?=]+/);
-      var utmArray = utm.filter(function(word) {
+
+      const ref = document.URL;
+      const utm = ref.split(/[&?=]+/);
+      const utmArray = utm.filter(function(word) {
+        
         if (
           word === "gclid" ||
           word === "fbclid" ||
@@ -33,41 +34,25 @@ class SEO extends Component {
           return word;
         }
       });
+
+      switch (utmArray[0]) {
+        case "gclid":
+          sessionStorage.setItem("Source", "Google Ads");
+          break;
+        case "fbclid":
+          sessionStorage.setItem("Source", "Facebook Ads");
+          break;
+        case "msclid":
+          sessionStorage.setItem("Source", "Bing Ads");
+          break;
+        case "search?q":
+          sessionStorage.setItem("Source", "Bing Search");
+          break;
+        default:
+            sessionStorage.setItem("Source", document.referrer);
+          break;
+      }
     }
-
-    switch (utmArray[0]) {
-      case "gclid":
-        sessionStorage.setItem("Source", "Google Ads");
-        break;
-      case "fbclid":
-        sessionStorage.setItem("Source", "Facebook Ads");
-        break;
-      case "msclid":
-        sessionStorage.setItem("Source", "Bing Ads");
-        break;
-      case "search?q":
-        sessionStorage.setItem("Source", "Bing Search");
-        break;
-      default:
-          sessionStorage.setItem("Source", document.referrer);
-
-        break;
-    }
-
-    // if (utmArray[0] === "gclid") {
-    //   sessionStorage.setItem("Source", "Google Ads");
-    // } else if (utmArray[0] === "fbclid") {
-    //   sessionStorage.setItem("Source", "Facebook Ads");
-    // } else if (utmArray[0] === "msclkid") {
-    //   sessionStorage.setItem("Source", "Bing Ads");
-    // } else if (utmArray.length === 0) {
-    //   var referrer = document.referrer;
-
-    //   if (referrer.length < 40) {
-    //     sessionStorage.setItem("Source", referrer);
-    //   } else {
-    //     sessionStorage.setItem("Source", "Bing Search");
-    //   }
   }
 
   render() {
@@ -75,24 +60,23 @@ class SEO extends Component {
     const desc = this.props.desc;
     const ogImage = this.props.ogImage;
     const pointToSelf = this.state.pointToSelf;
-
-    const language = lang.language;
+    const language = lang.lang;
     let languageAttribute = "";
 
     switch (language) {
-      case "se":
+      case "swedish":
         languageAttribute = "sv-SE";
         break;
-      case "dk":
+      case "danish":
         languageAttribute = "da-DK";
         break;
-      case "no":
+      case "norwegian":
         languageAttribute = "nb-NO";
         break;
-      case "fi":
+      case "finnish":
         languageAttribute = "fi-FI";
         break;
-      case "com":
+      case "english":
         languageAttribute = "en-GB";
         break;
       default:

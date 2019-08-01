@@ -1,50 +1,46 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+import React from "react";
+import { Link, graphql, StaticQuery } from "gatsby";
+import Img from "gatsby-image";
 
 class BlogRoll extends React.Component {
   render() {
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+    const { data } = this.props;
+    const { edges: posts } = data.allMarkdownRemark;
 
     return (
-      <div className="container">
-        <div className="row">
-          {posts &&
-            posts.map(({ node: post }) => (
-              <div key={post.id} className="col-12 col-md-6 col-lg-4 d-flex">
-                <div className="card-customer">
-                  <div className="card-image">
-                    <Link className="" to={post.fields.slug}>
-                      <Img
-                        fixed={post.frontmatter.card.childImageSharp.fixed}
-                      />
-                    </Link>
-                  </div>
-                  <div className="card-body">
-                    <h3>{post.frontmatter.title}</h3>
-                    <h4>{post.frontmatter.subtitle}</h4>
-                    <p>{post.frontmatter.quote}</p>
-                    <Link className="btn btn-turq button" to={post.fields.slug}>
-                      Läs mer
-                    </Link>
+      <section id="cases">
+        <div className="container">
+          <div className="row">
+            {posts &&
+              posts.map(({ node: post }) => (
+                <div key={post.id} className="col-12 col-md-6 col-lg-4 d-flex">
+                  <div className="card-customer">
+                    <div className="card-image">
+                      <Link className="" to={post.fields.slug}>
+                        <Img
+                          fixed={post.frontmatter.card.childImageSharp.fixed}
+                        />
+                      </Link>
+                    </div>
+                    <div className="card-body">
+                      <h3>{post.frontmatter.title}</h3>
+                      <h4>{post.frontmatter.subtitle}</h4>
+                      <p>{post.frontmatter.quote}</p>
+                      <Link
+                        className="btn btn-turq button"
+                        to={post.fields.slug}
+                      >
+                        Läs mer
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+          </div>
         </div>
-      </div>
-    )
+      </section>
+    );
   }
-}
-
-BlogRoll.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array,
-    }),
-  }),
 }
 
 export default () => (
@@ -85,4 +81,4 @@ export default () => (
     `}
     render={(data, count) => <BlogRoll data={data} count={count} />}
   />
-)
+);

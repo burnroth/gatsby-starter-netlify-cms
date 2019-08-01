@@ -1,9 +1,18 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
+import MobileSolutionsDropdown from "./MobileSolutionsDropdown";
 /* eslint-disable */
-class SolutionsDropdown extends Component {
+class MobileDropdown extends Component {
   constructor(props) {
     super(props);
+  }
+
+  handleClick(event) {
+    const name = event.target.name || event.target.dataset.name;
+
+    this.setState(prevState => ({
+      [name]: !prevState[name]
+    }));
   }
 
   render() {
@@ -42,15 +51,11 @@ class SolutionsDropdown extends Component {
             <a className="dropdown-heading">
               <b>{navbar.solutions.verticals.title}</b>
             </a>
-            {verticalsArray.map(item => (
-              <Link
-                key={Math.random() * 10}
-                className="dropdown-item"
-                to={item.href}
-              >
-                {item.linkText}
-              </Link>
-            ))}
+            <MobileSolutionsDropdown
+              close={this.props.close}
+              handleClick={this.handleClick}
+              translations={this.props.translations}
+            />
           </div>
         </div>
       </div>
@@ -58,4 +63,4 @@ class SolutionsDropdown extends Component {
   }
 }
 
-export default SolutionsDropdown;
+export default MobileDropdown;

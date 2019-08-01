@@ -4,7 +4,7 @@ import Navbar from './navbar/Navbar'
 import Footer from './Footer'
 
 import '../../assets/scss/imports.scss'
-import './Sections/font.css'
+import '../../assets/font.css'
 
 const TemplateWrapper = ({ children }) => (
   <StaticQuery

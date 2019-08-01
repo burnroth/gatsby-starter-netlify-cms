@@ -22,7 +22,7 @@ class Navbar extends Component {
   }
 
   handleClick(event) {
-    const name = event.target.dataset.name
+    const name = event.target.name || event.target.dataset.name
 
     this.setState(prevState => ({
       [name]: !prevState[name],
@@ -58,6 +58,7 @@ class Navbar extends Component {
                   />
                 </Link>
               </div>
+
               <div className="col-6 col-lg-7 d-flex">
                 <div className="align-items-center d-none d-lg-flex">
                   <div style={{ position: 'relative' }}>
@@ -120,6 +121,7 @@ class Navbar extends Component {
                   buttonText="Testa gratis"
                 />
               </div>
+              
               <div className="col-3 col-lg-4 d-flex">
                 <img
                   className="d-flex d-lg-none mx-auto align-self-center"

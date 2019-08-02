@@ -1,15 +1,24 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react";
+import { Link } from "gatsby";
+import lang from "../../../assets/translations/lang.json";
 
 const Button = ({
   buttonText,
-  buttonColor = 'btn-turq',
-  buttonClass = '',
+  contactUs = lang.buttons.contactUs,
+  contactURL = lang.navbar.contactURL,
+  buttonColor = "btn-turq",
+  buttonClass = "",
   onClick = null,
-  id = '',
-  href = '',
-  disabled = false
+  id = "",
+  href = "",
+  disabled = false,
+  contactButton = false
 }) =>
+contactButton ? (
+  <Link to={contactURL} className={`btn ${buttonClass} ${buttonColor}`} >
+    {buttonText || contactUs}
+  </Link>
+) : 
   href ? (
     <Link to={href} className={`btn ${buttonClass} ${buttonColor}`}>
       {buttonText}
@@ -23,6 +32,5 @@ const Button = ({
     >
       {buttonText}
     </button>
-  )
-
-export default Button
+  ) 
+export default Button;

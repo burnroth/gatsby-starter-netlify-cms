@@ -31,8 +31,10 @@
   },
   "buttons": {
     "freeTrial": "Testa gratis",
+    "contactUs" : "Kontakta oss",
     "freeDemo": "Få en personlig demo",
     "readMore": "Läs mer",
+    "getStarted": "Kom igång nu",
     "download": "Ladda hem",
     "downloadPoster": "Ladda hem vår poster",
     "login": "Logga in"
@@ -124,7 +126,8 @@
       "href": "/om-oss"
     },
     "alreadyCustomer": "Redan kund?",
-    "contact": "Kontakta oss"
+    "contact": "Kontakta oss",
+    "contactURL" : "/kontakta-oss"
   },
 
   "maggan": [

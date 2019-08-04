@@ -8,7 +8,6 @@ import Button from "../components/Buttons/Button";
 
 export const AddonsPageTemplate = ({
   freeTrial,
-  contactUs,
   readMore,
   getStarted,
   title,

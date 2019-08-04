@@ -65,7 +65,6 @@
   "devDependencies": {
     "json-loader": "^0.5.7",
     "prettier": "^1.17.1",
-    "redux-devtools": "^3.5.0",
     "rimraf": "^2.6.3"
   }
 }

@@ -14,32 +14,33 @@ features:
   blurbs:
     - image1:
         alt:  
-        image: "/like.svg"
-      rubrik: Kund- och fastighetsöversikt
-
+        image: "/user-groups.svg"
+      rubrik: Kundöversikt
       text: >-
-        Koppla ditt fastighetssystem till Lime CRM och samla all information du behöver för att på bästa sätt hantera ärenden och vårda relationerna. Här är allt lätt att hitta!
+        Få översikt och en sökbar vy över alla dina kunder och leads. All kontaktinformation på ett ställe.
 
     - image1:
-        alt: aaaaa
+        alt: 
         image: "/contract-job.svg"
-      rubrik: Kundvård och uthyrning
-
+      rubrik: Outlook och Excel
       text: >-
-        Förenkla det dagliga arbetet med befintliga och potentiella kunder. Med Lime CRM har du koll på dina hyresgäster och prospekt, samt får hjälp att jobba proaktivt.
+        Vi vet att du är van vid Outlook och dina Excel-ark – därför har vi kopplat ihop dem med Lime CRM.
 
     - image1:
-        alt: gggg
-        image: "/technology-items.svg"
-      rubrik: Publicering av annonser
+        alt: 
+        image: "/message.svg"
+      rubrik: Lime CRM Newsletter addon
       text: >-
-        Publicera snabbt lediga objekt där du önskar, direkt från Lime CRM. Exempelvis på din webbplats, Objektvision eller Newst. Intresseanmälningarna landar sedan i systemet.
+        Med Lime CRM Newsletter addon kan du hantera prenumeranter och evenemang, samt skicka nyhetsbrev direkt från Lime CRM.
+
     - image1:
-        alt: gggg
+        alt: 
         image: "/technology-items.svg"
-      rubrik: Publicering av annonser
+      rubrik: Webbklient
       text: >-
-        Publicera snabbt lediga objekt där du önskar, direkt från Lime CRM. Exempelvis på din webbplats, Objektvision eller Newst. Intresseanmälningarna landar sedan i systemet.
+        Med webbklienten till Lime CRM har du alltid tillgång till all kundinformation, oavsett var du är. Effektivitet i vardagen.
+
+
 
 usp:
   heading: Mindre administration

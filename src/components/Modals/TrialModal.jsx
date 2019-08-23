@@ -12,7 +12,6 @@ class TrialModal extends Component {
   componentDidMount() {
     document.addEventListener("mousedown", this.handleClickOutside);
     document.addEventListener("keydown", this.escapeModal);
-    console.log(jsonLang)
   }
 
   componentWillUnmount() {

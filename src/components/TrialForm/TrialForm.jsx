@@ -37,8 +37,7 @@ class TrialForm extends Component {
   }
 
   getInfo = () => {
-    const endpoint =
-      "https://gcqupcrlpd.execute-api.eu-west-1.amazonaws.com/v1/staging/search";
+    const endpoint = "https://gcqupcrlpd.execute-api.eu-west-1.amazonaws.com/v1/staging/search";
     const postQuery = this.state.query;
     const postBody = JSON.stringify({
       query:
@@ -117,6 +116,8 @@ class TrialForm extends Component {
   }
 
   handleSubmit(event) {
+    event.persist()
+    console.log(event)
     const pathName = document.location.pathname;
     const data = {
       firstName: this.state.firstName,
@@ -126,19 +127,15 @@ class TrialForm extends Component {
       company: this.state.company,
       companyId: this.state.companyId,
       country: lang.shortLang,
-      preferredLanguage: lang.lang,
       sessionSource: window.sessionStorage.getItem("Source"),
-      source: "pase",
-      submitsignup: "",
-      tags: [pathName, this.state.formID]
+      landingPage: pathName,
+      deal: "Free trial",
+      tags: [this.state.formID]
     };
     const endpoint =
-      "https://prod-22.westeurope.logic.azure.com:443/workflows/f85f0c53fe7b4403b65415a96dd21ce5/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Ue0S_My2ndhazx82nZCuKEUTKPLmiVvVczuz-NUmY4c";
+      "www.google.se";
     fetch(endpoint, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
       cache: "no-cache",
       body: JSON.stringify(data)
     })
@@ -153,7 +150,7 @@ class TrialForm extends Component {
     const form = this.props.data.translationsJson.forms;
 
     return (
-      <form onSubmit={this.handleSubmit} action="#">
+      <form onSubmit={this.handleSubmit} autocomplete="off" action="#">
         <div className="form-group form-2col-left">
           <input
             onChange={this.handleInputChange}
@@ -163,8 +160,9 @@ class TrialForm extends Component {
             name="firstName"
             placeholder={form.firstName}
             required
+            autocomplete="off"
           />
-          {}
+          
         </div>
         <div className="form-group form-2col-right">
           <input
@@ -175,6 +173,7 @@ class TrialForm extends Component {
             name="lastName"
             placeholder={form.lastName}
             required
+            autocomplete="off"
           />
         </div>
         <div className="form-group">
@@ -201,6 +200,7 @@ class TrialForm extends Component {
             name="email"
             placeholder={form.email}
             required
+            autocomplete="off"
           />
         </div>
         <div className="form-group">
@@ -212,6 +212,7 @@ class TrialForm extends Component {
             name="phone"
             placeholder={form.phone}
             required
+            autocomplete="off"
           />
           <div>
             <input
@@ -219,6 +220,7 @@ class TrialForm extends Component {
               name="dataTerms"
               onChange={this.handleDataTerms}
               required
+              autocomplete="off"
             />
             <a
               onClick={this.showDataTerms}

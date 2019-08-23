@@ -110,6 +110,7 @@ div.suggestions-list{
   max-height: 230px;
   overflow: auto;
   border-radius: 4px;
+  z-index: 1;
 
 option.suggestion{
   cursor: pointer;

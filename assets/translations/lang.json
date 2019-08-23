@@ -108,16 +108,16 @@
       "title": "Material",
       "resourcesArray": [
         {
-          "linkText": "Standard",
-          "href": "/losningar/crm"
+          "linkText": "Vad är CRM?",
+          "href": "/vad-ar-crm/"
         },
         {
-          "linkText": "Add-ons",
-          "href": "/addons"
+          "linkText": "Posters",
+          "href": "/resurser/"
         },
         {
-          "linkText": "GDPR",
-          "href": "/resurser/gdpr"
+          "linkText": "Blogg",
+          "href": "https://blogg.lime-crm.se/"
         }
       ]
     },
@@ -129,17 +129,6 @@
     "contact": "Kontakta oss",
     "contactURL" : "/kontakta-oss"
   },
-
-  "maggan": [
-    {
-      "maggan": [
-        {
-          "linkText": "halloj",
-          "href": "hallöj"
-        }
-      ]
-    }
-  ],
 
   "footer": {
     "about": {

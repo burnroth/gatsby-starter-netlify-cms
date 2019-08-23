@@ -51,4 +51,42 @@ benefits:
       heading: Ditt företag äger relationerna
       content: >-
        Vad sker när en av dina säljare bestämmer sig för att sluta och starta eget, eller går över till konkurrenten? Utan ett genomtänkt CRM-arbete och ett bra system, kan tanken vara en mardröm. Vet du vilka kunder din säljare har haft kontakt med? Vad har avtalats och lovats? Kan du vara säker på att kunderna inte följer med säljaren till det nya jobbet? <br> <br> Arbetar ditt företag aktivt med kundrelationerna i ett CRM-system minskar sårbarheten. Ditt företag äger kundinformationen istället för enskilda medarbetare och alla har överblick över det som sagts och gjorts – när, var och av vem. Så att du eller en kollega kan ta över stafettpinnen utan problem.
+
+myths:
+  heading: Vanliga ”vad är CRM?”-myter
+  blocks:
+  - block:
+      icon: /hearts.svg
+      heading: "Myt 1: ”CRM är ’allt eller inget’ och måste lösa allt för att användas”"
+
+      content: >-
+       Att ha allt i ett system kan skapa ett stort systemmonster som är svårt att hålla uppdaterat och svårt för användarna att hantera. Tanken med ett bra CRM-system är exakt det motsatta. Vi tror på best of breed-tanken som innebär att alla system ska göra det som de är bäst på och sedan integreras med varandra. Det betyder inte att alla ska jobba i flera system. Det betyder att informationen hamnar där den hör hemma och att alla avdelningar får det systemet som passar dem allra bäst.
+
+
+  - block:
+      icon: /hearts.svg
+      heading: "Myt 2: ”CRM är tidskrävande och ger mer administration”"
+
+      content: >-
+       Ett CRM-system innebär i längden mindre administration och mindre letande efter information. Det är alltid svårt att förändra ett arbetsmönster, men genom att locka användarna med funktioner som underlättar deras vardag kan vi garantera att systemet kommer användas. Tänk dig en översiktlig rapport med månadens resultat, en användbar ringlista som säljaren får direkt i handen eller om marknadsavdelningen kan ta ut en e-postlistan på 30 sekunder.
+
+
+  - block:
+      icon: /hearts.svg
+      heading: "Myt 3: ”CRM är dyrt och bara för stora företag”"
+
+      content: >-
+       Idag finns det flera tusen CRM-system på marknaden. Några är helt gratis, medan andra kräver en större investering. Men det finns något för alla plånböcker. Allt från projekt som bara kostar några hundralappar i månaden, till miljonbelopp. Oavsett belopp är ROI viktigt. 
+       Undersökningar visar att du får tillbaka ca åtta gånger investeringen när du implementerar ett CRM-system (Nucleus Research – Report 0128, 2014). En tydligare ROI är svår att hitta. Men att uppnå en sådan avkastning ställer krav på både beställare och leverantör. Investeringen lönar sig inte bara för att du installerar en programvara. Systemet måste också användas. Om du vill veta mer om hur du effektivt implementerar ett CRM-system och säkrare en hög ROI, kan du ladda ned den här postern som beskriver projektet steg för steg.
+
+demoSection:
+  heading: Så... vad är CRM egentligen?
+
+  content: >-
+    Vi förstår att CRM kan kännas diffust. Men det blir oftast tydligare med konkreta exempel från den egna verksamheten. Nyfiken på hur CRM skulle funka i just ditt bolag? Vi visar dig gärna.
+
+
+
+
+
 ---

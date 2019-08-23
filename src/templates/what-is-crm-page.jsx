@@ -4,6 +4,7 @@ import Img from "gatsby-image";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import TrialFormButton from "../components/Buttons/TrialFormButton";
+import DemoFormButton from "../components/Buttons/DemoFormButton";
 import Button from "../components/Buttons/Button";
 
 export const WhatIsCRMPageTemplate = ({
@@ -16,7 +17,9 @@ export const WhatIsCRMPageTemplate = ({
   hero,
   theory,
   praxis,
-  benefits
+  benefits,
+  myths,
+  demoSection
 }) => (
   <main id="landingPage">
     <SEO title={title} desc={description} />
@@ -25,9 +28,7 @@ export const WhatIsCRMPageTemplate = ({
         <div className="row">
           <div className="col-12 col-vertical-hero">
             <div className="top60">
-              <strong>
-                <h1 dangerouslySetInnerHTML={{ __html: hero.heading }} />
-              </strong>
+              <h1 dangerouslySetInnerHTML={{ __html: hero.heading }} />
               <p>{hero.subHeading} </p>
               <Button buttonColor="btn-white" contactButton={true} />
             </div>
@@ -38,11 +39,15 @@ export const WhatIsCRMPageTemplate = ({
     <section id="theory">
       <div className="container">
         <div className="row">
-          <div className="col-12">{theory.heading}</div>
+          <div className="col-12">
+            <h2>{theory.heading}</h2>
+          </div>
           <div className="col-12 col-md-6">
             <q>{theory.quote}</q>
           </div>
-          <div className="col-12 col-md-6">{theory.content}</div>
+          <div className="col-12 col-md-6">
+            <p dangerouslySetInnerHTML={{ __html: theory.content }} />
+          </div>
         </div>
       </div>
     </section>
@@ -70,20 +75,49 @@ export const WhatIsCRMPageTemplate = ({
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <h2></h2>
-
+            <h2>{benefits.heading} </h2>
           </div>
-          {benefits.blocks.map(item=>(
+          {benefits.blocks.map(item => (
             <div className="col-12">
-              <img src={item.block.icon.publicURL} alt=""/>
-              <h3>
-                {item.block.heading}
-              </h3>
-              <p>
-                {item.block.content}
-              </p>
+              <img src={item.block.icon.publicURL} alt="" />
+              <h3>{item.block.heading}</h3>
+              <p>{item.block.content}</p>
             </div>
           ))}
+          <div className="col-12">
+          <TrialFormButton />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="myths">
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <h2>{myths.heading}</h2>
+          </div>
+          {myths.blocks.map(item => (
+            <div className="col-12">
+              <img src={item.block.icon.publicURL} alt="" />
+              <h3>{item.block.heading}</h3>
+              <p>{item.block.content}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    <section id="demoSection">
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <h2>
+              <strong>{demoSection.heading}</strong>
+            </h2>
+            <p>
+              {demoSection.content}
+            </p>
+            <DemoFormButton buttonColor="btn-turq" />
+          </div>
         </div>
       </div>
     </section>
@@ -106,6 +140,8 @@ const AddonsPage = ({ data }) => {
         theory={frontmatter.theory}
         praxis={frontmatter.praxis}
         benefits={frontmatter.benefits}
+        myths={frontmatter.myths}
+        demoSection={frontmatter.demoSection}
       />
     </Layout>
   );
@@ -157,16 +193,33 @@ export const addonsPageQuery = graphql`
           }
         }
         benefits {
-            blocks {
-              block {
-                icon {
-                  publicURL
-                }
-                heading
-                content
+          heading
+          blocks {
+            block {
+              icon {
+                publicURL
               }
+              heading
+              content
             }
           }
+        }
+        myths {
+          heading
+          blocks {
+            block {
+              icon {
+                publicURL
+              }
+              heading
+              content
+            }
+          }
+        }
+        demoSection {
+          heading
+          content
+        }
       }
     }
   }
